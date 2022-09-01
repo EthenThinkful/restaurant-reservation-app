@@ -4,9 +4,13 @@
  * @type {Router}
  */
 
-const router = require("express").Router();
-const controller = require("./reservations.controller");
-
-router.route("/").get(controller.list);
-
-module.exports = router;
+ const router = require("express").Router();
+ const controller = require("./reservations.controller");
+ const methodNotAllowed = require("../errors/methodNotAllowed");
+ 
+ // root = /reservations/
+ 
+ router.route("/").post(controller.create).get(controller.list).all(methodNotAllowed);
+ 
+ 
+ module.exports = router;
