@@ -59,6 +59,36 @@
    }
    next();
  }
+
+ function reservationIsInFuture(req, res, next) {
+  const { reservation_date, reservation_time } = req.body;
+  const todaysDate = new Date();
+  const submittedDate = new Date(`${reservation_time} ${reservation_date}`);
+  if (submittedDate < todaysDate) {
+    return next({
+      status: 400,
+      message: `Reservations must be placed in the future.`
+    })
+  }
+  next();
+}
+
+// getDay returns a num 0-6 where 0 is Monday, 6 is Sunday
+//validation check for 1 --> Tuesday
+function isTuesday(req, res, next) {
+  const { reservation_date } = req.body;
+  const dayNum = new Date(reservation_date).getDay();
+  if (dayNum === 1) {
+    return next({
+      status: 400,
+      message: `Sorry! We're closed on Tuesdays!`
+    })
+  }
+  next();
+}
+
+
+
  
  /* validation currently checking if:
      - req has all required fields
@@ -73,7 +103,9 @@
   list,
    create: [
     hasRequiredFields,
-    hasOnlyValidProperties,    
+    hasOnlyValidProperties,
+    reservationIsInFuture,
+    isTuesday,    
     asyncErrorBoundary(create),
    ],
  };

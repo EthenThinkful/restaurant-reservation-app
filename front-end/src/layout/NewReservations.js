@@ -1,5 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
+import ErrorAlert from "./ErrorAlert";
+
 const { REACT_APP_API_BASE_URL } = process.env;
 
 function NewReservations() {
@@ -15,6 +17,14 @@ function NewReservations() {
   };
 
   const [formState, setFormState] = useState(initialFormState);
+  const [error, setError] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState(undefined);
+
+  useEffect(() => {
+    const abortController = new AbortController();
+    setErrorMessage(error)
+    return () => abortController.abort()
+  }, [error])
 
   const changeHandler = ({ target }) => {
     setFormState({ ...formState, [target.name]: target.value });
@@ -38,14 +48,22 @@ function NewReservations() {
     const resData = await response.json();
     // for now, the response from the backend is simply console logged
     console.log(resData);
-  
-  
+    if (resData.error) {
+      setError(resData.error);
+    }
+    console.log(resData.error);
+    if (response.status !== 400) {
     setFormState({ ...initialFormState });
     history.goBack();
+    }
   }
 
-
+  // currently, ErrorAlert will only display one error message at a time
+  // with "Reservations must be place in the future" taking priority
+  // needs to be set up so there multiple form valiations will result in multiple messages
   return (
+    <div>
+      {error ? <ErrorAlert errorMessage={errorMessage}/> : <></>}
     <div className="form-group">
       <form onSubmit={submitHandler}>
         <label htmlFor="first_name">First Name</label>
@@ -122,6 +140,7 @@ function NewReservations() {
           Submit
         </button>
       </form>
+    </div>
     </div>
   );
 }
