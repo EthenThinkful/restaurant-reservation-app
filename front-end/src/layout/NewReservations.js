@@ -46,12 +46,10 @@ function NewReservations() {
       body: JSON.stringify(formState),
     });
     const resData = await response.json();
-    // for now, the response from the backend is simply console logged
-    console.log(resData);
+    // successful requests are currently doing nothing with the resData
     if (resData.error) {
       setError(resData.error);
     }
-    console.log(resData.error);
     if (response.status !== 400) {
     setFormState({ ...initialFormState });
     history.goBack();
@@ -114,7 +112,7 @@ function NewReservations() {
           value={formState.reservation_time}
           onChange={changeHandler}
         ></input>
-        <label htmlFor="people">People Attending</label>
+        <label htmlFor="people">Number of Guests</label>
         <input
           required
           type="number"
@@ -134,7 +132,7 @@ function NewReservations() {
         </button>
         <button
           type="submit"
-          name="submit-btn"
+          name="submit-btn"         
           className="btn btn-secondary"
         >
           Submit
