@@ -44,6 +44,7 @@
 function hasAllFields(...fields) {
   return function (req, res, next) {
     const { data = {} } = req.body;
+    console.log(data)
     try {
       fields.forEach((field) => {
         if (!data[field]) {
