@@ -27,7 +27,7 @@ function NewReservations() {
   }, [error])
 
   const changeHandler = ({ target }) => {
-    setFormState({ ...formState, [target.name]: target.value });
+    setFormState({ ...formState, [target.name]: target.name === "people" ? Number(target.value) : target.value });
   };
 
   const cancelHandler = () => {
@@ -43,7 +43,7 @@ function NewReservations() {
       headers: {
         "Content-type": "application/json",
       },
-      body: JSON.stringify(formState),
+      body: JSON.stringify({data: formState}),
     });
     const resData = await response.json();
     // successful requests are currently doing nothing with the resData

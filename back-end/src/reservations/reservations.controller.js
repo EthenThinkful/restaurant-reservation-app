@@ -6,9 +6,9 @@
  const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
  
  async function list(req, res) {
-  const date = req.query.date
+  const date = req.query.date 
   const data = await service.list(date);
-  res.json({ data: data });
+  res.json({ data });
 }
  
  // VALIDATION PIPELINE
@@ -78,6 +78,22 @@ function dateValidator(req, res, next) {
     });
   }
   next();
+}
+
+function reservationExists(req, res, next) {
+  service.read(req.params.reservation_id)
+  .then((reservation) => {
+  if (reservation) {
+   res.locals.reservation = reservation
+   return next()
+  }
+  next({status: 404, message: `Reservation ID of ${req.params.reservation_id} cannot be found.`})
+}).catch(next) 
+}
+
+function read(req, res) {
+   const {reservation: data} = res.locals;
+   res.json({data})
 }
 
 function timeValidator(req,res,next) {
@@ -153,8 +169,8 @@ next();
  module.exports = {
   list:[asyncErrorBoundary(list)],
   create: [
-hasOnlyValidProperties,
-hasRequiredFields,
+    hasOnlyValidProperties,
+    hasRequiredFields,
     dateValidator,
     timeValidator,
     peopleIsNumber,
@@ -163,4 +179,5 @@ hasRequiredFields,
     timeIsAvailable,
     asyncErrorBoundary(create),
   ],
+  read:[reservationExists, asyncErrorBoundary(read)],
  };
