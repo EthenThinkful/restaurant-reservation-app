@@ -1,54 +1,100 @@
 import React, { useEffect, useState } from "react";
-import { listReservations } from "../utils/api";
+import { useLocation, useHistory } from "react-router";
+import { listReservations, listTables } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
-import ReservationList from "./ReservationsList";
-import { formatAsTime, previous, next, today as todayFn } from "../utils/date-time";
+import ReservationsList from "./ReservationsList";
+import TablesList from "./TablesList";
+import { formatAsTime, previous, next, today } from "../utils/date-time";
 
-/**
- * Defines the dashboard page.
- * @param date
- *  the date for which the user wants to view reservations.
- * @returns {JSX.Element}
- */
-function Dashboard({ today }) {
+
+function Dashboard({ date }) {
   const [reservations, setReservations] = useState([]);
+  const [tables, setTables] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
-  const [date, setDate] = useState(today)
+
+  const history = useHistory();
+
+  const urlQuery = useLocation().search;
+  const dateQueryStart = (urlQuery.search("date") + 5);
+  date = urlQuery.slice(dateQueryStart, dateQueryStart + 10) || date;
 
   useEffect(loadDashboard, [date]);
 
   function loadDashboard() {
     const abortController = new AbortController();
     setReservationsError(null);
+
     listReservations({ date }, abortController.signal)
       .then(setReservations)
       .catch(setReservationsError);
+
+    listTables(abortController.signal)
+      .then(setTables)
+      .catch(setReservationsError);  // errors fetching tables adds to reservationsError array
+
     return () => abortController.abort();
   }
 
-  const reservationslist = reservations.map((reservation, index) => (
-    <ReservationList
+  const reservationsList = reservations.map((reservation, index) => (
+    <ReservationsList
       key={index}
       reservation={reservation}
-      date={date}
       formatTime={formatAsTime}
     />
   ));
 
+  const tablesList = tables.map((table, index) => (
+    <TablesList
+    key={index}
+    table={table}
+    />
+  ));
+
+  const previousHandler = () => {
+    const previousDate = previous(date);
+    history.push(`/dashboard?date=${previousDate}`)
+  }
+
+  const nextHandler = () => {
+    const nextDate = next(date);
+    history.push(`/dashboard?date=${nextDate}`)
+  }
+
+  const todayHandler = () => {
+    const todayDate = today();
+    history.push(`/dashboard?date=${todayDate}`)
+  }
+
   return (
+
     <main>
-      <h1>{new Date().getHours() < 12 ? "Good morning." : "Good evening."}</h1>
-      <div className="d-md-flex mb-3">
-        <h4 className="mb-0">Reservations for {date}</h4>
+      <div className="row d-flex flex-column">
+        <h1
+          className="col-12 d-flex flex-wrap"
+          style={{ fontFamily: "Oooh Baby" }}
+        >
+          {new Date().getHours() < 12 ? "Good morning." : "Good evening."}
+        </h1>
+        <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
+          <h4 className="mb-0">Reservations for {date}</h4>
+        </div>
       </div>
       <div className="row justify-content-around my-3">
-        <button type="button" name="previous-btn" className="ml-auto" onClick={()=> setDate(previous(date))}>Previous</button>
-        <button type="button" name="next-btn" className="mx-3" onClick={()=> setDate(next(date))}>Next</button>
-        <button type="button" name="today" className="mr-auto" onClick={()=> setDate(todayFn())}>Today</button>
+        <button type="button" name="previous-btn" className="ml-auto" onClick={previousHandler}>
+          Previous
+        </button>
+        <button type="button" name="next-btn" className="mx-3" onClick={nextHandler}>
+          Next
+        </button>
+        <button type="button" name="today" className="mr-auto" onClick={todayHandler}>
+          Today
+        </button>
       </div>
-      <ErrorAlert error={reservationsError} />
+      {reservationsError ? <ErrorAlert errorMessage={reservationsError}/> : <></>}
       <hr />
-      <div className="row">{reservationslist}</div>     
+      <div className="row">{reservationsList.length === 0 ? (<div id="no-reservations"><h3>There are no reservations for this date.</h3></div>) : reservationsList}</div>
+      <br />
+      <div className="row">{tablesList.length === 0 ? (<h3>No Tables Listed</h3>): tablesList}</div>
     </main>
   );
 }
