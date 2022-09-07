@@ -52,7 +52,7 @@ function NewReservations() {
     }
     if (response.status !== 400) {
     setFormState({ ...initialFormState });
-    history.goBack();
+    history.push(`/dashboard/?date=${resData.data.reservation_date}`);
     }
   }
 
