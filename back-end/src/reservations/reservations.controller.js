@@ -184,11 +184,21 @@ next();
  function unknownStatus(req, res, next) {
   const { data = {} } = req.body;
   if (data["status"] === "unknown") {
-    next ({
+    return next ({
       status: 400,
       message: `unknown status`
     })
   } 
+  next();
+ }
+
+ function isValueFinished(req, res, next) {
+  if (res.locals.reservation.status === "finished") {
+    return next ({
+      status: 400,
+      message: `a finished reservation cannot be updated`
+    })
+  }
   next();
  }
 
@@ -218,5 +228,5 @@ next();
     asyncErrorBoundary(create),
   ],
   read:[reservationExists, asyncErrorBoundary(read)],
-  update: [reservationExists, unknownStatus, asyncErrorBoundary(update)],
+  update: [reservationExists, unknownStatus, isValueFinished, asyncErrorBoundary(update)],
  };

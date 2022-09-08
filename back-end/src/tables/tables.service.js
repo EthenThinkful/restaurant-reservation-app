@@ -38,6 +38,13 @@ async function update(newTableData) {
         }, "*");
 }
 
+async function updateStatus(reservationStatus) {
+    return knex("reservations")
+        .select("*")
+        .where({reservation_id: reservationStatus.reservation_id})
+        .update(reservationStatus);
+}
+
 async function destroy(table_id) {
     return knex("tables")
     .select("*")
@@ -54,5 +61,6 @@ module.exports = {
     read,
     readReservation,
     update,
+    updateStatus,
     destroy,
 }

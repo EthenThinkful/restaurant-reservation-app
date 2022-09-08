@@ -22,7 +22,6 @@ async function read(reservation_id) {
 }
 
 async function update(newReservation) {
-    console.log("I AM THE HULK", newReservation.reservation_id)
     return knex("reservations")
         .select("*")
         .where({reservation_id: newReservation.reservation_id})

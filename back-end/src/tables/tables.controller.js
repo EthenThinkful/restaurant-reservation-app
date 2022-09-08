@@ -1,5 +1,6 @@
 const service = require("./tables.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
+const reservationsService = require("../reservations/reservations.service");
 
 async function list(req, res, next) {
   const data = await service.list();
@@ -150,9 +151,23 @@ async function update(req, res, next) {
     ...table,
     reservation_id: reservation_id,
   };
+  console.log("ABOUT TO UPDATE TABLE")
   const data = await service.update(newTableData);
   res.status(200).json({ data: data });
 }
+// between these two functions, we are updating two different tables. above is updating restaurant ID in tables table. below is updating status in reservations table.
+async function updateStatus(req, res, next) {
+  const reservation = reservationsService.read(reservationStatus)
+  const {reservationStatus} = req.body.data;
+  const newTableDataStatus = {
+    ...reservation,
+    reservation_id: reservationStatus.reservation_id,
+  }
+  const data = await service.updateStatus(newTableDataStatus)
+  res.status(200).json({data: data});
+} // *simplify*
+
+
 
 module.exports = {
   list: [asyncErrorBoundary(list)],
@@ -162,6 +177,7 @@ module.exports = {
     asyncErrorBoundary(reservationExists),
     tableHasCapacity,
     tableIsAvailable,
+    asyncErrorBoundary(updateStatus),
     asyncErrorBoundary(update),
   ],
   delete: [asyncErrorBoundary(tableExists), tableIsNotAvailable, asyncErrorBoundary(destroy)],
