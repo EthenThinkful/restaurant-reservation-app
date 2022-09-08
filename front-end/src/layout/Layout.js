@@ -1,6 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import Routes from "./Routes";
+import "./Layout.css"
 
 /**
  * Defines the main layout of the application.
@@ -9,14 +10,17 @@ import Routes from "./Routes";
  *
  * @returns {JSX.Element}
  */
+
+
 function Layout() {
   return (
-    <div className="container-fluid" >
+    <div>
       <div>
         <div>
           <Menu />
         </div>
-        <div className="col">
+
+        <div className="col" >
           <Routes />
         </div>
       </div>

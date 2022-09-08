@@ -12,14 +12,14 @@ function ReservationList({ reservation, formatTime }) {
   return (
     <div id="reservation-card">
       <div id="card-title">Reservation for {formattedTime} {new Date(`${reservation_date} ${reservation_time}`).getHours() < 12 ? "AM" : "PM"}</div>
-      <div>
+      <div className="text-center">
         <h6 id="card-label">Name:</h6>
         <p id="card-text">{first_name} {last_name}</p>
         <h6 id="card-label">Contact Number:</h6>
         <p id="card-text">{mobile_number}</p>
         <h6 id="card-label">Number of Guests:</h6>
         <p id="card-text">{people}</p>
-        <button type="button" className="btn btn-primary"><a className="text-light" href={`/reservations/${reservation_id}/seat`}>Seat</a></button>
+        <button type="button" className="colorfulBtn"><a className="text-dark" href={`/reservations/${reservation_id}/seat`}>Seat</a></button>
       </div>
     </div>
   );

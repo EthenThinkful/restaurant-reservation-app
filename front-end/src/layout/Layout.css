@@ -4,8 +4,11 @@
   min-width: 200px;
 } */
 
-/* #nav {
-  background-color: rgba(48, 48, 48, 0.500); 
-  height:6.5rem;
-  z-index: 2;
+/* .background-image {
+  background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"); 
+  background-size: cover; 
+} */
+
+/* .col {
+  background-color: aquamarine;
 } */

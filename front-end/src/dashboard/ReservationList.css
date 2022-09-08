@@ -4,7 +4,7 @@
     margin: 1rem;
     border: black solid 1px;
     border-radius: 2rem;
-    background-color: #EBF3F3;
+    background-color: rgb(255, 255, 227);
 }
 
 #card-title {
@@ -20,4 +20,17 @@
 
 #card-text {
     margin-left: 1rem;
+}
+
+.colorfulBtn {
+    background-color: rgb(138, 237, 255);
+    border-radius: 5px;
+    border: 1px solid black;
+    opacity: 8;
+    transition: 0.3s;
+    padding: 10px;
+}
+
+.colorfulBtn:hover {
+    opacity: 0.6
 }
