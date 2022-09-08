@@ -44,7 +44,6 @@
 function hasAllFields(...fields) {
   return function (req, res, next) {
     const { data = {} } = req.body;
-    console.log(data)
     try {
       fields.forEach((field) => {
         if (!data[field]) {
@@ -102,7 +101,7 @@ function timeValidator(req,res,next) {
     return next({
       status: 400,
       message: `invalid reservation_time `,
-    });
+    });e
   }
   next();
 }
@@ -165,6 +164,44 @@ next();
    const data = await service.create(req.body.data);
    res.status(201).json({ data });
  }
+
+ function statusValidator(req, res, next) {
+  const { data = {} } = req.body;
+  if (data["status"] === "seated") {
+    next ({
+      status: 400,
+      message: `seated`
+    })
+  } else if (data["status"] === "finished") {
+    next ({
+      status: 400,
+      message: `finished`
+    })
+  }
+  next();
+ }
+
+ function unknownStatus(req, res, next) {
+  const { data = {} } = req.body;
+  if (data["status"] === "unknown") {
+    next ({
+      status: 400,
+      message: `unknown status`
+    })
+  } 
+  next();
+ }
+
+ async function update(req, res, next) {
+  const newReservation = {
+    ...req.body.data,
+    reservation_id: res.locals.reservation.reservation_id,
+  };
+  const data = await service.update(newReservation);
+  res.status(200).json({ data: newReservation });
+}
+
+
  
  module.exports = {
   list:[asyncErrorBoundary(list)],
@@ -177,7 +214,9 @@ next();
     notTuesday,
     notInThePast,
     timeIsAvailable,
+    statusValidator,
     asyncErrorBoundary(create),
   ],
   read:[reservationExists, asyncErrorBoundary(read)],
+  update: [reservationExists, unknownStatus, asyncErrorBoundary(update)],
  };
