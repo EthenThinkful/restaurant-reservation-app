@@ -2,7 +2,7 @@ import React from "react";
 import "./ReservationList.css";
 
 function ReservationList({ reservation, formatTime }) {
-  const { first_name, last_name, mobile_number, reservation_time, reservation_date, people, reservation_id } =
+  const { first_name, last_name, mobile_number, reservation_time, reservation_date, people, reservation_id, status } =
     reservation;
 
   let formattedTime = formatTime(reservation_time);
@@ -19,7 +19,9 @@ function ReservationList({ reservation, formatTime }) {
         <p id="card-text">{mobile_number}</p>
         <h6 id="card-label">Number of Guests:</h6>
         <p id="card-text">{people}</p>
-        <button type="button" className="colorfulBtn"><a className="text-dark" href={`/reservations/${reservation_id}/seat`}>Seat</a></button>
+        <h6 id="card-label">Status:</h6>
+        <p id="card-text" data-reservation-id-status={reservation.reservation_id}>{status}</p>
+        <button type="button" className="colorfulBtn">{status === "booked" ? <a className="text-dark" href={`/reservations/${reservation_id}/seat`}>Seat</a> : null}</button>
       </div>
     </div>
   );
