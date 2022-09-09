@@ -25,7 +25,7 @@ async function update(newReservation) {
     return knex("reservations")
         .select("*")
         .where({reservation_id: newReservation.reservation_id})
-        .update(newReservation);
+        .update({status: "Seated"}, "*");
 }
 
 module.exports = {

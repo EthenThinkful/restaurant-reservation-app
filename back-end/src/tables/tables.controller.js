@@ -1,6 +1,5 @@
 const service = require("./tables.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
-const reservationsService = require("../reservations/reservations.service");
 
 async function list(req, res, next) {
   const data = await service.list();
@@ -11,12 +10,6 @@ async function create(req, res, next) {
   const table = req.body.data;
   const data = await service.create(table);
   res.status(201).json({ data: data });
-}
-
-async function destroy(req, res, next) {
-  const table = res.locals.table;
-  await service.destroy(table.table_id);
-  res.sendStatus(200);
 }
 
 // VALIDATION PIPELINE STARTS HERE
@@ -88,7 +81,7 @@ async function tableExists(req, res, next) {
 function tableIsAvailable(req, res, next) {
   const table = res.locals.table;
   
-  if (table.reservation_id) {
+  if (table.status === "Occupied") { 
     return next({
       status: 400,
       message: `Reservation cannot be seated. Table is occupied.`,
@@ -97,12 +90,12 @@ function tableIsAvailable(req, res, next) {
   next();
 }
 
-function tableIsNotAvailable(req, res, next) {
+function tableIsOccupied(req, res, next) {
   const table = res.locals.table; 
-  if (table.reservation_id === null) {
+  if (table.status === "Free") {
     return next({
       status: 400,
-      message: `Table cleared. Table is not occupied.`,
+      message: `Error: Table ${table.table_name} is not occupied and therefor cannot be cleared.`
     });
   }
   next();
@@ -151,23 +144,15 @@ async function update(req, res, next) {
     ...table,
     reservation_id: reservation_id,
   };
-  console.log("ABOUT TO UPDATE TABLE")
   const data = await service.update(newTableData);
   res.status(200).json({ data: data });
 }
-// between these two functions, we are updating two different tables. above is updating restaurant ID in tables table. below is updating status in reservations table.
-async function updateStatus(req, res, next) {
-  const reservation = reservationsService.read(reservationStatus)
-  const {reservationStatus} = req.body.data;
-  const newTableDataStatus = {
-    ...reservation,
-    reservation_id: reservationStatus.reservation_id,
-  }
-  const data = await service.updateStatus(newTableDataStatus)
-  res.status(200).json({data: data});
-} // *simplify*
 
-
+async function destroy(req, res, next) {
+  const table = res.locals.table;
+  await service.delete(table.table_id);
+  res.sendStatus(200);
+}
 
 module.exports = {
   list: [asyncErrorBoundary(list)],
@@ -177,8 +162,7 @@ module.exports = {
     asyncErrorBoundary(reservationExists),
     tableHasCapacity,
     tableIsAvailable,
-    asyncErrorBoundary(updateStatus),
     asyncErrorBoundary(update),
   ],
-  delete: [asyncErrorBoundary(tableExists), tableIsNotAvailable, asyncErrorBoundary(destroy)],
+  delete: [asyncErrorBoundary(tableExists), tableIsOccupied, asyncErrorBoundary(destroy)],
 };

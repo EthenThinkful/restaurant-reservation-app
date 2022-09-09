@@ -34,15 +34,8 @@ async function update(newTableData) {
         .where({table_id: newTableData.table_id})
         .update({
             reservation_id: newTableData.reservation_id,
-            is_free: false
+            status: "Occupied"
         }, "*");
-}
-
-async function updateStatus(reservationStatus) {
-    return knex("reservations")
-        .select("*")
-        .where({reservation_id: reservationStatus.reservation_id})
-        .update(reservationStatus);
 }
 
 async function destroy(table_id) {
@@ -50,9 +43,9 @@ async function destroy(table_id) {
     .select("*")
     .where({table_id: table_id})
     .update({
-        is_free: true,
-        reservation_id: null
-    }, "*")
+        reservation_id: null,
+        status: "Free"
+    })
 }
 
 module.exports = {
@@ -61,6 +54,5 @@ module.exports = {
     read,
     readReservation,
     update,
-    updateStatus,
-    destroy,
+    delete: destroy,
 }
