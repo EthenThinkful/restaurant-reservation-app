@@ -1,5 +1,6 @@
 const { table } = require("../db/connection");
 const knex = require("../db/connection");
+const reservationService = require("../reservations/reservations.service")
 
 async function list() {
     return knex("tables")
@@ -33,8 +34,17 @@ async function update(newTableData) {
         .select("*")
         .where({table_id: newTableData.table_id})
         .update({
-            reservation_id: newTableData.reservation_id
+            reservation_id: newTableData.reservation_id,
             // status: "occupied"
+        }, "*");
+}
+
+async function updateReservationStatus(newTableData) {
+    return knex("reservations")
+        .select("*")
+        .where({reservation_id: newTableData.reservation_id})
+        .update({           
+            status: "seated"
         }, "*");
 }
 
@@ -47,11 +57,22 @@ async function destroy(table_id) {
     })
 }
 
+async function finishedStatus(newReservation) {
+    return knex("reservations")
+    .select("*")
+    .where({reservation_id: newReservation.reservation_id})
+    .update({
+        status: "finished"
+    })
+}
+
 module.exports = {
     list, 
     create,
     read,
     readReservation,
     update,
+    updateReservationStatus,
+    finishedStatus,
     delete: destroy,
 }

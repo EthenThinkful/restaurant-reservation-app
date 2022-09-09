@@ -1,5 +1,6 @@
 const service = require("./tables.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
+const reservationService = require("../reservations/reservations.service");
 
 async function list(req, res, next) {
   const data = await service.list();
@@ -167,12 +168,22 @@ async function update(req, res, next) {
     reservation_id: reservation_id,
   };
   const data = await service.update(newTableData);
+  await service.updateReservationStatus(newTableData);
   res.status(200).json({ data: data });
+}
+
+async function reservationIsNotAlreadySeated(req, res, next) {
+  const reservation = await reservationService.read(req.body.data.reservation_id);
+  if(reservation.status == "seated") return next({status:400, message: `Reservation is already seated`});
+  
+  next();
 }
 
 async function destroy(req, res, next) {
   const table = res.locals.table;
   await service.delete(table.table_id);
+  const reservation = await reservationService.read(table.reservation_id);
+  await service.finishedStatus(reservation)
   res.sendStatus(200);
 }
 
@@ -184,6 +195,7 @@ module.exports = {
     asyncErrorBoundary(reservationExists),
     tableHasCapacity,
     tableIsAvailable,
+    asyncErrorBoundary(reservationIsNotAlreadySeated),
     asyncErrorBoundary(update),
   ],
   delete: [asyncErrorBoundary(tableExists), tableNotAvailable, asyncErrorBoundary(destroy)],
