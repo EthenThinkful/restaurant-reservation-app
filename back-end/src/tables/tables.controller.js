@@ -81,7 +81,7 @@ async function tableExists(req, res, next) {
 function tableIsAvailable(req, res, next) {
   const table = res.locals.table;
   
-  if (table.status === "Occupied") { 
+  if (table.reservation_id) { 
     return next({
       status: 400,
       message: `Reservation cannot be seated. Table is occupied.`,
@@ -90,16 +90,38 @@ function tableIsAvailable(req, res, next) {
   next();
 }
 
-function tableIsOccupied(req, res, next) {
-  const table = res.locals.table; 
-  if (table.status === "Free") {
+function tableNotAvailable(req, res, next) {
+  const table = res.locals.table
+  if(!table.reservation_id) {
     return next({
       status: 400,
-      message: `Error: Table ${table.table_name} is not occupied and therefor cannot be cleared.`
-    });
+      message: `Table is not occupied`
+    })
   }
   next();
 }
+
+// function tableIsOccupied(req, res, next) {
+//   const table = res.locals.table; 
+//   if (table.reservation_id === null) {
+//     return next({
+//       status: 400,
+//       message: `Error: Table ${table.table_name} is not occupied and therefor cannot be cleared.`
+//     });
+//   }
+//   next();
+// }
+
+// function tableIsNotOccupied(req, res, next) {
+//   const table = res.locals.table;
+//   if (table.reservation_id) {
+//     return next({
+//       status: 200,
+//       message: `${table.table_id} is occupied.`
+//     })
+//   }
+//   next();
+// }
 
 async function reservationExists(req, res, next) {
     const { data } = req.body;
@@ -164,5 +186,5 @@ module.exports = {
     tableIsAvailable,
     asyncErrorBoundary(update),
   ],
-  delete: [asyncErrorBoundary(tableExists), tableIsOccupied, asyncErrorBoundary(destroy)],
+  delete: [asyncErrorBoundary(tableExists), tableNotAvailable, asyncErrorBoundary(destroy)],
 };
