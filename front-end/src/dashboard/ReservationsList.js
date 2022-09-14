@@ -24,12 +24,6 @@ function ReservationList({ reservation, formatTime, loadDashboard }) {
             
           }, history.go(0));
           return response;
-          // if (response.status !== 400) {
-          //   loadDashboard()
-          // } else {
-          //   console.log("there was an error")
-          //   console.log(response.status)
-          // }
     }
   }
 

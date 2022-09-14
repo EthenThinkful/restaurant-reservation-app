@@ -16,11 +16,11 @@ function Layout() {
   return (
     <div>
       <div>
-        <div>
+        <div className="fixed_page">
           <Menu />
         </div>
 
-        <div className="col" >
+        <div className="fixed_page">
           <Routes />
         </div>
       </div>

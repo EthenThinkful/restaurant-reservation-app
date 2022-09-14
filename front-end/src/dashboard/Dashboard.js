@@ -72,10 +72,10 @@ function Dashboard({ date }) {
     <main>
       <div className="row d-flex flex-column">
         <h1
-          className="col-12 d-flex flex-wrap"
-          style={{ fontFamily: "Oooh Baby" }}
+          className="col-12 d-flex flex-wrap mx-3 mt-5"
+          
         >
-          {new Date().getHours() < 12 ? "Good morning." : "Good evening."}
+          {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
         </h1>
         <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
           <h4 className="mb-0">Reservations for {date}</h4>
@@ -95,7 +95,7 @@ function Dashboard({ date }) {
       {reservationsError ? <ErrorAlert errorMessage={reservationsError}/> : <></>}
       <hr />
       <div className="row">{reservationsList.length === 0 ? (<div id="no-reservations"><h3>There are no reservations for this date.</h3></div>) : reservationsList}</div>
-      <br />
+      <hr />
       <div className="row">{tablesList.length === 0 ? (<h3>No Tables Listed</h3>): tablesList}</div>
     </main>
   );

@@ -9,6 +9,7 @@ import NotFound from "./NotFound";
 import { today } from "../utils/date-time";
 import  Search  from "./Search";
 import Edit from "./Edit"
+import "./Routes.css"
 
 /**
  * Defines all the routes for the application.
@@ -19,6 +20,7 @@ import Edit from "./Edit"
  */
 function Routes() {
   return (
+    <div className="img">
     <Switch>
     <Route exact path="/">
       <Redirect to={"/dashboard"} />
@@ -51,6 +53,7 @@ function Routes() {
       <NotFound />
     </Route>
   </Switch>
+  </div>
   );
 }
 

@@ -28,15 +28,18 @@ function TablesList({ table, loadDashboard }) {
       }
 
     return (
-        <div className="card mx-3" id="tables-list">
-        <div className="card-header">
+        <div className="tables-list card-circle" >
+        <div className="card_img">
+          <img src="https://user-images.githubusercontent.com/104235709/190213735-693b98d3-4a12-4621-9f92-21407930af6c.png" alt="table-image"/>
+        </div>
+        <div className="second-background-color mb-3">
           Table: {table_name}
         </div>
-        <ul className="list-group list-group-flush">
+        <ul className="list-group">
           <li className="list-group-item second-background-color">Capacity: {capacity}</li>
           <li className="list-group-item second-background-color" data-table-id-status={table.table_id}>{!reservation_id ? "Free" : "occupied"}</li>
         </ul>
-        {reservation_id ? <button type="button" onClick={onSubmitHandler} className="btn btn-primary" data-table-id-finish={table.table_id}>Finish</button> : <></>}
+        {reservation_id ? <button type="button" onClick={onSubmitHandler} className="btn btn-danger mt-2" data-table-id-finish={table.table_id}>Finish</button> : <></>}
       </div>
     )
 }
