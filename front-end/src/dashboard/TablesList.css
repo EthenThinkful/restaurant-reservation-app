@@ -1,8 +1,11 @@
 #tables-list {
-    
-    background-color: #a4fcff;
+    border-radius: 6rem;
+    background-color: #fff5bf;
+    border: black solid 1px;
 }
 
 .second-background-color {
+    border: black solid 1px;
+    border-radius: 2rem;
     background-color: rgb(255, 255, 227);
 }
