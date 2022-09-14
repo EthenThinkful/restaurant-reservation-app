@@ -11,7 +11,7 @@
  // root = /reservations/
  
  router.route("/").get(controller.list).post(controller.create).all(methodNotAllowed);
- router.route("/:reservation_id").get(controller.read).all(methodNotAllowed);
+ router.route("/:reservation_id").get(controller.read).put(controller.editReservation).all(methodNotAllowed);
  router.route("/:reservation_id/status").put(controller.update).all(methodNotAllowed);
 
  

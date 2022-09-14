@@ -1,14 +1,39 @@
 import React from "react";
 import "./ReservationList.css";
+import { useHistory } from "react-router";
 
-function ReservationList({ reservation, formatTime }) {
-  const { first_name, last_name, mobile_number, reservation_time, reservation_date, people, reservation_id, status } =
+const { REACT_APP_API_BASE_URL } = process.env;
+
+function ReservationList({ reservation, formatTime, loadDashboard }) {
+  const history = useHistory();
+  const { first_name, last_name, mobile_number, reservation_time, reservation_date, people, status, reservation_id } =
     reservation;
 
   let formattedTime = formatTime(reservation_time);
   let formattedHours = Number(formattedTime.slice(0,2)) > 12 ? Number(formattedTime.slice(0,2) % 12) : Number(formattedTime.slice(0,2));
   formattedTime = `${formattedHours}${formattedTime.slice(2)}`;
-  
+
+  const cancelHandler = async (e) => {
+    if (window.confirm("Do you want to cancel this reservation? This cannot be undone.")) {
+        const response = await fetch(`${REACT_APP_API_BASE_URL}/reservations/${reservation_id}/status`, {
+            method: "PUT",
+            headers: {
+              "Content-type": "application/json",
+            },
+            body: JSON.stringify({data: { status: "cancelled" } }),
+            
+          }, history.go(0));
+          return response;
+          // if (response.status !== 400) {
+          //   loadDashboard()
+          // } else {
+          //   console.log("there was an error")
+          //   console.log(response.status)
+          // }
+    }
+  }
+
+  if (reservation.status !== "cancelled") {
   return (
     <div id="reservation-card">
       <div id="card-title">Reservation for {formattedTime} {new Date(`${reservation_date} ${reservation_time}`).getHours() < 12 ? "AM" : "PM"}</div>
@@ -22,9 +47,11 @@ function ReservationList({ reservation, formatTime }) {
         <h6 id="card-label">Status:</h6>
         <p id="card-text" data-reservation-id-status={reservation.reservation_id}>{status}</p>
         <button type="button" className="colorfulBtn">{status === "Booked" ? <a className="text-dark" href={`/reservations/${reservation_id}/seat`}>Seat</a> : null}</button>
+        <button type="button" className="colorfulBtn">{status === "Booked" ? <a className="text-dark" href={`/reservations/${reservation_id}/edit`}>Edit</a> : null}</button>
+        <button type="button" className="colorfulBtn" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}>{status === "Booked" ? <div> Cancel </div> : null} </button>
       </div>
     </div>
-  );
+  )} else {return null}  
 }
 
 export default ReservationList;

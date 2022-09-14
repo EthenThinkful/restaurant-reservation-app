@@ -9,6 +9,7 @@ function Search() {
   const [formState, setFormState] = useState("");
   const [reservations, setReservations] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
+  const [altMessage, setAltMessage] = useState("")
 
   function changeHandler({ target }) {
     setFormState(target.value);
@@ -28,6 +29,9 @@ function Search() {
     const resData = await response.json();
     console.log(resData)
     console.log(resData.data.length)
+    if (resData.data.length === 0) {
+      setAltMessage("No reservations found.");
+  }
     if (response.status !== 400) {
         setReservations(resData.data);
     }
@@ -60,7 +64,7 @@ function Search() {
         ></input>
         <button type="submit">Find</button>
       </form>
-      <div>{reservationsList.length === 0 ? <> "No reservations found" </> : reservationsList}</div>
+      <div>{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
     </div>
   );
 }
