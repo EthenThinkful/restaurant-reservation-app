@@ -1,3 +1,25 @@
 /* .pink-floyd {
     background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
 } */
+
+.animated-text {
+    background-image: -webkit-linear-gradient(DarkSalmon 50%, rgb(255, 193, 112) 50%);
+    background-size: 100% 50px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-animation: stripes 2s linear infinite;
+    animation: stripes 2s linear infinite;
+    font-size: 50px;
+  }
+  
+  @-webkit-keyframes stripes {
+    100% {
+      background-position: 0 -50px;
+    }
+  }
+  
+  @keyframes stripes {
+    100% {
+      background-position: 0 -50px;
+    }
+  }

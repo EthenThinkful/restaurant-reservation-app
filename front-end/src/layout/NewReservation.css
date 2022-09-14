@@ -1,0 +1,27 @@
+.center {
+    text-align: center;
+    border: black solid 1px;
+    border-radius: 2rem;
+    padding: 30px;
+    margin: 2rem;
+}
+
+.form_style {
+    padding:10px;
+    border-radius:10px;
+    box-shadow: inset;
+}
+
+.background_color {
+    background-color: rgb(255, 255, 227);
+    padding: 2px;
+}
+
+.button-position {
+    text-align: center;
+    border: black solid 1px;
+    border-radius: 2rem;
+    padding: 10px;
+    margin: 1rem;
+    /* background-image: url("https://user-images.githubusercontent.com/104235709/190213580-8afadb99-1c2d-4464-84ee-95d5be0087fe.png"); */
+}

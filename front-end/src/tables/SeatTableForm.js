@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { listTables } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
+import "./SeatTableForm.css";
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
@@ -57,28 +58,33 @@ function SeatTableForm() {
   });
 
   return (
+    <div className="center">
     <div>
       {error ? <ErrorAlert errorMessage={error}/> : <></>}
-      <div className="form-group">
+      </div>
         <form onSubmit={submitHandler}>
+        <div class="form-group mb-2">
           <label htmlFor="table_id">Choose a table:</label>
-          <select required id="select" name="table_id">
+          </div>
+          <div class="form-group mx-sm-3 mb-2">
+          <select required id="select" name="table_id" className="background_color">
             {tableOptions}
           </select>
+          </div>
           <br />
           <button
             type="button"
             className="btn btn-secondary"
             onClick={() => history.goBack()}
+            class="btn btn-primary"
           >
             Cancel
           </button>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary" class="btn btn-secondary ml-3">
             Submit
           </button>
         </form>
       </div>
-    </div>
   );
 }
 

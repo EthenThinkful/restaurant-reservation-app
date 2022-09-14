@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
+import "./TableForm";
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
@@ -49,9 +50,9 @@ function TableForm() {
   return (
     <div>
     {error ? <ErrorAlert errorMessage={error}/> : <></>}
-    <div className="form-group">
+    <div className="form-group center">
       <form onSubmit={submitHandler}>
-        <label htmlFor="table_name">Table Name</label>
+        <label htmlFor="table_name" className="mr-2">Table Name</label>
         <input
           required
           type="text"
@@ -60,28 +61,30 @@ function TableForm() {
           title="Table names must be at least 2 characters long."
           value={formState.table_name}
           onChange={changeHandler}
+          className="mr-2"
         ></input>
-        <label htmlFor="capacity">Table Capacity</label>
+        <label htmlFor="capacity" className="mr-2">Table Capacity</label>
         <input          
           type="number"
           id="capacity"
           name="capacity"
           value={formState.capacity}
           onChange={changeHandler}
+          className="mr-2"
         ></input>
         <br />
         <button
           type="button"
           name="cancel-btn"
           onClick={cancelHandler}
-          className="btn btn-primary"
+          className="btn btn-primary button-position"
         >
           Cancel
         </button>
         <button
           type="submit"
           name="submit-btn"
-          className="btn btn-secondary"
+          className="btn btn-secondary button-position"
         >
           Submit
         </button>
