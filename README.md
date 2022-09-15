@@ -4,7 +4,7 @@ Easy to use reservation system directly made for restaurant personnel only.  Hel
 
 ## Demo
 
-You can view the app here: 
+You can view the app here: https://frontend-rr-er.herokuapp.com/dashboard?date=2022-09-16
 
 ## Installation
 
