@@ -30,7 +30,7 @@ function TablesList({ table, loadDashboard }) {
     return (
         <div className="tables-list card-circle" >
         <div className="card_img">
-          <img src="https://user-images.githubusercontent.com/104235709/190213735-693b98d3-4a12-4621-9f92-21407930af6c.png" alt="table-image"/>
+          <img src="https://user-images.githubusercontent.com/104235709/190213735-693b98d3-4a12-4621-9f92-21407930af6c.png" alt="table"/>
         </div>
         <div className="second-background-color mb-3">
           Table: {table_name}

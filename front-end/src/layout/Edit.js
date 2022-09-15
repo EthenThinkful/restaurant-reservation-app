@@ -83,7 +83,7 @@ function Edit() {
     // needs to be set up so there multiple form valiations will result in multiple messages
     return (
         <div>
-          {error ? <ErrorAlert errorMessage={errorMessage} /> : <></>}
+          {error ? <ErrorAlert errorMessage={setErrorMessage(errorMessage)} /> : <></>}
           <form class="needs-validation center " onSubmit={submitHandler}>
             <div class="form-row">
               <div class="col-md-4 mb-3">
