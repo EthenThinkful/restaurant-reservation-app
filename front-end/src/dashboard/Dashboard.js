@@ -94,7 +94,7 @@ function Dashboard({ date }) {
       </div>
       {reservationsError ? <ErrorAlert errorMessage={reservationsError}/> : <></>}
       <hr />
-      <div className="row">{reservationsList.length === 0 ? (<div id="no-reservations"><h3>There are no reservations for this date.</h3></div>) : reservationsList}</div>
+      <div className="row">{reservationsList.length === 0 ? (<div id="no-reservations"><h3 className="ml-5">There are no reservations for this date.</h3></div>) : reservationsList}</div>
       <hr />
       <div className="row">{tablesList.length === 0 ? (<h3>No Tables Listed</h3>): tablesList}</div>
     </main>
