@@ -24,8 +24,6 @@
 }
 
 .colorfulBtn {
-    /* background-color: DarkSalmon; */
-
     background-color: rgb(255, 193, 112);
     border-radius: 5px;
     border: 1px solid black;
@@ -34,11 +32,9 @@
     padding: 10px;
     margin: 3px;
     font-weight: bold;
-    /* color:red; */
 }
 
 .colorfulBtnTwo {
-    /* background-color: rgb(138, 237, 255); */
     background-color:grey;
     border-radius: 5px;
     border: 1px solid black;
@@ -47,7 +43,6 @@
     padding: 10px;
     margin: 3px;
     font-weight: bold;
-    /* color:red; */
 }
 
 .colorfulBtn:hover {
