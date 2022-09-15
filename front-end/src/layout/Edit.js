@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import ErrorAlert from "./ErrorAlert";
-import loadDashboard from "../dashboard/Dashboard"
 import "./NewReservation.css";
 
 const { REACT_APP_API_BASE_URL } = process.env;
