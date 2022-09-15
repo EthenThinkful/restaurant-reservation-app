@@ -1,10 +1,11 @@
 .tables-list {
     border-radius: 20rem;
-    background-color: #fff5bf;
+    /* background-color: #fff5bf; */
+    background-image: url("https://user-images.githubusercontent.com/104235709/190276740-a2648ab1-849f-4092-a1e4-f877822f59ea.jpeg");
     border: 1px solid black;
     text-align: center;
     /* margin-top:50px; */
-    background:rgb(255, 255, 227);
+    /* background:rgb(255, 255, 227); */
     padding:50px;
     /* margin-bottom: 50px; */
     border-radius:50%;
@@ -23,5 +24,22 @@
 }
 
 .second-background-color {   
-    background-color: rgb(255, 255, 227);
+    /* background-color: rgb(255, 255, 227); */
+}
+
+.third-background-color {   
+    /* background-color: rgb(255, 255, 255); */
+    /* background-color: DarkSalmon; */
+}
+
+.colorfulBtnTwo {
+    /* background-color: rgb(138, 237, 255); */
+    /* border-radius: 5px; */
+    border: 1px solid black;
+    opacity: 8;
+    transition: 0.3s;
+    padding: 10px;
+    margin: 3px;
+    font-weight: bold;
+    /* color:red; */
 }

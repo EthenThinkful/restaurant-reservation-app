@@ -61,7 +61,7 @@ function TableForm() {
           title="Table names must be at least 2 characters long."
           value={formState.table_name}
           onChange={changeHandler}
-          className="mr-2"
+          className="mr-2 background_color"
         ></input>
         <label htmlFor="capacity" className="mr-2">Table Capacity</label>
         <input          
@@ -70,7 +70,7 @@ function TableForm() {
           name="capacity"
           value={formState.capacity}
           onChange={changeHandler}
-          className="mr-2"
+          className="mr-2 background_color"
         ></input>
         <br />
         <button

@@ -40,9 +40,9 @@ function ReservationList({ reservation, formatTime, loadDashboard }) {
         <p id="card-text">{people}</p>
         <h6 id="card-label">Status:</h6>
         <p id="card-text" data-reservation-id-status={reservation.reservation_id}>{status}</p>
-        {status === "Booked" ? <button type="button"  className="colorfulBtn"> <a className="text-dark" href={`/reservations/${reservation_id}/seat`}>Seat</a></button> : null}
-        {status === "Booked" ? <button type="button" className="colorfulBtn"> <a className="text-dark" href={`/reservations/${reservation_id}/edit`}>Edit</a> </button> : null}
-        {status === "Booked" ? <button type="button" className="colorfulBtn" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}> <div> Cancel </div> </button> : null}
+        {status === "Booked" ? <button type="button"  className="colorfulBtnTwo"> <a className="text-light" href={`/reservations/${reservation_id}/seat`}>Seat</a></button> : null}
+        {status === "Booked" ? <button type="button" className="colorfulBtnTwo"> <a className="text-light" href={`/reservations/${reservation_id}/edit`}>Edit</a> </button> : null}
+        {status === "Booked" ? <button type="button" className="btn btn-danger colorfulBtnTwo text-light" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}> <div> Cancel </div> </button> : null}
       </div>
     </div>
   )} else {return null}  

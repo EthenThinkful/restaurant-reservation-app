@@ -36,12 +36,12 @@ function TablesList({ table, loadDashboard }) {
           Table: {table_name}
         </div>
         <ul className="list-group">
-          <li className="list-group-item second-background-color">Capacity: {capacity}</li>
-          <li className="list-group-item second-background-color" data-table-id-status={table.table_id}>{!reservation_id ? "Free" : "occupied"}</li>
+          <li className=" second-background-color">Capacity: {capacity}</li>
+          <li className="third-background-color" data-table-id-status={table.table_id}>{!reservation_id ? "Free" : "occupied"}</li>
         </ul>
-        {reservation_id ? <button type="button" onClick={onSubmitHandler} className="btn btn-danger mt-2" data-table-id-finish={table.table_id}>Finish</button> : <></>}
+        {reservation_id ? <button type="button" onClick={onSubmitHandler} className="btn btn-danger mt-2 colorfulBtnTwo" data-table-id-finish={table.table_id}>Finish</button> : <></>}
       </div>
-    )
+  )
 }
 
 export default TablesList;

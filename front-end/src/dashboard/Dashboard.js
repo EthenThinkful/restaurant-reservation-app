@@ -82,13 +82,13 @@ function Dashboard({ date }) {
         </div>
       </div>
       <div className="row justify-content-around my-3">
-        <button type="button" name="previous-btn" className="ml-auto btn btn-secondary" onClick={previousHandler}>
+        <button type="button" name="previous-btn" className="ml-auto btn btn-secondary colorfulBtnTwo" onClick={previousHandler}>
           Previous
         </button>
-        <button type="button" name="next-btn" className="mx-3 btn btn-secondary" onClick={nextHandler}>
+        <button type="button" name="next-btn" className="mx-3 btn btn-secondary colorfulBtnTwo" onClick={nextHandler}>
           Next
         </button>
-        <button type="button" name="today" className="mr-auto btn btn-secondary" onClick={todayHandler}>
+        <button type="button" name="today" className="mr-auto btn btn-secondary colorfulBtnTwo" onClick={todayHandler}>
           Today
         </button>
       </div>
