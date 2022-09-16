@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router";
-import "./NewReservation.css";
+
 
 function ReservationForm({reservationData, setReservationData, submitHandler}) {
 
