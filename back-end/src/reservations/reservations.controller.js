@@ -123,7 +123,10 @@ function peopleIsNumber(req, res, next) {
 
 function notTuesday(req,res,next) {
   const { data = {} } = req.body;
+console.log("REQ  BODY", req.body.data.reservation_date)
 const dateObject = new Date(data["reservation_date"])
+console.log("DATE OBJECT", dateObject)
+console.log("DATE OBJECT GET DAY", dateObject.getDay())
   if (dateObject.getDay()=== 1) {
     next({
       status: 400,
