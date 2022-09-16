@@ -1,16 +1,8 @@
 import React from "react";
-import { useHistory } from "react-router";
+import ErrorAlert from "./ErrorAlert";
 
 
-function ReservationForm({reservationData, setReservationData, submitHandler}) {
-
-    const history = useHistory();
-    const changeHandler = ({ target }) => {
-      setReservationData({
-        ...reservationData,
-        [target.name]: target.value,
-      });
-    };
+function ReservationForm({reservationData, setReservationData, submitHandler, cancelHandler, error, errorMessage, changeHandler}) {
 
     return (
         <div>
@@ -24,7 +16,7 @@ function ReservationForm({reservationData, setReservationData, submitHandler}) {
                   type="text"
                   id="first_name"
                   name="first_name"
-                  value={formState.first_name}
+                  value={reservationData.first_name}
                   className="background_color"
                   onChange={changeHandler}
                 ></input>
@@ -36,7 +28,7 @@ function ReservationForm({reservationData, setReservationData, submitHandler}) {
                   type="text"
                   id="last_name"
                   name="last_name"
-                  value={formState.last_name}
+                  value={reservationData.last_name}
                   className="background_color"
                   onChange={changeHandler}
                 ></input>
@@ -49,7 +41,7 @@ function ReservationForm({reservationData, setReservationData, submitHandler}) {
                   id="mobile_number"
                   name="mobile_number"
                   placeholder="xxx-xxx-xxxx"
-                  value={formState.mobile_number}
+                  value={reservationData.mobile_number}
                   className="background_color"
                   onChange={changeHandler}
                 ></input>
@@ -62,7 +54,7 @@ function ReservationForm({reservationData, setReservationData, submitHandler}) {
                   id="reservation_date"
                   name="reservation_date"
                   placeholder={new Date()}
-                  value={formState.reservation_date}
+                  value={reservationData.reservation_date}
                   className="background_color"
                   onChange={changeHandler}
                 ></input>
@@ -75,7 +67,7 @@ function ReservationForm({reservationData, setReservationData, submitHandler}) {
                   id="reservation_time"
                   name="reservation_time"
                   // placeholder="HH:MM:SS"
-                  value={formState.reservation_time}
+                  value={reservationData.reservation_time}
                   onChange={changeHandler}
                   className="background_color"
                 ></input>
@@ -87,7 +79,7 @@ function ReservationForm({reservationData, setReservationData, submitHandler}) {
                   type="number"
                   id="people"
                   name="people"
-                  value={formState.people}
+                  value={reservationData.people}
                   onChange={changeHandler}
                   className="background_color"
                 ></input>
