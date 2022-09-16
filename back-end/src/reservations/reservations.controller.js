@@ -127,7 +127,7 @@ console.log("REQ  BODY", req.body.data.reservation_date)
 const dateObject = new Date(data["reservation_date"])
 console.log("DATE OBJECT", dateObject)
 console.log("DATE OBJECT GET DAY", dateObject.getDay())
-  if (dateObject.getDay()=== 1) {
+  if (dateObject.getDay() === 2) {
     next({
       status: 400,
       message: `Reservations cannot be made for Tuesday, as the restaurant is closed Tuesdays.`,
