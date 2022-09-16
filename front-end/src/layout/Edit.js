@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
-import ErrorAlert from "./ErrorAlert";
 import "./NewReservation.css";
 import ReservationForm from "./ReservationForm";
 
@@ -20,8 +19,7 @@ function Edit() {
     };
   
     const [formState, setFormState] = useState(initialFormState);
-    const [error, setError] = useState(undefined);
-    const [errorMessage, setErrorMessage] = useState(undefined);
+    const [error, setError] = useState(null);
   
     //USED TO RENDER CURRENT FORM DATA TO BE EDITABLE
     useEffect(() => {
@@ -36,8 +34,8 @@ function Edit() {
                 "Content-type": "application/json",
               },
             }
-          );
-          const resData = await response.json();
+          )
+          const resData = await response.json()
           setFormState({
             ...resData.data,
             reservation_date: resData.data.reservation_date.slice(0, 10),
@@ -70,6 +68,7 @@ function Edit() {
         body: JSON.stringify({data: formState}),
       })
       const resData = await response.json();
+      console.log("ERROR MESSAGE", resData.error)
       if (resData.error) {
         setError(resData.error);
       }
@@ -78,21 +77,19 @@ function Edit() {
         history.push(`/dashboard/?date=${formState.reservation_date}`);
         }
     }
-  
+    console.log("ERRORRRRR", error)
     // currently, ErrorAlert will only display one error message at a time
     // with "Reservations must be place in the future" taking priority
     // needs to be set up so there multiple form valiations will result in multiple messages
     return (
         <div>
-          {error ? <ErrorAlert errorMessage={setErrorMessage(errorMessage)} /> : <></>}
         <ReservationForm 
         reservationData={formState}
         setReservationData={setFormState}
         submitHandler={submitHandler}
         cancelHandler={cancelHandler}
-        errorMessage={errorMessage}
-        error={error}
         changeHandler={changeHandler}
+        error={error}
         />  
         </div>
     );

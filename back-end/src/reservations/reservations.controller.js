@@ -245,6 +245,7 @@ async function editReservation(req, res, next) {
     reservationExists,
     hasOnlyValidProperties,
     hasRequiredFields,
+    notTuesday,
     dateValidator,
     timeValidator,
     peopleIsNumber,

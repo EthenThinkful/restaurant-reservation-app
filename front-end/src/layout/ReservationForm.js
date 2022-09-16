@@ -2,11 +2,11 @@ import React from "react";
 import ErrorAlert from "./ErrorAlert";
 
 
-function ReservationForm({reservationData, setReservationData, submitHandler, cancelHandler, error, errorMessage, changeHandler}) {
+function ReservationForm({reservationData, setReservationData, submitHandler, cancelHandler, error, changeHandler}) {
 
     return (
         <div>
-          {error ? <ErrorAlert errorMessage={errorMessage} /> : <></>}
+          <ErrorAlert error={error} /> 
           <form class="needs-validation center " onSubmit={submitHandler}>
             <div class="form-row">
               <div class="col-md-4 mb-3">

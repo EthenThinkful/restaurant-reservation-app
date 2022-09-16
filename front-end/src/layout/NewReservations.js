@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
-import ErrorAlert from "./ErrorAlert";
 import "./NewReservation.css";
 import ReservationForm from "./ReservationForm";
 
@@ -19,12 +18,11 @@ function NewReservations() {
   };
 
   const [formState, setFormState] = useState(initialFormState);
-  const [error, setError] = useState(undefined);
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const abortController = new AbortController();
-    setErrorMessage(error);
+    setError(error);
     return () => abortController.abort();
   }, [error]);
 
@@ -67,13 +65,11 @@ function NewReservations() {
   // needs to be set up so there multiple form valiations will result in multiple messages
   return (
     <div>
-      {error ? <ErrorAlert errorMessage={errorMessage} /> : <></>}
       <ReservationForm 
       reservationData={formState}
       setReservationData={setFormState}
       submitHandler={submitHandler}
       cancelHandler={cancelHandler}
-      errorMessage={errorMessage}
       error={error}
       changeHandler={changeHandler}
       />
