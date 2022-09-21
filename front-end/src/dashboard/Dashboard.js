@@ -72,7 +72,7 @@ function Dashboard({ date }) {
     <main>
       <div className="row d-flex flex-column">
         <h1
-          className="col-12 d-flex flex-wrap mx-3 mt-5 animated-text"
+          className="col-12 d-flex flex-wrap mx-3 mt-5 pb-3 animated-text"
           
         >
           {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
