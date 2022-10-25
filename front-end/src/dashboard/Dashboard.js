@@ -70,14 +70,16 @@ function Dashboard({ date }) {
   return (
 
     <main>
-      <div className="row d-flex flex-column message-window">
+      <div className="message-window">
+        <div>
         <h1
-          className="col d-flex flex-wrap animated-text"
+          className="animated-text"
           
         >
           {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
         </h1>
-        <div className="col description">Simplify your Restaurant Management</div>
+        <div className="description">Simplify your Restaurant Management</div>
+        </div>
         <div id="restaurant-picture" className="display-picture"></div>
       </div>
         <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">

@@ -16,28 +16,28 @@ function Menu() {
             <span id="logo">Periodic Tables</span>
           </div>
         </Link>
-        <nav id="nav" className="row align-items-center">
-        <ul className="col d-flex flex-wrap nav" id="accordionSidebar">
+        <nav>
+        <ul id="accordionSidebar">
           <li className="nav-item">
-            <Link className="text-dark nav-link" to="/dashboard">
+            <Link className="nav-link" to="/dashboard">
               <span className="oi oi-dashboard" />
               &nbsp;Dashboard
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="text-dark nav-link" to="/search">
+            <Link className="nav-link" to="/search">
               <span className="oi oi-magnifying-glass" />
               &nbsp;Search
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="text-dark nav-link" to="/reservations/new">
+            <Link className="nav-link" to="/reservations/new">
               <span className="oi oi-plus" />
               &nbsp;New Reservation
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="text-dark nav-link" to="/tables/new">
+            <Link className="nav-link" to="/tables/new">
               <span className="oi oi-layers" />
               &nbsp;New Table
             </Link>

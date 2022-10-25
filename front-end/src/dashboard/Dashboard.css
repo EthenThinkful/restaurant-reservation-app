@@ -38,14 +38,14 @@
   padding: 2%;
 }
 
-.message-window {
-  max-width: 100%;
+/* .message-window {
   margin-left: 15%;
   margin-right: 15%;
   margin-top: 2%;
   margin-bottom: 5%;
-
-}
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
 
 .description {
   margin-bottom: 2%;
@@ -55,6 +55,8 @@
 
 .display-picture {
   background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
+  display: flex;
+  justify-content: center;
 }
 
 #restaurant-picture {
@@ -65,3 +67,29 @@
   border-bottom: rgb(0, 0, 0) solid 1px;
   margin-left: 75%;
 }
+
+@media screen and (min-width: 280px) {
+  #restaurant-picture {
+    height: 15rem;
+    width: 15rem;
+    border-radius: 25%;
+    background-size: cover;
+    border-bottom: rgb(0, 0, 0) solid 1px;
+  }
+
+  .message-window {
+    /* margin-left: 15%;
+    margin-right: 15%; */
+    /* margin-top: 2%;
+    margin-bottom: 5%; */
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  
+  .display-picture {
+    background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
+    display: flex;
+    justify-content: center;
+  }
+
+} 
