@@ -19,20 +19,20 @@
     z-index: 1;
 } */
 
-nav {
+/* nav {
     color:rgb(0, 0, 0); 
     height:6.5rem;
     z-index: 2;
 }
 
 .justify-content-between {
-    /* background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"); */
+    background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
     background-size: 100%;
     color: rgb(199, 33, 33);
-}
+} */
 
 @media screen and (min-width: 280px) {
-    #background-container {
+    /* #background-container {
         height: 7rem;
         display: flex;
         padding: 0 2rem;
@@ -41,9 +41,9 @@ nav {
         align-items: center;
         display: flex;
         justify-content: space-between;
-    }
+    } */
     
-    #logo {
+    /* #logo {
         color: rgb(0, 0, 0);
         font-size: 25px;
         font-weight: 600;
@@ -51,19 +51,13 @@ nav {
         padding: auto;
         color: rgb(0, 0, 0);
         width: fit-content;
-    }
-
-    /* nav {
-        color:rgb(0, 0, 0); 
-        height:6.5rem;
-        z-index: 2;
     } */
 
-    li {
+    /* li {
         list-style: none;
-    }
+    } */
 
-    #accordionSidebar {
+    /* #accordionSidebar {
         display: flex;
         flex-direction: column;
         position:absolute;
@@ -77,13 +71,13 @@ nav {
         transition: 0.3s;
         border-top: 2px solid black;
         opacity: 1;
-    }
+    } */
 
     /* #accordionSidebar.active {
         left: 0;
     } */
 
-    .nav-item {
+    /* .nav-item {
         margin: 16px 0;
     }
 
@@ -118,12 +112,12 @@ nav {
         display: block;
         width: 25px;
         height: 3px;
-        /* 5px top & bottom, auto left & right */
+        5px top & bottom, auto left & right
         margin: 5px auto; 
         -webkit-transition: all 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
         background-color: black;
-    }
+    } */
 
     /* BOOTSTRAP TRIAL OF HAMBURGER */
 
@@ -162,15 +156,15 @@ nav {
       }
       
       .animated-icon1 span {
-        background: #e65100;
+        background: DarkSalmon;
       }
       
       .animated-icon2 span {
-        background: #e3f2fd;
+        background: rgba(250, 246, 211, 0.5);
       }
       
       .animated-icon3 span {
-        background: #f3e5f5;
+        background: rgba(250, 246, 211, 0.5);
       }
       
       .animated-icon1 span:nth-child(1) {
@@ -205,4 +199,20 @@ nav {
         -o-transform: rotate(-135deg);
         transform: rotate(-135deg);
       }
+
+      .navbar-nav {
+        background-color: rgba(250, 246, 211, 0.5);
+        
+      }
+
+      .navbar {
+        margin: 0;
+        padding: 0;
+      }
+
+     .nav-item {
+        display: flex;
+        justify-content: center;
+     }
+      
 }

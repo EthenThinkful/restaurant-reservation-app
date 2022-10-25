@@ -76,13 +76,13 @@ function Menu() {
     // </nav>
     // </div>
     
-    <nav class="navbar navbar-light amber lighten-4 mb-4">
-      <a class="navbar-brand" href="/">
+    <nav className="navbar navbar-light amber mb-4">
+      <a className="navbar-brand" href="/">
         Periodic Tables
       </a>
 
       <button
-        class="navbar-toggler first-button"
+        className="navbar-toggler first-button"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent20"
@@ -90,28 +90,33 @@ function Menu() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <div class="animated-icon1">
+        <div className="animated-icon1">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent20">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">
-              Home <span class="sr-only">(current)</span>
+      <div className="collapse navbar-collapse" id="navbarSupportedContent20">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a className="oi oi-dashboard nav-link" href="/dashboard">
+            &nbsp;Dashboard<span className="sr-only">(current)</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Features
+          <li className="nav-item">
+            <a className="oi oi-magnifying-glass nav-link" href="/search">
+              Search
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              Pricing
+          <li className="nav-item">
+            <a className="oi oi-plus nav-link" href="/reservations/new">
+            &nbsp;New Reservation
+            </a>
+          </li>
+          <li className="nav-item">
+            <a className="oi oi-layers nav-link" href="/tables/new">
+            &nbsp;New Table
             </a>
           </li>
         </ul>
