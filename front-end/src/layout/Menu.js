@@ -14,6 +14,7 @@ import "./Menu.css";
 function Menu() {
   const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [animate, setAnimate] = useState('animated-icon1');
 
   return (
     //     <div id="background-container" className="row d-flex justify-content-between side-bar">
@@ -77,7 +78,7 @@ function Menu() {
     // </div>
     
     <nav className="navbar navbar-light amber mb-4">
-      <a className="navbar-brand" href="/">
+      <a className="navbar-brand" id="logo" href="/">
         Periodic Tables
       </a>
 
@@ -90,7 +91,7 @@ function Menu() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <div className="animated-icon1">
+        <div className={animate} onClick={() => setAnimate('animated-icon1.open')}>
           <span></span>
           <span></span>
           <span></span>
