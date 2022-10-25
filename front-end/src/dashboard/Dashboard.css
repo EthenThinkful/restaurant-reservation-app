@@ -6,6 +6,8 @@
     -webkit-animation: stripes 2s linear infinite;
     animation: stripes 2s linear infinite;
     font-size: 50px;
+    display: flex;
+    justify-content: center;
   }
   
   @-webkit-keyframes stripes {
@@ -29,4 +31,37 @@
     padding: 10px;
     margin: 3px;
     font-weight: bold;
+}
+
+.reservations-list {
+  background-color: rgba(250, 246, 211, 0.5);
+  padding: 2%;
+}
+
+.message-window {
+  max-width: 100%;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+
+}
+
+.description {
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+}
+
+.display-picture {
+  background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
+}
+
+#restaurant-picture {
+  height: 25rem;
+  width: 25rem;
+  border-radius: 25%;
+  background-size: cover;
+  border-bottom: rgb(0, 0, 0) solid 1px;
+  margin-left: 75%;
 }

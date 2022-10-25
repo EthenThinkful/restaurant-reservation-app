@@ -1,14 +1,18 @@
 #background-container {
     height: 10rem;
-    background-color: rgba(141, 29, 29, 0.5);
-    background-size: cover;
+    background-color: rgba(250, 246, 211, 0.5);
+    background-size: 100%;
     align-items: center;
-    border-bottom: rgb(0, 0, 0) solid 1px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15%;
+    padding-right: 15%;
 }
 
 #logo {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 45px;
+    font-weight: 600;
     width: fit-content;
     margin-left: 10px;
     padding: 1rem 2.5rem;
@@ -16,12 +20,14 @@
 }
 
 #nav {
-    color:rgb(246, 254, 255); 
+    color:rgb(0, 0, 0); 
     height:6.5rem;
     z-index: 2;
 }
 
 .justify-content-between {
-    background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
+    /* background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"); */
+    background-size: 100%;
+    color: rgb(199, 33, 33);
 }
 
