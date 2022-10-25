@@ -33,16 +33,14 @@ nav {
 
 @media screen and (min-width: 280px) {
     #background-container {
-        height: 10rem;
+        height: 7rem;
         display: flex;
-        padding-bottom: 5%;
+        padding: 0 2rem;
         background-color: rgba(250, 246, 211, 0.5);
         background-size: 100%;
         align-items: center;
         display: flex;
         justify-content: space-between;
-        padding-left: 1%;
-        padding-right: 1%;
     }
     
     #logo {
@@ -55,11 +53,11 @@ nav {
         width: fit-content;
     }
 
-    nav {
+    /* nav {
         color:rgb(0, 0, 0); 
         height:6.5rem;
         z-index: 2;
-    }
+    } */
 
     li {
         list-style: none;
@@ -67,23 +65,23 @@ nav {
 
     #accordionSidebar {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        
-        position:fixed;
-        left: -100%;
-        top: 70px;
-        gap: 0;
         flex-direction: column;
-        background-color:rgba(250, 246, 211, 0.5);
+        position:absolute;
+        align-items: center; 
+        top: 100px;
+        right: 0;
+        left: 0;
         width: 100%;
+        background-color: rgb(255, 193, 112);
         text-align: center;
         transition: 0.3s;
+        border-top: 2px solid black;
+        opacity: 1;
     }
 
-    #accordionSidebar.active {
+    /* #accordionSidebar.active {
         left: 0;
-    }
+    } */
 
     .nav-item {
         margin: 16px 0;
@@ -101,6 +99,7 @@ nav {
     .hamburger{
         display: block;
         cursor: pointer;
+        padding: 2rem 2rem;
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -125,4 +124,85 @@ nav {
         transition: all 0.3s ease-in-out;
         background-color: black;
     }
+
+    /* BOOTSTRAP TRIAL OF HAMBURGER */
+
+    .animated-icon1, .animated-icon2, .animated-icon3 {
+        width: 30px;
+        height: 20px;
+        position: relative;
+        margin: 0px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+      }
+      
+      .animated-icon1 span, .animated-icon2 span, .animated-icon3 span {
+        display: block;
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+      }
+      
+      .animated-icon1 span {
+        background: #e65100;
+      }
+      
+      .animated-icon2 span {
+        background: #e3f2fd;
+      }
+      
+      .animated-icon3 span {
+        background: #f3e5f5;
+      }
+      
+      .animated-icon1 span:nth-child(1) {
+       top: 0px;
+      }
+      
+      .animated-icon1 span:nth-child(2) {
+        top: 10px;
+      }
+      
+      .animated-icon1 span:nth-child(3) {
+        top: 20px;
+      }
+      
+      .animated-icon1.open span:nth-child(1) {
+        top: 11px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(135deg);
+      }
+      
+      .animated-icon1.open span:nth-child(2) {
+        opacity: 0;
+        left: -60px;
+      }
+      
+      .animated-icon1.open span:nth-child(3) {
+        top: 11px;
+        -webkit-transform: rotate(-135deg);
+        -moz-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+      }
 }
