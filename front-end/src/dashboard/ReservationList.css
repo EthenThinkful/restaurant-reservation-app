@@ -1,90 +1,37 @@
 /* FONTS */
 
 @font-face {
-    font-family: 'Poppins Regular';
-    src: url('../fonts/Poppins-Regular.ttf');
-  }
-  
-  @font-face {
-    font-family: 'Poppins ExtraLight';
-    src: url(../fonts/Poppins-ExtraLight.ttf);
-  }
-  
-  @font-face {
-    font-family: 'Poppins Light';
-    src: url('../fonts/Poppins-Light.ttf');
-  }
+  font-family: "Poppins Regular";
+  src: url("../fonts/Poppins-Regular.ttf");
+}
 
-  * {
-    font-family: 'Poppins Regular';
-    }
+@font-face {
+  font-family: "Poppins ExtraLight";
+  src: url(../fonts/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "Poppins Light";
+  src: url("../fonts/Poppins-Light.ttf");
+}
+
+* {
+  font-family: "Poppins Regular";
+}
 
 @media screen and (min-width: 280px) {
-
-#reservation-card {
+  #reservation-card {
     padding: 2rem 2rem 4rem 4rem;
     margin: 1rem 1rem;
     background-color: rgba(250, 246, 211, 0.5);
-    /* margin: 2rem; */
-    /* border: black solid 1px; */
-    /* border-radius: 2rem; */
-    /* background-color: rgb(255, 255, 227); */
+  }
 
-}
-
-#card-title {
+  #card-title {
     margin-bottom: 2rem;
-}
+  }
 
-#card-text {
+  #card-text {
     margin-bottom: 2rem;
     color: darksalmon;
+  }
 }
-/*
-
-#card-title {
-    font-weight: bold;
-    font-size: 20px;
-    padding: 10px 20px;
-}
-
-#card-label {
-    color: #7C7C9C;
-    margin-left: 1rem;
-}
-
-#card-text {
-    margin-left: 1rem;
-}
-
-.colorfulBtn {
-    background-color: rgb(255, 193, 112);
-    border-radius: 5px;
-    border: 1px solid black;
-    opacity: 8;
-    transition: 0.3s;
-    padding: 10px;
-    margin: 3px;
-    font-weight: bold;
-}
-
-.colorfulBtnTwo {
-    background-color:grey;
-    border-radius: 5px;
-    border: 1px solid black;
-    opacity: 8;
-    transition: 0.3s;
-    padding: 10px;
-    margin: 3px;
-    font-weight: bold;
-}
-
-.colorfulBtn:hover {
-    opacity: 0.6
-} */
-
-
-}
-
-
-

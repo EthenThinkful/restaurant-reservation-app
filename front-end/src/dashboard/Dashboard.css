@@ -1,48 +1,45 @@
 /* FONTS */
 
 @font-face {
-  font-family: 'Poppins Regular';
-  src: url('../fonts/Poppins-Regular.ttf');
+  font-family: "Poppins Regular";
+  src: url("../fonts/Poppins-Regular.ttf");
 }
 
 @font-face {
-  font-family: 'Poppins ExtraLight';
+  font-family: "Poppins ExtraLight";
   src: url(../fonts/Poppins-ExtraLight.ttf);
 }
 
 @font-face {
-  font-family: 'Poppins Light';
-  src: url('../fonts/Poppins-Light.ttf');
+  font-family: "Poppins Light";
+  src: url("../fonts/Poppins-Light.ttf");
 }
 
-*{
-  font-family: 'Poppins Regular';
+* {
+  font-family: "Poppins Regular";
 }
 
 @media screen and (min-width: 280px) {
-
-
   .animated-text {
-    background-image: -webkit-linear-gradient(DarkSalmon 50%, rgb(255, 193, 112) 50%);
+    background-image: -webkit-linear-gradient(
+      DarkSalmon 50%,
+      rgb(255, 193, 112) 50%
+    );
     background-size: 100% 50px;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-animation: stripes 2s linear infinite;
     animation: stripes 2s linear infinite;
     font-size: 50px;
-    /* display: flex;
-    justify-content: center; */
     margin: 1rem 0rem 2rem 2rem;
-    /* padding-bottom: 10px;
-  } */
-}
-  
+  }
+
   @-webkit-keyframes stripes {
     100% {
       background-position: 0 -50px;
     }
   }
-  
+
   @keyframes stripes {
     100% {
       background-position: 0 -50px;
@@ -50,7 +47,7 @@
   }
 
   .colorfulBtnTwo {
-    background-color:rgb(143, 143, 143);
+    background-color: rgb(143, 143, 143);
     border-radius: 5px;
     border: 1px solid black;
     opacity: 8;
@@ -58,21 +55,18 @@
     padding: 10px;
     margin: 0rem 0rem 0rem 0rem;
     font-weight: bold;
-}
+  }
 
-.reservations-list {
-  padding: 2%;
-}
+  .reservations-list {
+    padding: 2%;
+  }
 
   .description {
-    /* margin-bottom: 2%; */
     display: flex;
     justify-content: center;
-    font-family: 'Poppins Light';
+    font-family: "Poppins Light";
     font-size: 14px;
     margin: 0rem 7rem 2rem 2rem;
-    /* padding-left: 13%;
-    margin-bottom: 25px; */
   }
 
   #restaurant-picture {
@@ -93,7 +87,7 @@
     display: grid;
     grid-template-columns: 1fr;
   }
-  
+
   .display-picture {
     background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
   }
@@ -104,7 +98,5 @@
 
   .reservations-list {
     margin-top: 2rem;
-
   }
-
 }
