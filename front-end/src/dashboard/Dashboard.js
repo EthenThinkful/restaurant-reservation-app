@@ -83,7 +83,7 @@ function Dashboard({ date }) {
         <button
           type="button"
           name="previous-btn"
-          className="ml-auto btn btn-secondary colorfulBtnTwo"
+          className="ml-auto btn btn-secondary"
           onClick={previousHandler}
         >
           Previous
@@ -91,7 +91,7 @@ function Dashboard({ date }) {
         <button
           type="button"
           name="next-btn"
-          className="mx-3 btn btn-secondary colorfulBtnTwo"
+          className="mx-3 btn btn-secondary"
           onClick={nextHandler}
         >
           Next
@@ -99,7 +99,7 @@ function Dashboard({ date }) {
         <button
           type="button"
           name="today"
-          className="mr-auto btn btn-secondary colorfulBtnTwo"
+          className="mr-auto btn btn-secondary"
           onClick={todayHandler}
         >
           Today
