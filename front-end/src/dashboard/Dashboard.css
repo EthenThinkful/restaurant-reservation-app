@@ -1,4 +1,28 @@
-.animated-text {
+/* FONTS */
+
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins ExtraLight';
+  src: url(../fonts/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins Light';
+  src: url('../fonts/Poppins-Light.ttf');
+}
+
+*{
+  font-family: 'Poppins Regular';
+}
+
+@media screen and (min-width: 280px) {
+
+
+  .animated-text {
     background-image: -webkit-linear-gradient(DarkSalmon 50%, rgb(255, 193, 112) 50%);
     background-size: 100% 50px;
     -webkit-text-fill-color: transparent;
@@ -6,10 +30,12 @@
     -webkit-animation: stripes 2s linear infinite;
     animation: stripes 2s linear infinite;
     font-size: 50px;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 10px;
-  }
+    /* display: flex;
+    justify-content: center; */
+    margin: 1rem 0rem 2rem 2rem;
+    /* padding-bottom: 10px;
+  } */
+}
   
   @-webkit-keyframes stripes {
     100% {
@@ -35,56 +61,18 @@
 }
 
 .reservations-list {
-  background-color: rgba(250, 246, 211, 0.5);
   padding: 2%;
 }
 
-/* .message-window {
-  margin-left: 15%;
-  margin-right: 15%;
-  margin-top: 2%;
-  margin-bottom: 5%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-} */
-
-/* .description {
-  margin-bottom: 2%;
-  display: flex;
-  justify-content: center;
-  font-family: 'Poppins Light';
-  font-size: 14px;
-  margin-right: 5%;
-} */
-
-/* .display-picture {
-  background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
-  display: flex;
-  justify-content: center;
-} */
-
-/* #restaurant-picture {
-  height: 25rem;
-  width: 25rem;
-  border-radius: 25%;
-  background-size: cover;
-  border-bottom: rgb(0, 0, 0) solid 1px;
-  margin-left: 75%;
-} */
-
-@media screen and (min-width: 280px) {
-  *{
-    font-family: 'Poppins Regular';
-  }
-
   .description {
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     display: flex;
     justify-content: center;
     font-family: 'Poppins Light';
     font-size: 14px;
-    padding-left: 13%;
-    margin-bottom: 25px;
+    margin: 0rem 7rem 2rem 2rem;
+    /* padding-left: 13%;
+    margin-bottom: 25px; */
   }
 
   #restaurant-picture {
@@ -97,14 +85,11 @@
     justify-content: center;
     align-items: center;
     margin-left: 25%;
-    margin-bottom: 5%
+    margin-bottom: 15%;
+    margin-top: 5%;
   }
 
   .message-window {
-    /* margin-left: 15%;
-    margin-right: 15%; */
-    /* margin-top: 2%;
-    margin-bottom: 5%; */
     display: grid;
     grid-template-columns: 1fr;
   }
@@ -113,21 +98,13 @@
     background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
   }
 
-}
+  #no-reservations {
+    margin: 1rem 1em;
+  }
 
-/* FONTS */
+  .reservations-list {
+    margin-top: 2rem;
 
-@font-face {
-  font-family: 'Poppins Regular';
-  src: url('../fonts/Poppins-Regular.ttf');
-}
+  }
 
-@font-face {
-  font-family: 'Poppins ExtraLight';
-  src: url(../fonts/Poppins-ExtraLight.ttf);
-}
-
-@font-face {
-  font-family: 'Poppins Light';
-  src: url('../fonts/Poppins-Light.ttf');
 }

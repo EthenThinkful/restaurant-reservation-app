@@ -70,7 +70,7 @@ function Dashboard({ date }) {
         </h1>
 
         <div className="description">
-          Simplify your Restaurant Management with "Periodic Tables". A robust
+          Simplify your Restaurant Management. A robust
           and intuitive app that helps you manage your reservations, tables, and
           organization.
         </div>
@@ -79,7 +79,7 @@ function Dashboard({ date }) {
       <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
         <h4 className="mb-0">Reservations for {date}</h4>
       </div>
-      <div className="row justify-content-around my-3">
+      <div className="row my-4">
         <button
           type="button"
           name="previous-btn"
@@ -111,10 +111,10 @@ function Dashboard({ date }) {
         <></>
       )}
 
-      <div className="row reservations-list">
+      <div className="reservations-list">
         {reservationsList.length === 0 ? (
           <div id="no-reservations">
-            <h3 className="ml-5">There are no reservations for this date.</h3>
+            <h5>There are no reservations for this date.</h5>
           </div>
         ) : (
           reservationsList

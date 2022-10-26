@@ -76,10 +76,17 @@ function Menu() {
     //     </div> */}
     // </nav>
     // </div>
-    
+
     <nav className="navbar navbar-light amber mb-4">
       <a className="navbar-brand" id="logo" href="/">
+      <div className="logo ml-2" >
         Periodic Tables
+          <img
+            src="https://user-images.githubusercontent.com/104235709/198115095-b7d574ba-f876-4a3e-8a73-93dbdee749b8.png"
+            alt="PTLogo"
+            className="ml-3 mt-3"
+          />
+        </div>
       </a>
 
       <button
@@ -92,9 +99,7 @@ function Menu() {
         aria-label="Toggle navigation"
         //trying to animate the spans on click with the useState()
       >
-        <div className={animate ? "animated-icon1" : "animated-icon1.open"}
-        
-        >
+        <div className={animate ? "animated-icon1" : "animated-icon1.open"}>
           <span></span>
           <span></span>
           <span></span>
@@ -105,7 +110,7 @@ function Menu() {
         <ul className="navbar-nav">
           <li className="nav-item">
             <a className="oi oi-dashboard nav-link" href="/dashboard">
-            &nbsp;Dashboard
+              &nbsp;Dashboard
             </a>
           </li>
           <li className="nav-item">
@@ -115,12 +120,12 @@ function Menu() {
           </li>
           <li className="nav-item">
             <a className="oi oi-plus nav-link" href="/reservations/new">
-            &nbsp;New Reservation
+              &nbsp;New Reservation
             </a>
           </li>
           <li className="nav-item">
             <a className="oi oi-layers nav-link" href="/tables/new">
-            &nbsp;New Table
+              &nbsp;New Table
             </a>
           </li>
         </ul>

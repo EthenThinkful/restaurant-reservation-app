@@ -1,12 +1,37 @@
+/* FONTS */
+
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('../fonts/Poppins-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Poppins ExtraLight';
+    src: url(../fonts/Poppins-ExtraLight.ttf);
+  }
+  
+  @font-face {
+    font-family: 'Poppins Light';
+    src: url('../fonts/Poppins-Light.ttf');
+  }
+
+  * {
+    font-family: 'Poppins Regular';
+    }
+
+@media screen and (min-width: 280px) {
 
 #reservation-card {
-    padding: 10px;
-    margin: 2rem;
-    border: black solid 1px;
-    border-radius: 2rem;
-    background-color: rgb(255, 255, 227);
+    padding: 2rem;
+    margin: 1rem;
+    background-color: rgba(250, 246, 211, 0.5);
+    /* margin: 2rem; */
+    /* border: black solid 1px; */
+    /* border-radius: 2rem; */
+    /* background-color: rgb(255, 255, 227); */
 
 }
+/*
 
 #card-title {
     font-weight: bold;
@@ -47,4 +72,10 @@
 
 .colorfulBtn:hover {
     opacity: 0.6
+} */
+
+
 }
+
+
+

@@ -1,12 +1,36 @@
+/* FONTS */
+
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('../fonts/Poppins-Regular.ttf');
+  }
+  
+  @font-face {
+    font-family: 'Poppins ExtraLight';
+    src: url(../fonts/Poppins-ExtraLight.ttf);
+  }
+  
+  @font-face {
+    font-family: 'Poppins Light';
+    src: url('../fonts/Poppins-Light.ttf');
+  }
+  
+  *{
+    font-family: 'Poppins Regular';
+  }
+
+@media screen and (min-width: 280px) {
+
 .tables-list {
     border-radius: 20rem;
-    background-image: url("https://user-images.githubusercontent.com/104235709/190276740-a2648ab1-849f-4092-a1e4-f877822f59ea.jpeg");
+    background-color: rgba(250, 246, 211, 0.5);
+    /* background-image: url("https://user-images.githubusercontent.com/104235709/190276740-a2648ab1-849f-4092-a1e4-f877822f59ea.jpeg"); */
     border: 1px solid black;
     text-align: center;
     padding:50px;
-    border-radius:50%;
+    border-radius:5%;
     margin: 2rem;
-    
+    color: DarkSalmon;
 }
 
 .card-circle .card-title{
@@ -15,16 +39,21 @@
 }
 
 .card_img img {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
+    width: 25px;
+    height: 25px;
+    margin-bottom: 25px;
 }
 
 .colorfulBtnTwo {
     border: 1px solid black;
     opacity: 8;
     transition: 0.3s;
-    padding: 10px;
-    margin: 3px;
     font-weight: bold;
+    background-color: blueviolet;
+}
+
+.list-group {
+    list-style: none;
+}
+
 }

@@ -1,126 +1,21 @@
+/* FONTS */
 
-/* #background-container {
-    height: 10rem;
-    background-color: rgba(250, 246, 211, 0.5);
-    background-size: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding-left: 15%;
-    padding-right: 15%;
-} */
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('../fonts/Poppins-Regular.ttf')
+  }
 
-/* #logo {
-    color: rgb(0, 0, 0);
-    font-size: 45px;
-    font-weight: 600;
-    width: fit-content;
-    margin-left: 10px;
-    padding: 1rem 2.5rem;
-    z-index: 1;
-} */
-
-/* nav {
-    color:rgb(0, 0, 0); 
-    height:6.5rem;
-    z-index: 2;
+* {
+font-family: 'Poppins Regular';
 }
 
-.justify-content-between {
-    background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
-    background-size: 100%;
-    color: rgb(199, 33, 33);
-} */
-
 @media screen and (min-width: 280px) {
-  /* #background-container {
-        height: 7rem;
-        display: flex;
-        padding: 0 2rem;
-        background-color: rgba(250, 246, 211, 0.5);
-        background-size: 100%;
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-    } */
 
-  /* #logo {
-        color: rgb(0, 0, 0);
-        font-size: 25px;
-        font-weight: 600;
-        margin: auto;
-        padding: auto;
-        color: rgb(0, 0, 0);
-        width: fit-content;
-    } */
-
-  /* li {
-        list-style: none;
-    } */
-
-  /* #accordionSidebar {
-        display: flex;
-        flex-direction: column;
-        position:absolute;
-        align-items: center; 
-        top: 100px;
-        right: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgb(255, 193, 112);
-        text-align: center;
-        transition: 0.3s;
-        border-top: 2px solid black;
-        opacity: 1;
-    } */
-
-  /* #accordionSidebar.active {
-        left: 0;
-    } */
-
-  /* .nav-item {
-        margin: 16px 0;
-    }
-
-    .nav-link {
-        transition: 0.4s ease;
-        color: black;
-    }
-
-    .nav-link:hover{
-        color: DarkSalmon;
-    }
-
-    .hamburger{
-        display: block;
-        cursor: pointer;
-        padding: 2rem 2rem;
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    .bar{
-        display: block;
-        width: 25px;
-        height: 3px;
-        5px top & bottom, auto left & right
-        margin: 5px auto; 
-        -webkit-transition: all 0.3s ease-in-out;
-        transition: all 0.3s ease-in-out;
-        background-color: black;
-    } */
-
-  /* BOOTSTRAP TRIAL OF HAMBURGER */
+  .logo img {
+    width: 25px;
+    height: 25px;
+    margin-bottom: 25px;
+  }
 
   .animated-icon1,
   .animated-icon2,
@@ -208,27 +103,6 @@
     transform: rotate(-135deg);
   }
 
-  /* .dookie {
-    top: 11px;
-    -webkit-transform: rotate(135deg);
-    -moz-transform: rotate(135deg);
-    -o-transform: rotate(135deg);
-    transform: rotate(135deg);
-  }
-
-  .dookie2 {
-    opacity: 0;
-    left: -60px;
-  }
-
-  .dookie3 {
-    top: 11px;
-    -webkit-transform: rotate(-135deg);
-    -moz-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-  } */
-
   .navbar-nav {
     background-color: rgba(255, 169, 134, 0.5);
     padding-bottom: 3%;
@@ -243,9 +117,7 @@
           font-family: 'Poppins Regular';  
   }
  
-
-
-  .nav-item {
+.nav-item {
     display: flex;
     justify-content: center;
     padding-top: 3%;
@@ -274,12 +146,3 @@
 }
 
 }
-
-/* FONTS */
-
-@font-face {
-    font-family: 'Poppins Regular';
-    src: url('../fonts/Poppins-Regular.ttf')
-    }
-
-
