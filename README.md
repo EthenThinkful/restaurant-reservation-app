@@ -4,7 +4,7 @@ Easy to use reservation system directly made for restaurant personnel only.  Hel
 
 *I am currently re-styling the entire app mobile first... UPDATE:
 
-<img width="1440" alt="Screen Shot 2022-09-15 at 9 06 18 AM" src="https://user-images.githubusercontent.com/104235709/190445188-a050cdd9-0f59-40ca-b396-33a3f6b0b8b4.png">
+![PeriodicTablesUpdate](https://user-images.githubusercontent.com/104235709/197932624-3a33c31c-be87-41e2-878a-f9655e01443f.PNG)
 
 ## Demo
 
