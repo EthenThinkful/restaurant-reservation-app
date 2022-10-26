@@ -1,3 +1,4 @@
+
 /* #background-container {
     height: 10rem;
     background-color: rgba(250, 246, 211, 0.5);
@@ -164,23 +165,26 @@
   }
 
   .animated-icon2 span {
-    background: rgba(250, 246, 211, 0.5);
+    background: DarkSalmon;
   }
 
   .animated-icon3 span {
-    background: rgba(250, 246, 211, 0.5);
+    background: DarkSalmon;
   }
 
   .animated-icon1 span:nth-child(1) {
     top: 0px;
+    
   }
 
   .animated-icon1 span:nth-child(2) {
     top: 10px;
+    
   }
 
   .animated-icon1 span:nth-child(3) {
     top: 20px;
+    
   }
 
   .animated-icon1.open span:nth-child(1) {
@@ -204,21 +208,48 @@
     transform: rotate(-135deg);
   }
 
+  /* .dookie {
+    top: 11px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  .dookie2 {
+    opacity: 0;
+    left: -60px;
+  }
+
+  .dookie3 {
+    top: 11px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+  } */
+
   .navbar-nav {
     background-color: rgba(255, 169, 134, 0.5);
     padding-bottom: 3%;
   }
-
   .navbar {
     background-color: rgba(250, 246, 211, 0.5);
     margin: 0 0;
     padding: 0 0;
+    -webkit-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
+     -moz-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
+          box-shadow: 0 10px 6px -6px rgb(224, 224, 224);  
+          font-family: 'Poppins Regular';  
   }
+ 
+
 
   .nav-item {
     display: flex;
     justify-content: center;
     padding-top: 3%;
+    font-family: 'Poppins Regular';
   }
   
  .navbar-toggler {
@@ -229,7 +260,7 @@
 
   #logo {
     color: DarkSalmon;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 500;
     margin-right: auto;
     padding-left: 2%;
@@ -243,3 +274,12 @@
 }
 
 }
+
+/* FONTS */
+
+@font-face {
+    font-family: 'Poppins Regular';
+    src: url('../fonts/Poppins-Regular.ttf')
+    }
+
+

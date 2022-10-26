@@ -8,6 +8,7 @@
     font-size: 50px;
     display: flex;
     justify-content: center;
+    padding-bottom: 10px;
   }
   
   @-webkit-keyframes stripes {
@@ -47,34 +48,56 @@
   grid-template-columns: 1fr 1fr;
 } */
 
-.description {
+/* .description {
   margin-bottom: 2%;
   display: flex;
   justify-content: center;
-}
+  font-family: 'Poppins Light';
+  font-size: 14px;
+  margin-right: 5%;
+} */
 
-.display-picture {
+/* .display-picture {
   background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
   display: flex;
   justify-content: center;
-}
+} */
 
-#restaurant-picture {
+/* #restaurant-picture {
   height: 25rem;
   width: 25rem;
   border-radius: 25%;
   background-size: cover;
   border-bottom: rgb(0, 0, 0) solid 1px;
   margin-left: 75%;
-}
+} */
 
 @media screen and (min-width: 280px) {
+  *{
+    font-family: 'Poppins Regular';
+  }
+
+  .description {
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Poppins Light';
+    font-size: 14px;
+    padding-left: 13%;
+    margin-bottom: 25px;
+  }
+
   #restaurant-picture {
     height: 15rem;
     width: 15rem;
     border-radius: 25%;
     background-size: cover;
     border-bottom: rgb(0, 0, 0) solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25%;
+    margin-bottom: 5%
   }
 
   .message-window {
@@ -88,8 +111,23 @@
   
   .display-picture {
     background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
-    display: flex;
-    justify-content: center;
   }
 
-} 
+}
+
+/* FONTS */
+
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('../fonts/Poppins-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Poppins ExtraLight';
+  src: url(../fonts/Poppins-ExtraLight.ttf);
+}
+
+@font-face {
+  font-family: 'Poppins Light';
+  src: url('../fonts/Poppins-Light.ttf');
+}

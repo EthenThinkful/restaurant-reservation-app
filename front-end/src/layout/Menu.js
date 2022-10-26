@@ -14,7 +14,7 @@ import "./Menu.css";
 function Menu() {
   const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [animate, setAnimate] = useState('animated-icon1');
+  const [animate, setAnimate] = useState(true);
 
   return (
     //     <div id="background-container" className="row d-flex justify-content-between side-bar">
@@ -90,8 +90,11 @@ function Menu() {
         aria-controls="navbarSupportedContent20"
         aria-expanded="false"
         aria-label="Toggle navigation"
+        //trying to animate the spans on click with the useState()
       >
-        <div className={animate} onClick={() => setAnimate('animated-icon1.open')}>
+        <div className={animate ? "animated-icon1" : "animated-icon1.open"}
+        
+        >
           <span></span>
           <span></span>
           <span></span>
@@ -102,7 +105,7 @@ function Menu() {
         <ul className="navbar-nav">
           <li className="nav-item">
             <a className="oi oi-dashboard nav-link" href="/dashboard">
-            &nbsp;Dashboard<span className="sr-only">(current)</span>
+            &nbsp;Dashboard
             </a>
           </li>
           <li className="nav-item">

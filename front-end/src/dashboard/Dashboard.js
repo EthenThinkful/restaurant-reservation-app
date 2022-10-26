@@ -62,74 +62,74 @@ function Dashboard({ date }) {
     history.push(`/dashboard?date=${todayDate}`);
   };
 
-    return (
-      <main>
-        <div className="message-window">
-          <div>
-            <h1 className="animated-text">
-              {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
-            </h1>
-            <div className="description">
-              Simplify your Restaurant Management
-            </div>
+  return (
+    <main>
+      <div className="message-window">
+        <h1 className="animated-text">
+          {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
+        </h1>
+
+        <div className="description">
+          Simplify your Restaurant Management with "Periodic Tables". A robust
+          and intuitive app that helps you manage your reservations, tables, and
+          organization.
+        </div>
+        </div>
+        <div id="restaurant-picture" className="display-picture"></div>
+      <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
+        <h4 className="mb-0">Reservations for {date}</h4>
+      </div>
+      <div className="row justify-content-around my-3">
+        <button
+          type="button"
+          name="previous-btn"
+          className="ml-auto btn btn-secondary colorfulBtnTwo"
+          onClick={previousHandler}
+        >
+          Previous
+        </button>
+        <button
+          type="button"
+          name="next-btn"
+          className="mx-3 btn btn-secondary colorfulBtnTwo"
+          onClick={nextHandler}
+        >
+          Next
+        </button>
+        <button
+          type="button"
+          name="today"
+          className="mr-auto btn btn-secondary colorfulBtnTwo"
+          onClick={todayHandler}
+        >
+          Today
+        </button>
+      </div>
+      {reservationsError ? (
+        <ErrorAlert errorMessage={reservationsError} />
+      ) : (
+        <></>
+      )}
+
+      <div className="row reservations-list">
+        {reservationsList.length === 0 ? (
+          <div id="no-reservations">
+            <h3 className="ml-5">There are no reservations for this date.</h3>
           </div>
-          <div id="restaurant-picture" className="display-picture"></div>
-        </div>
-        <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
-          <h4 className="mb-0">Reservations for {date}</h4>
-        </div>
-        <div className="row justify-content-around my-3">
-          <button
-            type="button"
-            name="previous-btn"
-            className="ml-auto btn btn-secondary colorfulBtnTwo"
-            onClick={previousHandler}
-          >
-            Previous
-          </button>
-          <button
-            type="button"
-            name="next-btn"
-            className="mx-3 btn btn-secondary colorfulBtnTwo"
-            onClick={nextHandler}
-          >
-            Next
-          </button>
-          <button
-            type="button"
-            name="today"
-            className="mr-auto btn btn-secondary colorfulBtnTwo"
-            onClick={todayHandler}
-          >
-            Today
-          </button>
-        </div>
-        {reservationsError ? (
-          <ErrorAlert errorMessage={reservationsError} />
         ) : (
-          <></>
+          reservationsList
         )}
+      </div>
 
-        <div className="row reservations-list">
-          {reservationsList.length === 0 ? (
-            <div id="no-reservations">
-              <h3 className="ml-5">There are no reservations for this date.</h3>
-            </div>
-          ) : (
-            reservationsList
-          )}
-        </div>
-
-        <div className="row">
-          {tablesList.length === 0 ? (
-            <h3 className="ml-5">No Tables Listed</h3>
-          ) : (
-            tablesList
-          )}
-        </div>
-      </main>
-    );
-  } 
-
+      <div className="row">
+        {tablesList.length === 0 ? (
+          <h3 className="ml-5">No Tables Listed</h3>
+        ) : (
+          tablesList
+        )}
+      </div>
+    </main>
+  );
+}
 
 export default Dashboard;

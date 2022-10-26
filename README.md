@@ -2,6 +2,10 @@
 
 Easy to use reservation system directly made for restaurant personnel only.  Help your company keep track, edit, create, update and delete specified tables, reservations, and statuses.
 
+*I am currently re-styling the entire app mobile first... UPDATE:
+
+<img width="1440" alt="Screen Shot 2022-09-15 at 9 06 18 AM" src="https://user-images.githubusercontent.com/104235709/190445188-a050cdd9-0f59-40ca-b396-33a3f6b0b8b4.png">
+
 ## Demo
 
 You can view the app here: https://frontend-rr-er.herokuapp.com/dashboard?date=2022-09-16
