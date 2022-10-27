@@ -67,7 +67,7 @@ function SeatTableForm() {
           <label htmlFor="table_id">Choose a table:</label>
           </div>
           <div class="form-group mx-sm-3 mb-2">
-          <select required id="select" name="table_id" className="background_color">
+          <select id="select" name="table_id" title="select button" className="background_color">
             {tableOptions}
           </select>
           </div>
@@ -76,7 +76,7 @@ function SeatTableForm() {
             type="button"
             className="btn btn-secondary"
             onClick={() => history.goBack()}
-            class="btn btn-primary"
+            class="btn btn-secondary"
           >
             Cancel
           </button>

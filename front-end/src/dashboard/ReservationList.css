@@ -34,4 +34,24 @@
     margin-bottom: 2rem;
     color: darksalmon;
   }
+
+}
+
+@media screen and (min-width: 768px) {
+    #reservation-card {
+        padding: 2rem 2rem 4rem 4rem;
+        margin: 1rem 1rem;
+        background-color: rgba(250, 246, 211, 0.5);
+        
+      }
+    
+      #card-title {
+        margin-bottom: 2rem;
+      }
+    
+      #card-text {
+        margin-bottom: 2rem;
+        color: darksalmon;
+      }
+
 }

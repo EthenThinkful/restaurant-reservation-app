@@ -11,6 +11,17 @@ font-family: 'Poppins Regular';
 
 @media screen and (min-width: 280px) {
 
+  a {
+    color: gray;
+    font-family: 'Poppins Regular';
+    font-size: 100%;
+  }
+
+  a:hover {
+    color: darksalmon;
+    transition: 0.3s;
+  }
+
   .logo img {
     width: 25px;
     height: 25px;
@@ -54,18 +65,21 @@ font-family: 'Poppins Regular';
     
   }
 
-  .navbar-nav {
+  .navBar-nav {
     background-color: rgba(255, 169, 134, 0.5);
     padding-bottom: 3%;
+    
   }
-  .navbar {
+  .navBar {
     background-color: rgba(250, 246, 211, 0.5);
     margin: 0 0;
     padding: 0 0;
     -webkit-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
      -moz-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
           box-shadow: 0 10px 6px -6px rgb(224, 224, 224);  
-          font-family: 'Poppins Regular';  
+          font-family: 'Poppins Regular'; 
+          /* display: flex;
+          justify-content: space-between; */
   }
  
 .nav-item {
@@ -79,6 +93,7 @@ font-family: 'Poppins Regular';
     border-color: none;
     color: none;
     border-style: none;
+    
   }
 
   #logo {
@@ -95,5 +110,55 @@ font-family: 'Poppins Regular';
   button:focus {
     outline: none;
 }
+
+.justifyNav {
+  display: flex;
+  justify-content: space-between;
+}
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  #navbarSupportedContent20 {
+    display: flex;
+    justify-content: flex-end;
+    
+  }
+
+  .navBar-nav {
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 14rem;
+  }
+
+  .navBar {
+    position: relative;
+    display: flex;
+    flex-wrap: none;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-link {
+    margin-top: 2rem;
+    
+  }
+
+  #logo {
+    color: DarkSalmon;
+    font-size: 40px;
+    font-weight: 500;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: fit-content;
+    margin-left: 14rem;
+  }
 
 }

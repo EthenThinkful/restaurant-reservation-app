@@ -70,15 +70,15 @@
   }
 
   #restaurant-picture {
-    height: 15rem;
-    width: 15rem;
+    height: 20rem;
+    width: 20rem;
     border-radius: 25%;
     background-size: cover;
     border-bottom: rgb(0, 0, 0) solid 1px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 25%;
+    margin-left: 15%;
     margin-bottom: 15%;
     margin-top: 5%;
   }
@@ -99,4 +99,61 @@
   .reservations-list {
     margin-top: 2rem;
   }
+}
+
+@media screen and (min-width: 768px) {
+  .animated-text {
+    background-image: -webkit-linear-gradient(
+      DarkSalmon 50%,
+      rgb(255, 193, 112) 50%
+    );
+    background-size: 100% 50px;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-animation: stripes 2s linear infinite;
+    animation: stripes 2s linear infinite;
+    font-size: 60px;
+    margin: 4rem 6rem 4rem 14rem;
+  }
+
+  .description {
+    font-family: "Poppins Light";
+    font-size: 16px;
+    margin: 6rem 0rem 0rem 0rem;
+  }
+
+  #restaurant-picture {
+    height: 30rem;
+    width: 30rem;
+    border-radius: 25%;
+    /* background-size: cover; */
+    border-bottom: rgb(0, 0, 0) solid 1px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-left: 12rem;
+    /* margin-bottom: 15%;
+    margin-top: 5%; */
+    margin-right: 25rem;
+  }
+
+  .message-window {
+    display: grid;
+    grid-template-areas: "1 1"
+  }
+
+  .reservations-list {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-areas: '1 1'
+  }
+
+  .tables_list {
+    display: grid;
+    grid-template-areas: '1 1 1 1';
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+
 }

@@ -65,17 +65,16 @@ function Dashboard({ date }) {
   return (
     <main>
       <div className="message-window">
-        <h1 className="animated-text">
+        <div className="animated-text">
           {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
-        </h1>
-
+        </div>
         <div className="description">
           Simplify your Restaurant Management. A robust
           and intuitive app that helps you manage your reservations, tables, and
           organization.
         </div>
-        </div>
         <div id="restaurant-picture" className="display-picture"></div>
+        </div>
       <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
         <h4 className="mb-0">Reservations for {date}</h4>
       </div>
@@ -121,7 +120,7 @@ function Dashboard({ date }) {
         )}
       </div>
 
-      <div className="row">
+      <div className="tables_list">
         {tablesList.length === 0 ? (
           <h3 className="ml-5">No Tables Listed</h3>
         ) : (

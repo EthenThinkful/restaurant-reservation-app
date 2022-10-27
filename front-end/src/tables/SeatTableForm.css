@@ -1,8 +1,37 @@
+@media screen and (min-width: 280px) {
+
 .center {
     text-align: center;
     padding: 50px;
+    background-color: rgba(250, 246, 211, 0.5);
 }
 
 .background_color {
-    background-color: rgb(255, 255, 227);
+    background-color: white;
+        padding: 10px;
+        border-radius: 15px;
+        border-color: orange;
+}
+
+
+
+option {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+
+}
+
+.background_color:focus {
+    outline: none;
+}
+
+.form-group {
+    color: darksalmon;
+}
+
+#select {
+    background-color: white;
+}
+
 }
