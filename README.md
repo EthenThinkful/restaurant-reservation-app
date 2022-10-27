@@ -2,22 +2,13 @@
 
 Easy to use reservation system directly made for restaurant personnel only.  Help your company keep track, edit, create, update and delete specified tables, reservations, and statuses.
 
-*I am currently re-styling the entire app mobile first... UPDATE:
-
-![PeriodicTablesUpdate](https://user-images.githubusercontent.com/104235709/197932624-3a33c31c-be87-41e2-878a-f9655e01443f.PNG)
+*I am currently re-styling the entire app mobile first... 
 
 ## Demo
 
-You can view the app here: https://frontend-rr-er.herokuapp.com/dashboard?date=2022-09-16
+You can view the app here: https://frontend-rr-er.herokuapp.com/dashboard
 
-## Installation
-
-1. Run `npm install` under the root folder to install project dependencies.
-1. Run `npm run start` to start your server.
-1. Run `cp ./back-end/.env.sample ./back-end/.env`.
-1. Update the `./back-end/.env` file with the connection URL's to your ElephantSQL database instance.
-1. Run `cp ./front-end/.env.sample ./front-end/.env`.
-1. You should not need to make changes to the `./front-end/.env` file unless you want to connect to a backend at a location other than http://localhost:5001.
+![PeriodicTablesUpdate](https://user-images.githubusercontent.com/104235709/197932624-3a33c31c-be87-41e2-878a-f9655e01443f.PNG)
 
 ## Features
 
@@ -56,6 +47,15 @@ Once the reservation at any table is done with their table you can click the "fi
 Searching a Reservation by Phone Number: Upon clicking the search button on the top of the dashboard you will be prompted to a page where you can input a phone number that will retreive and list all reservations associated with that number: 
 
 <img width="1440" alt="Screen Shot 2022-09-15 at 9 54 12 AM" src="https://user-images.githubusercontent.com/104235709/190450661-426a0da3-e1f0-4544-a83d-bd2ddffbcfdd.png">
+
+## Installation
+
+1. Run `npm install` under the root folder to install project dependencies.
+1. Run `npm run start` to start your server.
+1. Run `cp ./back-end/.env.sample ./back-end/.env`.
+1. Update the `./back-end/.env` file with the connection URL's to your ElephantSQL database instance.
+1. Run `cp ./front-end/.env.sample ./front-end/.env`.
+1. You should not need to make changes to the `./front-end/.env` file unless you want to connect to a backend at a location other than http://localhost:5001.
 
 ## Plans for App Expansion
 
