@@ -1,14 +1,33 @@
+@media screen and (min-width: 280px) {
+
 .search_center {
     text-align: center;
     padding: 50px;
+    color: darksalmon;
+}
+
+#mobile_number {
+    padding: 10px;
+    border-radius: 15px;
+    border-color: orange;
+}
+
+#mobile_number:focus {
+    outline: none;
 }
 
 .form_style {
-    padding:10px;
+    padding:1rem;
     border-radius:10px;
     box-shadow: inset;
 }
 
+.search-text {
+    font-size: 17px;
+    padding: 1rem;
+}
+
 .background_color {
-    background-color: rgb(255, 255, 227);
+    background-color: rgba(250, 246, 211, 0.5);
+}
 }

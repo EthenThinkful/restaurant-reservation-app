@@ -56,7 +56,7 @@ function Search() {
         <div>{reservationsError ? <ErrorAlert errorMessage={reservationsError} /> : <></>}</div>
       <form onSubmit={submitHandler}>
       <div class="form-group mb-2">
-        <label htmlFor="mobile_number">Search</label>
+        <div className="search-text">Search</div>
         </div>
         <div class="form-group mx-sm-3 mb-2">
         <input
@@ -68,7 +68,7 @@ function Search() {
           className="background_color"
         ></input>
         </div>
-        <button type="submit" class="btn btn-primary mt-3">Find</button>
+        <button type="submit" class="btn btn-secondary mt-3">Find</button>
       </form>
       <div>{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
     </div>
