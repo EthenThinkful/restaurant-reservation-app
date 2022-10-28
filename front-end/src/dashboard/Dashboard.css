@@ -75,9 +75,9 @@
     border-radius: 25%;
     background-size: cover;
     border-bottom: rgb(0, 0, 0) solid 1px;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     /* margin-left: 0%;
     margin-bottom: 25%;
     margin-top: 0%; */
@@ -87,7 +87,7 @@
     display: grid;
     grid-template-columns: 1fr;
     align-items: center;
-    margin: 2rem 4rem 6rem 4rem;
+    margin: 2rem 4rem 5rem 3.5rem;
   }
 
   .description-photo {
