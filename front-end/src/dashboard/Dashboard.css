@@ -20,9 +20,7 @@
 }
 
 @media screen and (min-width: 280px) {
-  *{
-    margin: 2rem;
-  }
+
   .animated-text {
     background-image: -webkit-linear-gradient(
       DarkSalmon 50%,
@@ -34,7 +32,9 @@
     -webkit-animation: stripes 2s linear infinite;
     animation: stripes 2s linear infinite;
     font-size: 40px;
-    margin: 2rem 2rem 0rem 4rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
   }
 
   @-webkit-keyframes stripes {
@@ -47,10 +47,6 @@
     100% {
       background-position: 0 -50px;
     }
-  }
-
-  .message-window {
-    margin-right: 50px;
   }
 
   .colorfulBtnTwo {
@@ -71,7 +67,9 @@
   .description {
     font-family: "Poppins Light";
     font-size: 14px;
-    margin: 2rem 6rem 2rem 4rem;
+    display: flex;
+    justify-content: center;
+    margin: 2rem 2rem 2rem 3rem;
   }
 
   #restaurant-picture {
@@ -79,7 +77,12 @@
     width: 15rem;
     border-radius: 25%;
     background-size: cover;
-    margin: 0rem 2rem 3rem 7rem;
+    margin: 0rem 2rem 3rem 4rem;
+  }
+
+  .message-window {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   /* .description-photo {
