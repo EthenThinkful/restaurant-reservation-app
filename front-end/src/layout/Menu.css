@@ -114,11 +114,16 @@ font-family: 'Poppins Regular';
 .justifyNav {
   display: flex;
   justify-content: space-between;
+  
 }
 
 }
 
 @media screen and (min-width: 768px) {
+
+  .justifyNav { 
+    margin-right: 12rem;
+  }
 
   .navbar-toggler {
     display: none;

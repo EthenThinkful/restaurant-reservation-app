@@ -68,12 +68,14 @@ function Dashboard({ date }) {
         <div className="animated-text">
           {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
         </div>
-        <div className="description">
+        <div className="description-photo">
+          <div className="description">
           Simplify your Restaurant Management. A robust
           and intuitive app that helps you manage your reservations, tables, and
           organization.
-        </div>
+          </div>
         <div id="restaurant-picture" className="display-picture"></div>
+        </div>
         </div>
       <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
         <h4 className="mb-0">Reservations for {date}</h4>

@@ -31,7 +31,9 @@
     -webkit-animation: stripes 2s linear infinite;
     animation: stripes 2s linear infinite;
     font-size: 50px;
-    margin: 1rem 0rem 2rem 2rem;
+    margin: 0rem 0rem 2rem 0rem;
+    /* display: flex;
+    justify-content: center; */
   }
 
   @-webkit-keyframes stripes {
@@ -62,30 +64,36 @@
   }
 
   .description {
-    display: flex;
-    justify-content: center;
     font-family: "Poppins Light";
     font-size: 14px;
-    margin: 0rem 7rem 2rem 2rem;
+    /* margin: 0rem 0rem 1rem 4rem; */
   }
 
   #restaurant-picture {
-    height: 20rem;
-    width: 20rem;
+    height: 15rem;
+    width: 15rem;
     border-radius: 25%;
     background-size: cover;
     border-bottom: rgb(0, 0, 0) solid 1px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 15%;
-    margin-bottom: 15%;
-    margin-top: 5%;
+    /* margin-left: 0%;
+    margin-bottom: 25%;
+    margin-top: 0%; */
   }
 
   .message-window {
     display: grid;
     grid-template-columns: 1fr;
+    align-items: center;
+    margin: 2rem 4rem 6rem 4rem;
+  }
+
+  .description-photo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
   }
 
   .display-picture {
@@ -94,6 +102,9 @@
 
   #no-reservations {
     margin: 1rem 1em;
+    color: rgba(255, 38, 0, 0.5);
+    display: flex; 
+    justify-content: center;
   }
 
   .reservations-list {
