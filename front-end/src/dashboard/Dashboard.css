@@ -20,6 +20,9 @@
 }
 
 @media screen and (min-width: 280px) {
+  *{
+    margin: 2rem;
+  }
   .animated-text {
     background-image: -webkit-linear-gradient(
       DarkSalmon 50%,
@@ -30,10 +33,8 @@
     -webkit-background-clip: text;
     -webkit-animation: stripes 2s linear infinite;
     animation: stripes 2s linear infinite;
-    font-size: 50px;
-    margin: 0rem 0rem 2rem 0rem;
-    /* display: flex;
-    justify-content: center; */
+    font-size: 40px;
+    margin: 2rem 2rem 0rem 4rem;
   }
 
   @-webkit-keyframes stripes {
@@ -46,6 +47,10 @@
     100% {
       background-position: 0 -50px;
     }
+  }
+
+  .message-window {
+    margin-right: 50px;
   }
 
   .colorfulBtnTwo {
@@ -66,7 +71,7 @@
   .description {
     font-family: "Poppins Light";
     font-size: 14px;
-    /* margin: 0rem 0rem 1rem 4rem; */
+    margin: 2rem 6rem 2rem 4rem;
   }
 
   #restaurant-picture {
@@ -74,34 +79,20 @@
     width: 15rem;
     border-radius: 25%;
     background-size: cover;
-    border-bottom: rgb(0, 0, 0) solid 1px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
-    /* margin-left: 0%;
-    margin-bottom: 25%;
-    margin-top: 0%; */
+    margin: 0rem 2rem 3rem 7rem;
   }
 
-  .message-window {
+  /* .description-photo {
     display: grid;
     grid-template-columns: 1fr;
-    align-items: center;
-    margin: 2rem 4rem 5rem 3.5rem;
-  }
-
-  .description-photo {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-  }
+  } */
 
   .display-picture {
     background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
   }
 
   #no-reservations {
-    margin: 1rem 1em;
+    margin: 1rem 2rem 1rem 2rem;
     color: rgba(255, 38, 0, 0.5);
     display: flex; 
     justify-content: center;
@@ -137,20 +128,9 @@
     height: 30rem;
     width: 30rem;
     border-radius: 25%;
-    /* background-size: cover; */
     border-bottom: rgb(0, 0, 0) solid 1px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     margin-left: 12rem;
-    /* margin-bottom: 15%;
-    margin-top: 5%; */
     margin-right: 25rem;
-  }
-
-  .message-window {
-    display: grid;
-    grid-template-areas: "1 1"
   }
 
   .reservations-list {
