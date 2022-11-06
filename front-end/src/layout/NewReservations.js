@@ -49,7 +49,7 @@ function NewReservations() {
       body: JSON.stringify({ data: formState }),
     });
     const resData = await response.json();
-    // successful requests are currently doing nothing with the resData
+
     if (resData.error) {
       setError(resData.error);
     }
@@ -59,18 +59,15 @@ function NewReservations() {
     }
   };
 
-  // currently, ErrorAlert will only display one error message at a time
-  // with "Reservations must be place in the future" taking priority
-  // needs to be set up so there multiple form valiations will result in multiple messages
   return (
     <div>
-      <ReservationForm 
-      reservationData={formState}
-      setReservationData={setFormState}
-      submitHandler={submitHandler}
-      cancelHandler={cancelHandler}
-      error={error}
-      changeHandler={changeHandler}
+      <ReservationForm
+        reservationData={formState}
+        setReservationData={setFormState}
+        submitHandler={submitHandler}
+        cancelHandler={cancelHandler}
+        error={error}
+        changeHandler={changeHandler}
       />
     </div>
   );

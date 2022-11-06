@@ -85,11 +85,6 @@
     grid-template-columns: 1fr;
   }
 
-  /* .description-photo {
-    display: grid;
-    grid-template-columns: 1fr;
-  } */
-
   .display-picture {
     background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
   }

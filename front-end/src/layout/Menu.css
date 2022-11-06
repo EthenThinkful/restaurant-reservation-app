@@ -78,8 +78,6 @@ font-family: 'Poppins Regular';
      -moz-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
           box-shadow: 0 10px 6px -6px rgb(224, 224, 224);  
           font-family: 'Poppins Regular'; 
-          /* display: flex;
-          justify-content: space-between; */
   }
  
 .nav-item {
