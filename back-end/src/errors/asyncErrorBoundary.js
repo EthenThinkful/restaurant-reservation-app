@@ -1,3 +1,5 @@
+// confirm errors (for async functions only)
+
 function asyncErrorBoundary(delegate, defaultStatus) {
     return (request, response, next) => {
       Promise.resolve()

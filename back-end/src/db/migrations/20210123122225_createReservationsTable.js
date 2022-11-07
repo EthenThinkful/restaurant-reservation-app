@@ -1,3 +1,5 @@
+// function to create the reservation table in the DB with specified columns
+
 exports.up = function (knex) {
   return knex.schema.createTable("reservations", (table) => {
     table.increments("reservation_id").primary();
@@ -10,6 +12,8 @@ exports.up = function (knex) {
     table.timestamps(true, true);
  });
 }; 
+
+// function to drop this table
 
 exports.down = function (knex) {
   return knex.schema.dropTable("reservations");

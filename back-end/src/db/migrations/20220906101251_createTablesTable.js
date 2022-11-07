@@ -1,5 +1,7 @@
 const { table } = require("../connection");
 
+// creating a table to hold our restaurant's tables data
+
 exports.up = function(knex) {
     return knex.schema.createTable("tables", (table) => {
     table.increments("table_id").primary();
@@ -13,6 +15,8 @@ exports.up = function(knex) {
       .onDelete("CASCADE");
     table.timestamps(true, true);
 })};
+
+// function to drop this table
 
 exports.down = function(knex) {
     return knex.schema.dropTable("tables");

@@ -1,10 +1,19 @@
-/**
- * List handler for reservation resources
- */
+/* Most of these functions rely on knex queries in "./reservations.service".
+ asyncErrorBoundary() created for safe guarding all async functions, specifically within this controller file. */
 
- const service = require("./reservations.service");
- const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
+const service = require("./reservations.service");
+const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
  
+/* ATTENTION: The "THEE" keyword (as shown at start of line 16) is used to indicate the major/main functions that are being exported */
+
+/* Major/main export functions: 
+1.) list,
+2.) create,
+3.) read, 
+4.) update, 
+5.) editReservation */
+
+ // *THEE list function* display reservations based on mobile number or date.
  async function list(req, res) {
   if (req.query.mobile_number) {
     const data = await service.search(req.query.mobile_number);
@@ -29,6 +38,7 @@
    "reservation_id",
  ];
  
+// *MIDDLEWARE* makes sure reservation only contains valid properties (used with "create" and "editReservation" functions).
  function hasOnlyValidProperties(req, res, next) {
   const { data = {} } = req.body;
 
@@ -45,6 +55,7 @@
   next();
 }
 
+// *HELPER FUNCTION* Created to be used ONLY with "hasRequiredFields" (line 67)
 function hasAllFields(...fields) {
   return function (req, res, next) {
     const { data = {} } = req.body;
@@ -63,6 +74,7 @@ function hasAllFields(...fields) {
   };
 }
 
+// *MIDDLEWARE* Verifies required fields (used with "create" and "editReservation" functions). 
 const hasRequiredFields = hasAllFields(
   "first_name",
   "last_name",
@@ -72,6 +84,7 @@ const hasRequiredFields = hasAllFields(
   "people"
 );
 
+// *MIDDLEWARE* Validates date (used with "create" and "editReservation" functions).
 function dateValidator(req, res, next) {
   const { data = {} } = req.body;
   if (!data["reservation_date"].match(/\d{4}-\d{2}-\d{2}/)) {
@@ -83,6 +96,7 @@ function dateValidator(req, res, next) {
   next();
 }
 
+// *MIDDLEWARE* Checks to see if a reservation exists (used with "read", "update", and "editReservation" functions).
 function reservationExists(req, res, next) {
   service.read(req.params.reservation_id)
   .then((reservation) => {
@@ -94,11 +108,13 @@ function reservationExists(req, res, next) {
 }).catch(next) 
 }
 
+// *THEE read function* Basic read function
 function read(req, res) {
-   const {reservation: data} = res.locals;
+   const {reservation: data} = res.locals; // res.locals stored on line 94
    res.json({data})
 }
 
+// *MIDDLEWARE* timeValidator (used with "create" and "editReservation" functions).
 function timeValidator(req,res,next) {
   const { data = {} } = req.body;
   if (!data["reservation_time"].match(/[0-9]{2}:[0-9]{2}/)) {
@@ -110,6 +126,7 @@ function timeValidator(req,res,next) {
   next();
 }
 
+// *MIDDLEWARE* checks if people field is a number (used with "create" and "editReservation" functions).
 function peopleIsNumber(req, res, next) {
   const { data = {} } = req.body;
   if (typeof data["people"] != "number") {
@@ -121,6 +138,7 @@ function peopleIsNumber(req, res, next) {
   next();
 }
 
+// *MIDDLEWARE* when creating a reservation, makes sure reservation is not made on a Tuesday (used with "create" and "editReservation" functions).
 function notTuesday(req,res,next) {
 const { data = {} } = req.body;
 const dateObject = new Date(data["reservation_date"])
@@ -133,10 +151,7 @@ const dateObject = new Date(data["reservation_date"])
  next();
 }
 
-// getDay returns a num 0-6 where 0 is Monday, 6 is Sunday
-//validation check for 1 --> Tuesday
-
-
+// *MIDDLEWARE* used when creating a reservation, makes sure reservation is not made after hours (used with "create" function).
 function timeIsAvailable(req,res,next) {
   const { data = {} } = req.body;
   let submittedTime =data["reservation_time"].replace(":", "");
@@ -149,6 +164,7 @@ function timeIsAvailable(req,res,next) {
   next();
 }
 
+// *MIDDLEWARE* makes sure reservation is made at a future time (used with "create" function).
 function notInThePast(req, res, next) {
   const { data = {} } = req.body;
 if (Date.parse(data["reservation_date"]) < Date.now()) {
@@ -160,15 +176,13 @@ if (Date.parse(data["reservation_date"]) < Date.now()) {
 next();
 }
  
- /* validation currently checking if:
-     - req has all required fields
-     - req has all valid entries of fields
- */
+// *THEE create function* creates a new reservation.
  async function create(req, res, next) {
    const data = await service.create(req.body.data);
    res.status(201).json({ data });
  }
 
+// *MIDDLEWARE* Makes sure status is set to "Free" (used with "create" function).
  function statusValidator(req, res, next) {
   const { data = {} } = req.body;
   if (data["status"] === "seated") {
@@ -185,6 +199,7 @@ next();
   next();
  }
 
+ // *MIDDLEWARE* Makes sure status is not "unknown" (used with "update" function).
  function unknownStatus(req, res, next) {
   const { data = {} } = req.body;
   if (data["status"] === "unknown") {
@@ -196,6 +211,7 @@ next();
   next();
  }
 
+ // *MIDDLEWARE* Cannot update a reservation is status is set to "finished" (used with "update" function).
  function isValueFinished(req, res, next) {
   if (res.locals.reservation.status === "finished") {
     return next ({
@@ -206,6 +222,7 @@ next();
   next();
  }
 
+ // *THEE update function* updates an existing reservation
  async function update(req, res, next) {
   const newReservation = {
     ...req.body.data,
@@ -215,6 +232,7 @@ next();
   res.status(200).json({ data: newReservation });
 }
 
+// *THEE editReservation function* edits an existing reservation
 async function editReservation(req, res, next) {
   const editableReservation = {
     ...req.body.data,
