@@ -1,13 +1,15 @@
-const { table } = require("../db/connection");
 const knex = require("../db/connection");
-const reservationService = require("../reservations/reservations.service")
 
+// KNEX QUERIES!
+
+// *list function* display all tables ordered by table name.
 async function list() {
     return knex("tables")
         .select("*")
         .orderBy("table_name");
 }
 
+// *create function* basic create function.
 async function create(table) {
     return knex("tables")
     .insert(table)
@@ -15,6 +17,7 @@ async function create(table) {
     .then((tables)=> tables[0]);
 }
 
+// *read function* retrieve table by id.
 async function read(table_id) {
     return knex("tables")
         .select("*")
@@ -22,6 +25,7 @@ async function read(table_id) {
         .first();
 }
 
+// checks to see if the reservation contains a "people count"
 async function readReservation(reservation_id) {
     return knex("reservations")
         .select("people")
@@ -29,16 +33,17 @@ async function readReservation(reservation_id) {
         .first();
 }
 
+// updates the reservation_id contained within the table's data 
 async function update(newTableData) {
     return knex("tables")
         .select("*")
         .where({table_id: newTableData.table_id})
         .update({
             reservation_id: newTableData.reservation_id,
-            // status: "occupied"
         }, "*");
 }
 
+// updates status of a reservation (not a table) to "seated".
 async function updateReservationStatus(newTableData) {
     return knex("reservations")
         .select("*")
@@ -48,6 +53,7 @@ async function updateReservationStatus(newTableData) {
         }, "*");
 }
 
+// *destroy function* "destroy" as in setting a tables reservation id to null.
 async function destroy(table_id) {
     return knex("tables")
     .select("*")
@@ -57,6 +63,7 @@ async function destroy(table_id) {
     })
 }
 
+// works hand in hand with the destroy function to, updating the status to "finished".
 async function finishedStatus(newReservation) {
     return knex("reservations")
     .select("*")

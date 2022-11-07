@@ -1,12 +1,25 @@
+/* Most of these functions rely on knex queries made in "./tables.service".
+ asyncErrorBoundary() created for safe guarding all async functions, specifically within the "controller file". */
+
 const service = require("./tables.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
 const reservationService = require("../reservations/reservations.service");
 
+/* ATTENTION: The "THEE" keyword (as shown at start of line 16) is used to indicate the major/main functions that are being exported & used in the router file */
+
+/* Major/main export functions: 
+1.) list,
+2.) create,
+3.) update, 
+4.) delete */
+
+// *THEE list function* display all tables.
 async function list(req, res, next) {
   const data = await service.list();
   res.json({ data: data });
 }
 
+// *THEE create function* create a table.
 async function create(req, res, next) {
   const table = req.body.data;
   const data = await service.create(table);
@@ -16,6 +29,7 @@ async function create(req, res, next) {
 // VALIDATION PIPELINE STARTS HERE
 const VALID_PROPERTIES = ["table_name", "capacity"];
 
+// *MIDDLEWARE* makes sure table contains required fields (used with "create" function).
 function hasRequiredFields(req, res, next) {
   const { data = {} } = req.body;
   const map = new Map();
@@ -36,6 +50,7 @@ function hasRequiredFields(req, res, next) {
   next();
 }
 
+// *MIDDLEWARE* makes sure table contains valid inputs (used with "create" function).
 function hasValidFieldInputs(req, res, next) {
   let { table_name, capacity } = req.body.data;
 
@@ -64,12 +79,13 @@ function hasValidFieldInputs(req, res, next) {
   next();
 }
 
+// *MIDDLEWARE* does the table exist? (used with "update" and "delete" functions).
 async function tableExists(req, res, next) {
   const { table_id } = req.params;
   
   const table = await service.read(table_id);
   if (table) {
-    res.locals.table = table;
+    res.locals.table = table; // DECLARATION of "res.locals"
     return next();
   }
 
@@ -79,6 +95,7 @@ async function tableExists(req, res, next) {
   });
 }
 
+// *MIDDLEWARE* is table available? (used with "update" function).
 function tableIsAvailable(req, res, next) {
   const table = res.locals.table;
   
@@ -91,7 +108,8 @@ function tableIsAvailable(req, res, next) {
   next();
 }
 
-function tableNotAvailable(req, res, next) {
+// *MIDDLEWARE* makes sure tables is occupied (used with "delete" function).
+function tableNotOccupied(req, res, next) {
   const table = res.locals.table
   if(!table.reservation_id) {
     return next({
@@ -102,28 +120,7 @@ function tableNotAvailable(req, res, next) {
   next();
 }
 
-// function tableIsOccupied(req, res, next) {
-//   const table = res.locals.table; 
-//   if (table.reservation_id === null) {
-//     return next({
-//       status: 400,
-//       message: `Error: Table ${table.table_name} is not occupied and therefor cannot be cleared.`
-//     });
-//   }
-//   next();
-// }
-
-// function tableIsNotOccupied(req, res, next) {
-//   const table = res.locals.table;
-//   if (table.reservation_id) {
-//     return next({
-//       status: 200,
-//       message: `${table.table_id} is occupied.`
-//     })
-//   }
-//   next();
-// }
-
+// *MIDDLEWARE* checks if reservation id exists on table (used with "update" function).
 async function reservationExists(req, res, next) {
     const { data } = req.body;
 
@@ -148,6 +145,7 @@ async function reservationExists(req, res, next) {
     })
 }
 
+// *MIDDLEWARE* checking if table capacity can fit amount of people upon update request (used with "update" function). 
 function tableHasCapacity(req, res, next) {
   const table = res.locals.table;
   const people = res.locals.people;
@@ -160,6 +158,7 @@ function tableHasCapacity(req, res, next) {
   next();
 }
 
+// *THEE update function* update a table.
 async function update(req, res, next) {
   const table = res.locals.table;
   const { reservation_id } = req.body.data;
@@ -172,6 +171,7 @@ async function update(req, res, next) {
   res.status(200).json({ data: data });
 }
 
+// *MIDDLEWARE* making sure reservation is not already seated (used with "update" function).
 async function reservationIsNotAlreadySeated(req, res, next) {
   const reservation = await reservationService.read(req.body.data.reservation_id);
   if(reservation.status == "seated") return next({status:400, message: `Reservation is already seated`});
@@ -179,6 +179,7 @@ async function reservationIsNotAlreadySeated(req, res, next) {
   next();
 }
 
+// *THEE destroy function* updates a table's reservation id to "null".
 async function destroy(req, res, next) {
   const table = res.locals.table;
   await service.delete(table.table_id);
@@ -198,5 +199,5 @@ module.exports = {
     asyncErrorBoundary(reservationIsNotAlreadySeated),
     asyncErrorBoundary(update),
   ],
-  delete: [asyncErrorBoundary(tableExists), tableNotAvailable, asyncErrorBoundary(destroy)],
+  delete: [asyncErrorBoundary(tableExists), tableNotOccupied, asyncErrorBoundary(destroy)],
 };

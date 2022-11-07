@@ -9,13 +9,12 @@
  const methodNotAllowed = require("../errors/methodNotAllowed");
  
 /*     
- root "/" = "/reservations"   
+ root "/" === "/reservations"   
     ** Check app.js line 18
 */
 
- router.route("/").get(controller.list).post(controller.create).all(methodNotAllowed);
- router.route("/:reservation_id").get(controller.read).put(controller.editReservation).all(methodNotAllowed);
- router.route("/:reservation_id/status").put(controller.update).all(methodNotAllowed);
+router.route("/").get(controller.list).post(controller.create).all(methodNotAllowed);
+router.route("/:reservation_id").get(controller.read).put(controller.editReservation).all(methodNotAllowed);
+router.route("/:reservation_id/status").put(controller.update).all(methodNotAllowed);
 
- 
- module.exports = router;
+module.exports = router;

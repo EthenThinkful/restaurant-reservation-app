@@ -2,7 +2,7 @@ const knex = require("../db/connection");
 
 // KNEX QUERIES!
 
-// List function to display all reservations dependent on current date & status
+// *list function* to display all reservations dependent on current date & status.
 async function list(date) {
     return knex("reservations")
         .select("*")
@@ -11,7 +11,7 @@ async function list(date) {
         .orderBy("reservation_time");
 }
 
-// Search function to display all reservations by phone number (ordered by reservation date)
+// *search function* to display all reservations by phone number (ordered by reservation date).
 function search(mobile_number) {
     return knex("reservations")
       .whereRaw(
@@ -21,7 +21,7 @@ function search(mobile_number) {
       .orderBy("reservation_date");
   }
 
-// Creating a reservation
+// basic create function
 async function create(reservation) {
     return knex("reservations")
         .insert(reservation)
@@ -29,7 +29,7 @@ async function create(reservation) {
         .then((reservations) => reservations[0])
 }
 
-// Essential read function used to identify a specific reservation
+// essential read function used to identify a specific reservation
 async function read(reservation_id) {
     return knex("reservations")
     .select("*")
@@ -37,6 +37,7 @@ async function read(reservation_id) {
     .first()
 }
 
+// update an existing reservation
 async function update(newReservation) {
     return knex("reservations")
         .select("*")
@@ -45,6 +46,7 @@ async function update(newReservation) {
         .then((x) => x[0]);
 }
 
+// edit an existing reservation
 async function editReservation(editableReservation) {
     return knex("reservations") 
     .select("*")

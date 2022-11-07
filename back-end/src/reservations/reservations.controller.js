@@ -1,10 +1,10 @@
-/* Most of these functions rely on knex queries in "./reservations.service".
- asyncErrorBoundary() created for safe guarding all async functions, specifically within this controller file. */
+/* Most of these functions rely on knex queries made in "./reservations.service".
+ asyncErrorBoundary() created for safe guarding all async functions, specifically within the "controller file". */
 
 const service = require("./reservations.service");
 const asyncErrorBoundary = require("../errors/asyncErrorBoundary");
  
-/* ATTENTION: The "THEE" keyword (as shown at start of line 16) is used to indicate the major/main functions that are being exported */
+/* ATTENTION: The "THEE" keyword (as shown at start of line 16) is used to indicate the major/main functions that are being exported & used in the router file */
 
 /* Major/main export functions: 
 1.) list,
