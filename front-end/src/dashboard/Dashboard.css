@@ -135,8 +135,8 @@
 
   .reservations-list {
     margin-top: 2rem;
-    display: grid;
-    grid-template-areas: '1 1'
+    display: flex;
+    justify-content: center;
   }
 
   .tables_list {
