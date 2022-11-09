@@ -2,7 +2,7 @@ import React from "react";
 import ErrorAlert from "./ErrorAlert";
 import './ReservationForm.css'
 
-
+// Reservation form shared between Edit & NewReservations components!
 function ReservationForm({reservationData, submitHandler, cancelHandler, error, changeHandler}) {
 
     return (

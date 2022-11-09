@@ -22,7 +22,7 @@ function Edit() {
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState(null);
 
-  // Used for rendering current reservation data in order to be editable
+  // Used for rendering current reservation that we want to edit 
   useEffect(() => {
     const abortController = new AbortController();
 
@@ -61,6 +61,7 @@ function Edit() {
     history.goBack();
   };
 
+  // This is what edits (mutates the data in our database) a reservation directly
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -79,12 +80,11 @@ function Edit() {
     if (resData.error) {
       setError(resData.error);
     }
-
+    // Redirect to the dashboard page of the date on edited reservation
     if (response.status !== 400) {
       history.push(`/dashboard/?date=${formState.reservation_date}`);
     }
   };
-  console.log("ERRORRRRR", error);
 
   return (
     <div>

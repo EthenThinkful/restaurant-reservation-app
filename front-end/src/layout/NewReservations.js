@@ -7,6 +7,7 @@ const { REACT_APP_API_BASE_URL } = process.env;
 function NewReservations() {
   const history = useHistory();
 
+  // Initial values we want to fill within our formState useState()
   const initialFormState = {
     first_name: "",
     last_name: "",
@@ -16,15 +17,17 @@ function NewReservations() {
     people: 0,
   };
 
-  const [formState, setFormState] = useState(initialFormState);
+  const [formState, setFormState] = useState(initialFormState); 
   const [error, setError] = useState(null);
 
+  // This useEffect runs only if there is an error
   useEffect(() => {
     const abortController = new AbortController();
     setError(error);
     return () => abortController.abort();
   }, [error]);
 
+  // If the value that is being changed is 'people', that field may only be a number.
   const changeHandler = ({ target }) => {
     setFormState({
       ...formState,
@@ -38,6 +41,7 @@ function NewReservations() {
     history.goBack();
   };
 
+  // create a reservation!
   const submitHandler = async (e) => {
     e.preventDefault();
 
@@ -53,6 +57,7 @@ function NewReservations() {
     if (resData.error) {
       setError(resData.error);
     }
+    // re-sets our initial form state & takes us to the dashboard page of the reservation date
     if (response.status !== 400) {
       setFormState({ ...initialFormState });
       history.push(`/dashboard/?date=${resData.data.reservation_date}`);
@@ -61,6 +66,7 @@ function NewReservations() {
 
   return (
     <div>
+      {/* (NewReservations.js & Edit.js same the same form component) */}
       <ReservationForm
         reservationData={formState}
         setReservationData={setFormState}

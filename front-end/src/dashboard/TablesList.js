@@ -13,7 +13,7 @@ function TablesList({ table, loadDashboard }) {
     const onSubmitHandler = async (e) => {
         if (window.confirm("Is this table ready to seat new guests? This cannot be undone.")) {
             const response = await fetch(`${REACT_APP_API_BASE_URL}/tables/${table_id}/seat`, {
-                method: "DELETE",
+                method: "DELETE", // Remember, delete here was specified in the backend to *update a table's status column.
                 headers: {
                   "Content-type": "application/json",
                 },

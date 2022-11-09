@@ -6,15 +6,15 @@ import "./SeatTableForm.css";
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
-
+// Component used to seat a specific reservation at any given table
 function SeatTableForm() {
   const history = useHistory();
-  const { reservation_id } = useParams();
+  const { reservation_id } = useParams(); 
 
   const [tables, setTables] = useState([]);
   const [error, setError] = useState(undefined);
 
-  function loadTables() {
+  function loadTables() { // loads available tables
     const abortController = new AbortController();
     setError(null);
 
@@ -23,33 +23,34 @@ function SeatTableForm() {
     return () => abortController.abort();
   }
 
-  useEffect(loadTables, []);
+  useEffect(loadTables, []); // load tables upon page load
 
-  // the value selected in the form is used to determine where to send the data
-  // ex. PUT request to "/tables/1/seat" to update the reservation_id column in "tables"
+  // the value selected in the form ("select") is used to determine where to send the data
+  // ex. PUT request to "/tables/1/seat" updates the reservation_id (1) column in the "tables" table within the database
+
   const submitHandler = async (e) => {
     e.preventDefault();
     const form = document.getElementById("select");
-    const value = form.value;
+    const value = form.value; // value of any option within select 
     const response = await fetch(`${REACT_APP_API_BASE_URL}/tables/${value}/seat`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",
         },
         body: JSON.stringify({data: { reservation_id: reservation_id }}),
-      });
+      }); // update the reservation id 
       const resData = await response.json();
-      console.log(resData)
       if (resData.error) {
         setError(resData.error);
       }
-    
+      // end of request: return to dashboard
       if (response.status !== 400) {
         history.push(`/dashboard`);
       }
   };
 
   const tableOptions = tables.map((table, index) => {
+    // renders each option within the "select" form
     return (
       <option key={index} value={table.table_id}>
         {table.table_name} - {table.capacity}

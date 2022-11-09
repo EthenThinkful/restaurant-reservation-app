@@ -6,18 +6,21 @@ import "./Search.css";
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
+// Component used for searching a reservation by mobile number.
 function Search() {
   const [formState, setFormState] = useState("");
   const [reservations, setReservations] = useState([]);
   const [reservationsError, setReservationsError] = useState(null);
   const [altMessage, setAltMessage] = useState("")
 
+  // sets formState to inputed mobile number 
   function changeHandler({ target }) {
     setFormState(target.value);
   }
 
   async function submitHandler(e) {
     e.preventDefault();
+    // fetches reservation based off of formState value (mobile number)
     const response = await fetch(
       `${REACT_APP_API_BASE_URL}/reservations?mobile_number=${formState}`,
       {
@@ -28,11 +31,10 @@ function Search() {
       }
     );
     const resData = await response.json();
-    console.log(resData)
-    console.log(resData.data.length)
     if (resData.data.length === 0) {
       setAltMessage("No reservations found.");
   }
+  // sets "reservations" useState to hold the reservation(s) data
     if (response.status !== 400) {
         setReservations(resData.data);
     }
@@ -41,6 +43,7 @@ function Search() {
     }
   }
 
+  // holds/renders reservation card(s) data
   const reservationsList = reservations.map((reservation, index) => {
     return (
       <ReservationList
@@ -68,8 +71,10 @@ function Search() {
           className="background_color"
         ></input>
         </div>
+        {/* sends a get request */}
         <button type="submit" class="btn btn-secondary mt-3">Find</button>
       </form>
+      {/* renders the reservation card(s) found or displays "No reservations found." */}
       <div>{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
     </div>
   );

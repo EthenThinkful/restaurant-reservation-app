@@ -16,6 +16,7 @@ function TableForm() {
   const [formState, setFormState] = useState(initialFormState);
   const [error, setError] = useState(undefined);
 
+  // manipulates our formState values in order to create a new table
   const changeHandler = ({ target }) => {
     setFormState({ ...formState, [target.name]: target.value });
   };
@@ -25,6 +26,7 @@ function TableForm() {
     history.goBack();
   };
 
+  // create a new table 
   const submitHandler = async (e) => {
     e.preventDefault();
     formState.capacity = Number(formState.capacity);
