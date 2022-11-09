@@ -27,6 +27,8 @@
   }
 
   #card-title {
+    display: flex;
+    justify-content: center;
     margin-bottom: 2rem;
   }
 
@@ -43,10 +45,6 @@
         margin: 1rem 1rem;
         background-color: rgba(250, 246, 211, 0.5);
         
-      }
-    
-      #card-title {
-        margin-bottom: 2rem;
       }
     
       #card-text {
