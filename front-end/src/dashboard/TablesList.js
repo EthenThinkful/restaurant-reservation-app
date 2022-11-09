@@ -6,9 +6,10 @@ import "./TablesList.css"
 const { REACT_APP_API_BASE_URL } = process.env;
 
 function TablesList({ table, loadDashboard }) {
+  // deconstructing needed values from table
     const { table_name, capacity, reservation_id, table_id } = table;
     
-
+    // frees an existing table to be able to seat new guests 
     const onSubmitHandler = async (e) => {
         if (window.confirm("Is this table ready to seat new guests? This cannot be undone.")) {
             const response = await fetch(`${REACT_APP_API_BASE_URL}/tables/${table_id}/seat`, {
@@ -27,8 +28,9 @@ function TablesList({ table, loadDashboard }) {
         }
       }
 
+      // renders all tables
     return (
-        <div className="tables-list" >
+        <div className="tables-list">
         <div className="card_img">
           <img src="https://user-images.githubusercontent.com/104235709/198115095-b7d574ba-f876-4a3e-8a73-93dbdee749b8.png" alt="PTLogo"/>
         </div>

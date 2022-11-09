@@ -3,7 +3,7 @@ import ErrorAlert from "./ErrorAlert";
 import './ReservationForm.css'
 
 
-function ReservationForm({reservationData, setReservationData, submitHandler, cancelHandler, error, changeHandler}) {
+function ReservationForm({reservationData, submitHandler, cancelHandler, error, changeHandler}) {
 
     return (
         <div>

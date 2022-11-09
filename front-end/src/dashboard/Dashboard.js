@@ -8,19 +8,21 @@ import { formatAsTime, previous, next, today } from "../utils/date-time";
 import "./Dashboard.css";
 
 function Dashboard({ date }) {
+  // useStates for data manipulation
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
-  const [reservationsError, setReservationsError] = useState(null);
+  const [reservationsError, setReservationsError] = useState(null); 
 
-  const history = useHistory();
+  const history = useHistory(); // Declaration of useHistory (used on previous, next, & today buttons).
 
   const urlQuery = useLocation().search;
   const dateQueryStart = urlQuery.search("date") + 5;
   date = urlQuery.slice(dateQueryStart, dateQueryStart + 10) || date;
 
-  useEffect(loadDashboard, [date]);
+  useEffect(loadDashboard, [date]); // Only re-run loadDashboard if date changes 
 
-  function loadDashboard() {
+  // Loads our useState arrays for reservations / tables with any existing data
+  function loadDashboard() { 
     const abortController = new AbortController();
     setReservationsError(null);
 
@@ -35,6 +37,7 @@ function Dashboard({ date }) {
     return () => abortController.abort();
   }
 
+  // renders our reservations list
   const reservationsList = reservations.map((reservation, index) => (
     <ReservationsList
       key={index}
@@ -43,20 +46,24 @@ function Dashboard({ date }) {
     />
   ));
 
+  // renders our tables list 
   const tablesList = tables.map((table, index) => (
     <TablesList key={index} table={table} loadDashboard={loadDashboard} />
   ));
 
+  // (useHistory) redirects user to the previous date
   const previousHandler = () => {
     const previousDate = previous(date);
     history.push(`/dashboard?date=${previousDate}`);
   };
 
+  // (useHistory) redirects user to the next date
   const nextHandler = () => {
     const nextDate = next(date);
     history.push(`/dashboard?date=${nextDate}`);
   };
 
+  // (useHistory) redirects user to today's date
   const todayHandler = () => {
     const todayDate = today();
     history.push(`/dashboard?date=${todayDate}`);
@@ -81,6 +88,7 @@ function Dashboard({ date }) {
         <h4 className="mb-0">Reservations for {date}</h4>
       </div>
       <div className="row my-4">
+        {/* useHistory buttons */}
         <button
           type="button"
           name="previous-btn"
@@ -106,12 +114,13 @@ function Dashboard({ date }) {
           Today
         </button>
       </div>
+      {/* Make sure any errors are displayed */}
       {reservationsError ? (
         <ErrorAlert errorMessage={reservationsError} />
       ) : (
         <></>
       )}
-
+      {/* Lets user know if there aren't any reservations with a message or renders any existing reservations. */}
       <div className="reservations-list">
         {reservationsList.length === 0 ? (
           <div id="no-reservations">
@@ -121,7 +130,7 @@ function Dashboard({ date }) {
           reservationsList
         )}
       </div>
-
+      {/* Lets user know if there aren't any tables with a message or renders any existing tables. */}
       <div className="tables_list">
         {tablesList.length === 0 ? (
           <h3 className="ml-5">No Tables Listed</h3>
