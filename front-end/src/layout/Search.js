@@ -75,7 +75,7 @@ function Search() {
         <button type="submit" class="btn btn-secondary mt-3">Find</button>
       </form>
       {/* renders the reservation card(s) found or displays "No reservations found." */}
-      <div>{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
+      <div className="reservationsList">{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
     </div>
   );
 }

@@ -21,7 +21,7 @@
 
 @media screen and (min-width: 280px) {
   #reservation-card {
-    padding: 2rem 2rem 4rem 4rem;
+    padding: 2rem 2rem 2rem 2rem;
     margin: 1rem 1rem;
     background-color: rgba(250, 246, 211, 0.5);
   }
