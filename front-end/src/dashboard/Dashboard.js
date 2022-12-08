@@ -84,6 +84,8 @@ function Dashboard({ date }) {
         <div id="restaurant-picture" className="display-picture"></div>
         </div>
         </div>
+        {/* adding... below */}
+        <div className="reservation-date">
       <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
         <h4 className="mb-0">Reservations for {date}</h4>
       </div>
@@ -114,15 +116,18 @@ function Dashboard({ date }) {
           Today
         </button>
       </div>
+      
       {/* Make sure any errors are displayed */}
       {reservationsError ? (
         <ErrorAlert errorMessage={reservationsError} />
       ) : (
         <></>
       )}
+      </div>
       {/* Lets user know if there aren't any reservations with a message or renders any existing reservations. */}
       <div className="reservations-list">
         {reservationsList.length === 0 ? (
+          // changed below
           <div id="no-reservations">
             <h5>There are no reservations for this date.</h5>
           </div>

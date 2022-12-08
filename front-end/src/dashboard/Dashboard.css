@@ -128,8 +128,9 @@
     width: 25rem;
     border-radius: 25%;
     border-bottom: rgb(0, 0, 0) solid 1px;
-    margin: 6rem 6rem 6rem 47rem;
-    
+    /* margin: 6rem 6rem 6rem 47rem; */
+    /* added below */
+    margin: 0% 0% 5% 40%;
     
   }
 
@@ -145,6 +146,12 @@
     margin-left: 2rem;
     margin-right: 2rem;
   }
+
+  .reservation-date {
+  /* added */
+    margin: 0% 0% 0% 0%;
+  }
+
 
 
 }

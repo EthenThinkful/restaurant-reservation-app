@@ -47,6 +47,7 @@ function TableForm() {
       setFormState({ ...initialFormState });
       history.push(`/dashboard`);
     }
+    
   };
 
   return (
