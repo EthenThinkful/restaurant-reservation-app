@@ -112,6 +112,13 @@
     margin-top: 4rem;
   }
 
+  .restaurant-picture {
+    height: 40%;
+    width: 40%;
+    border-radius: 5%;
+    background-size: cover;
+  }
+
   .description {
     font-family: "Poppins Light";
     font-size: 17px;
