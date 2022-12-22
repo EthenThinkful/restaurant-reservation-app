@@ -20,7 +20,6 @@
 }
 
 @media screen and (min-width: 280px) {
-
   .animated-text {
     background-image: -webkit-linear-gradient(
       DarkSalmon 50%,
@@ -34,7 +33,7 @@
     font-size: 40px;
     display: flex;
     justify-content: center;
-    margin-top: 1rem;
+    margin: 1rem;
   }
 
   @-webkit-keyframes stripes {
@@ -69,30 +68,27 @@
     font-size: 14px;
     display: flex;
     justify-content: center;
-    margin: 2rem 2rem 2rem 3rem;
+    margin: 2% 25% 10% 25%;
   }
 
-  #restaurant-picture {
-    height: 15rem;
-    width: 15rem;
+  .restaurant-picture {
+    height: 12.5rem;
+    width: 14.5rem;
     border-radius: 25%;
     background-size: cover;
-    margin: 0rem 0rem 2rem 5.5rem;
+    margin-bottom: 3rem;
   }
 
   .message-window {
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .display-picture {
-    background-image: url("https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg");
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   #no-reservations {
     margin: 1rem 2rem 1rem 2rem;
     color: rgba(255, 38, 0, 0.5);
-    display: flex; 
+    display: flex;
     justify-content: center;
   }
 
@@ -114,23 +110,13 @@
     animation: stripes 2s linear infinite;
     font-size: 60px;
     margin-top: 4rem;
-    
   }
 
   .description {
     font-family: "Poppins Light";
     font-size: 17px;
-    margin: 4rem 40rem 4rem 42.5rem;
-  }
-
-  #restaurant-picture {
-    height: 25rem;
-    width: 25rem;
-    border-radius: 25%;
-    border-bottom: rgb(0, 0, 0) solid 1px;
-    /* margin: 6rem 6rem 6rem 47rem; */
-    /* added below */
-    margin: 0% 0% 5% 40%;
+    display: flex;
+    justify-content: center;
     
   }
 
@@ -142,16 +128,27 @@
 
   .tables_list {
     display: grid;
-    grid-template-areas: '1 1 1 1';
+    grid-template-areas: "1 1 1 1";
     margin-left: 2rem;
     margin-right: 2rem;
   }
 
-  .reservation-date {
-  /* added */
-    margin: 0% 0% 0% 0%;
+  
+}
+
+@media screen and (min-width: 1195px) {
+  .restaurant-picture {
+    height: 40%;
+    width: 40%;
+    border-radius: 5%;
+    background-size: cover;
   }
 
-
-
+  .description {
+    font-family: "Poppins Light";
+    font-size: 17px;
+    display: flex;
+    justify-content: center;
+    margin: 5% 25%;
+  }
 }
