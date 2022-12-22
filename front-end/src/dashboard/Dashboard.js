@@ -11,7 +11,7 @@ function Dashboard({ date }) {
   // useStates for data manipulation
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
-  const [reservationsError, setReservationsError] = useState(null); 
+  const [reservationsError, setReservationsError] = useState(null);
 
   const history = useHistory(); // Declaration of useHistory (used on previous, next, & today buttons).
 
@@ -19,10 +19,10 @@ function Dashboard({ date }) {
   const dateQueryStart = urlQuery.search("date") + 5;
   date = urlQuery.slice(dateQueryStart, dateQueryStart + 10) || date;
 
-  useEffect(loadDashboard, [date]); // Only re-run loadDashboard if date changes 
+  useEffect(loadDashboard, [date]); // Only re-run loadDashboard if date changes
 
   // Loads our useState arrays for reservations / tables with any existing data
-  function loadDashboard() { 
+  function loadDashboard() {
     const abortController = new AbortController();
     setReservationsError(null);
 
@@ -46,7 +46,7 @@ function Dashboard({ date }) {
     />
   ));
 
-  // renders our tables list 
+  // renders our tables list
   const tablesList = tables.map((table, index) => (
     <TablesList key={index} table={table} loadDashboard={loadDashboard} />
   ));
@@ -75,54 +75,57 @@ function Dashboard({ date }) {
         <div className="animated-text">
           {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
         </div>
-        <div className="description-photo">
+        
           <div className="description">
-          Simplify your Restaurant Management. A robust
-          and intuitive app that helps you manage your reservations, tables, and
-          organization.
+            Simplify your Restaurant Management. A robust and intuitive app that
+            helps you manage your reservations, tables, and organization.
           </div>
-        <div id="restaurant-picture" className="display-picture"></div>
+          <img
+            className="restaurant-picture"
+            src="https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"
+            alt="restaurantPhoto"
+          />
         </div>
-        </div>
-        {/* adding... below */}
-        <div className="reservation-date">
-      <div className="col-12 flex-wrap d-flex flex-wrap justify-content-center">
-        <h4 className="mb-0">Reservations for {date}</h4>
-      </div>
-      <div className="row my-4">
-        {/* useHistory buttons */}
-        <button
-          type="button"
-          name="previous-btn"
-          className="ml-auto btn btn-secondary"
-          onClick={previousHandler}
-        >
-          Previous
-        </button>
-        <button
-          type="button"
-          name="next-btn"
-          className="mx-3 btn btn-secondary"
-          onClick={nextHandler}
-        >
-          Next
-        </button>
-        <button
-          type="button"
-          name="today"
-          className="mr-auto btn btn-secondary"
-          onClick={todayHandler}
-        >
-          Today
-        </button>
-      </div>
       
-      {/* Make sure any errors are displayed */}
-      {reservationsError ? (
-        <ErrorAlert errorMessage={reservationsError} />
-      ) : (
-        <></>
-      )}
+      {/* adding... below */}
+      <div className="reservation-date">
+        <div className="col-12 d-flex flex-wrap justify-content-center">
+          <h4 className="mb-0">Reservations for {date}</h4>
+        </div>
+        <div className="row my-4">
+          {/* useHistory buttons */}
+          <button
+            type="button"
+            name="previous-btn"
+            className="ml-auto btn btn-secondary"
+            onClick={previousHandler}
+          >
+            Previous
+          </button>
+          <button
+            type="button"
+            name="next-btn"
+            className="mx-3 btn btn-secondary"
+            onClick={nextHandler}
+          >
+            Next
+          </button>
+          <button
+            type="button"
+            name="today"
+            className="mr-auto btn btn-secondary"
+            onClick={todayHandler}
+          >
+            Today
+          </button>
+        </div>
+
+        {/* Make sure any errors are displayed */}
+        {reservationsError ? (
+          <ErrorAlert errorMessage={reservationsError} />
+        ) : (
+          <></>
+        )}
       </div>
       {/* Lets user know if there aren't any reservations with a message or renders any existing reservations. */}
       <div className="reservations-list">

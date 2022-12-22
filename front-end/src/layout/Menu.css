@@ -1,5 +1,6 @@
-/* FONTS */
 
+
+/* FONTS */
 @font-face {
   font-family: 'Poppins Regular';
   src: url('../fonts/Poppins-Regular.ttf')
@@ -130,7 +131,6 @@ font-family: 'Poppins Regular';
   #navbarSupportedContent20 {
     display: flex;
     justify-content: flex-end;
-    
   }
 
   .navBar-nav {
@@ -153,7 +153,9 @@ font-family: 'Poppins Regular';
     margin-top: 2rem;
     
   }
+}
 
+@media screen and (min-width: 1024px) {
   #logo {
     color: DarkSalmon;
     font-size: 40px;
@@ -163,5 +165,5 @@ font-family: 'Poppins Regular';
     width: fit-content;
     margin-left: 14rem;
   }
-
+  
 }
