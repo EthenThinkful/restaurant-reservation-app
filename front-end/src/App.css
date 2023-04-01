@@ -43,7 +43,7 @@ textarea {
 }
 
 .section {
-  padding: 0rem 0 2rem;
+  padding: 0rem 0 0rem;
 }
 
 button {
@@ -53,7 +53,7 @@ button {
 }
 
 .container {
-  max-width: 968px;
+  /* max-width: 968px; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -81,7 +81,7 @@ button {
       }
     
       .section {
-        padding: 0rem 0 2rem;
+        padding: 0rem 0 0rem;
       }
     
       .section__subtitle {
@@ -90,6 +90,7 @@ button {
     }
 
     @media screen and (max-width: 576px) {
+      
     }
     
     /* For small devices */
