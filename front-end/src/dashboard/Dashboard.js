@@ -70,22 +70,24 @@ function Dashboard({ date }) {
   };
 
   return (
-    <main>
-      <div className="message-window">
-        <div className="animated-text">
+    <section className="home section">
+      {/* <div className="message-window section"> */}
+      <div className="animated-text">
           {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
         </div>
-        
-          <div className="description">
-            Simplify your Restaurant Management. A robust and intuitive app that
-            helps you manage your reservations, tables, and organization.
-          </div>
-          <img
+      <div className="home__container container grid">
+        {/* <div className="home__content grid"> */}
+        <img
             className="restaurant-picture"
             src="https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"
             alt="restaurantPhoto"
           />
+          <div className="description pl-8">
+            Simplify your Restaurant Management. A robust and intuitive app that
+            helps you manage your reservations, tables, and organization.
+          </div>
         </div>
+      {/* </div> */}
       
       {/* adding... below */}
       <div className="reservation-date">
@@ -146,7 +148,8 @@ function Dashboard({ date }) {
           tablesList
         )}
       </div>
-    </main>
+      {/* </div> */}
+    </section>
   );
 }
 
