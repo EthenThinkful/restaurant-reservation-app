@@ -1,23 +1,105 @@
-@media screen and (max-width: 992px) {
-    :root {
-      --big-font-size: 2.75rem;
-      --h1-font-size: 1.5rem;
-      --h2-font-size: 1.25rem;
-      --h3-font-size: 1rem;
-      --normal-font-size: 0.938rem;
-      --small-font-size: 0.813rem;
-      --smaller-font-size: 0.75rem;
-    }
-  }
 
-  @media screen and (max-width: 992px) {
     :root {
-      --big-font-size: 2.75rem;
-      --h1-font-size: 1.5rem;
-      --h2-font-size: 1.25rem;
-      --h3-font-size: 1rem;
-      --normal-font-size: 0.938rem;
-      --small-font-size: 0.813rem;
-      --smaller-font-size: 0.75rem;
+      --big-font-size: 3.5rem;
+  --h1-font-size: 2.25rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --smaller-font-size: 0.813rem;
+  --tiny-font-size: 0.625rem;
+
+      --mb-0-25: 0.25rem;
+  --mb-0-5: 0.5rem;
+  --mb-0-75: 0.75rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --mb-2-5: 2.5rem;
+  --mb-3: 3rem;
+
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+
     }
-  } 
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body,
+button,
+input,
+textarea {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+.section {
+  padding: 0rem 0 2rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.container {
+  max-width: 968px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+    @media screen and (max-width: 992px) {
+      :root {
+        --big-font-size: 2.75rem;
+        --h1-font-size: 1.5rem;
+        --h2-font-size: 1.25rem;
+        --h3-font-size: 1rem;
+        --normal-font-size: 0.938rem;
+        --small-font-size: 0.813rem;
+        --smaller-font-size: 0.75rem;
+      }
+      .container {
+        margin-left: var(--mb-1-5);
+        margin-right: var(--mb-1-5);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      body {
+        margin: 0 0 var(--header-height) 0;
+      }
+    
+      .section {
+        padding: 0rem 0 2rem;
+      }
+    
+      .section__subtitle {
+        margin-bottom: var(--mb-3);
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+    }
+    
+    /* For small devices */
+    @media screen and (max-width: 350px) {
+      :root {
+        --big-font-size: 2.25rem;
+      }
+    
+      .container {
+        margin-left: var(--mb-1);
+        margin-right: var(--mb-1);
+      }
+    }

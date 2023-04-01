@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./Menu.css";
 /**
  * Defines the menu for this application.
@@ -7,7 +8,8 @@ import "./Menu.css";
  */
 
 function Menu() {
-
+  const [Toggle, showMenu] = useState(false);
+  
   return (
     
     <header className="header">
@@ -26,7 +28,7 @@ function Menu() {
 
       {/* hamburger menu button for mobile view */}
       <button
-        className="navbar-toggler first-button"
+        className="navbar-toggler burger__menu"
         type="button"
         data-toggle="collapse"
         data-target="#navbarSupportedContent20"

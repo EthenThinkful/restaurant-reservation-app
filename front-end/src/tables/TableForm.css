@@ -1,8 +1,12 @@
 @media screen and (min-width: 280px) {
 
+    .table__form {
+        margin-top: 10rem;
+    }
+
 .center {
     text-align: center;
-    border: black solid 1px;
+    border: rgb(255, 193, 112);
     border-radius: 2rem;
     padding: 30px;
     margin: 2rem;

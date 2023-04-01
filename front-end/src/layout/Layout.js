@@ -13,17 +13,12 @@ import Routes from "./Routes";
 
 function Layout() {
   return (
-    <div>
-      <div>
-        <div className="fixed_page">
-          <Menu />
+    <>
+        <Menu />
+        <div className="main">
+        <Routes />
         </div>
-
-        <div className="fixed_page">
-          <Routes />
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 
