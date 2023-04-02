@@ -2,6 +2,7 @@ import React from "react";
 import Menu from "./Menu";
 import Routes from "./Routes";
 
+
 /**
  * Defines the main layout of the application.
  *
@@ -15,6 +16,7 @@ function Layout() {
   return (
     <>
         <Menu />
+    
         <div className="main">
         <Routes />
         </div>

@@ -6,8 +6,9 @@ import ReservationsList from "./ReservationsList";
 import TablesList from "./TablesList";
 import { formatAsTime, previous, next, today } from "../utils/date-time";
 import "./Dashboard.css";
+import '../layout/Menu';
 
-function Dashboard({ date }) {
+function Dashboard({ date, Toggle }) {
   // useStates for data manipulation
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
@@ -69,9 +70,10 @@ function Dashboard({ date }) {
     history.push(`/dashboard?date=${todayDate}`);
   };
 
+  
   return (
     <section className="home section">
-      <div className="animated-text">
+      <div className={Toggle ? "animated-text-2" : "animated-text"}>
           {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
       </div>
       <div className="home__container container">
