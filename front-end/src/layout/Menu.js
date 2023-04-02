@@ -1,5 +1,7 @@
 import React from "react";
+import { useState } from "react";
 import "./Menu.css";
+import Hamburger from "./Hamburger";
 /**
  * Defines the menu for this application.
  *
@@ -7,9 +9,15 @@ import "./Menu.css";
  */
 
 function Menu() {
+
+  const [Toggle, showMenu] = useState(false);
   
   return (
-    
+
+    <>
+    <div className={Toggle ? "no-show-menu" : "show-menu"}>
+    <Hamburger Toggle={Toggle}/>
+    </div>
     <header className="header">
       <div className="nav container">
       <a className="navbar-brand" id="logo" href="/">
@@ -23,8 +31,7 @@ function Menu() {
           />
         </div>
       </a>
-
-      {/* hamburger menu button for mobile view */}
+      {/* hamburger menu
       <button
         className="navbar-toggler burger__menu"
         type="button"
@@ -34,15 +41,18 @@ function Menu() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        {/* hamburger menu spans */}
         <div className="animated-icon1">
           <span></span>
           <span></span>
           <span></span>
         </div>
       </button>
+      end of hamburger menu */}
       {/* actual menu starts here */}
-      {/* <div className="collapse navbar-collapse" id="navbarSupportedContent20"> */}
+      <button>
+      <i className="uil uil-bars icon__font"
+      onClick={() => showMenu(!Toggle)}></i>
+      </button>
         <div className="nav__menu">
         <ul className="nav__list grid">
           {/* link to dashboard */}
@@ -73,6 +83,7 @@ function Menu() {
       </div>
       </div>
     </header>
+    </>
   );
 }
 
