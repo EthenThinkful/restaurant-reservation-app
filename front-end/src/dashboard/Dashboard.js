@@ -105,7 +105,7 @@ function Dashboard({ date, Toggle }) {
       </div>
       
       {/* adding... below */}
-      <div className="reservation-date container">
+      <div className="reservation-date">
         <div className=" d-flex  justify-content-center">
           <h4 className="mb-0">Reservations for {date}</h4>
         </div>
@@ -145,7 +145,7 @@ function Dashboard({ date, Toggle }) {
         )}
       </div>
       {/* Lets user know if there aren't any reservations with a message or renders any existing reservations. */}
-      <div className="reservations-list container">
+      <div className="reservations-list ">
         {reservationsList.length === 0 ? (
           // changed below
           <div id="no-reservations">
@@ -156,7 +156,7 @@ function Dashboard({ date, Toggle }) {
         )}
       </div>
       {/* Lets user know if there aren't any tables with a message or renders any existing tables. */}
-      <div className="tables_list container">
+      <div className="tables_list ">
         {tablesList.length === 0 ? (
           <h3 className="ml-5">No Tables Listed</h3>
         ) : (
