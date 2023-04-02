@@ -137,6 +137,9 @@ button:focus {
 }
 
 @media screen and (max-width: 992px) {
+  .burger {
+    background-color: rgb(247, 244, 220);
+  }
   .nav__menu {
     display: none;
   }

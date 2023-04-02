@@ -49,7 +49,7 @@ function Menu() {
       </button>
       end of hamburger menu */}
       {/* actual menu starts here */}
-      <button>
+      <button className="burger">
       <i className="uil uil-bars icon__font"
       onClick={() => showMenu(!Toggle)}></i>
       </button>
