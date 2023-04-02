@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import "./Menu.css";
 /**
  * Defines the menu for this application.
@@ -8,7 +7,6 @@ import "./Menu.css";
  */
 
 function Menu() {
-  const [Toggle, showMenu] = useState(false);
   
   return (
     
