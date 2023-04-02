@@ -70,26 +70,41 @@ function Dashboard({ date }) {
   };
 
   return (
-    <main>
-      <div className="message-window">
-        <div className="animated-text">
+    <section className="home section">
+      <div className="animated-text">
           {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
-        </div>
-        
-          <div className="description">
-            Simplify your Restaurant Management. A robust and intuitive app that
-            helps you manage your reservations, tables, and organization.
-          </div>
-          <img
+      </div>
+      <div className="home__container container">
+        <div className="home__content">
+        <img
             className="restaurant-picture"
             src="https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"
             alt="restaurantPhoto"
           />
-        </div>
+          <img
+            className="restaurant-pictureTwo"
+            src="https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"
+            alt="restaurantPhoto"
+          />
+          
+            <h1 className="home__title">Periodic Tables 
+          <div className="description">
+            Simplify your Restaurant Management. A robust and intuitive app that
+            helps you manage your reservations, tables, and organization.
+          </div>
+          </h1>
+          </div>
+          <h1 className="home__titleTwo">Periodic Tables 
+          <div className="descriptionTwo">
+            Simplify your Restaurant Management. A robust and intuitive app that
+            helps you manage your reservations, tables, and organization.
+          </div>
+          </h1>
+      </div>
       
       {/* adding... below */}
-      <div className="reservation-date">
-        <div className="col-12 d-flex flex-wrap justify-content-center">
+      <div className="reservation-date container">
+        <div className=" d-flex  justify-content-center">
           <h4 className="mb-0">Reservations for {date}</h4>
         </div>
         <div className="row my-4">
@@ -97,7 +112,7 @@ function Dashboard({ date }) {
           <button
             type="button"
             name="previous-btn"
-            className="ml-auto btn btn-secondary"
+            className="ml-auto btn today__button"
             onClick={previousHandler}
           >
             Previous
@@ -105,7 +120,7 @@ function Dashboard({ date }) {
           <button
             type="button"
             name="next-btn"
-            className="mx-3 btn btn-secondary"
+            className="mx-3 btn today__button"
             onClick={nextHandler}
           >
             Next
@@ -113,7 +128,7 @@ function Dashboard({ date }) {
           <button
             type="button"
             name="today"
-            className="mr-auto btn btn-secondary"
+            className="mr-auto btn today__button"
             onClick={todayHandler}
           >
             Today
@@ -128,7 +143,7 @@ function Dashboard({ date }) {
         )}
       </div>
       {/* Lets user know if there aren't any reservations with a message or renders any existing reservations. */}
-      <div className="reservations-list">
+      <div className="reservations-list container">
         {reservationsList.length === 0 ? (
           // changed below
           <div id="no-reservations">
@@ -139,14 +154,14 @@ function Dashboard({ date }) {
         )}
       </div>
       {/* Lets user know if there aren't any tables with a message or renders any existing tables. */}
-      <div className="tables_list">
+      <div className="tables_list container">
         {tablesList.length === 0 ? (
           <h3 className="ml-5">No Tables Listed</h3>
         ) : (
           tablesList
         )}
       </div>
-    </main>
+    </section>
   );
 }
 

@@ -1,15 +1,26 @@
-@media screen and (min-width: 280px) {
+
 
 .search_center {
     text-align: center;
     padding: 0px;
     color: darksalmon;
+    margin-top: 10rem;
 }
+
+.search__button {
+    background-color: rgb(143, 143, 143);
+    color: white;
+  }
+
+.search__button:hover {
+    background-color: rgb(255, 193, 112);
+    color: white;
+  }
 
 #mobile_number {
     padding: 10px;
     border-radius: 15px;
-    border-color: orange;
+    border-color: rgb(255, 193, 112);
 }
 
 #mobile_number:focus {
@@ -29,5 +40,4 @@
 
 .background_color {
     background-color: rgba(250, 246, 211, 0.5);
-}
 }

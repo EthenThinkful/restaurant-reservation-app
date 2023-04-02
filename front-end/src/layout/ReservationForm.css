@@ -1,4 +1,8 @@
-@media screen and (min-width: 280px) {
+
+    .res__form {
+        margin-top: 10rem;
+        border-color: rgb(255, 193, 112);
+    }
     .center {
         text-align: center;
         margin: 1rem;
@@ -13,7 +17,7 @@
         background-color: white;
         padding: 10px;
         border-radius: 15px;
-        border-color: orange;
+        border-color: rgb(255, 193, 112);
     }
 
 
@@ -22,10 +26,17 @@
         outline: none;
     }
     
-    .button-position {
+    .res__button {
         text-align: center;
         margin: 1rem;
+        background-color: rgb(143, 143, 143);
+        color: white;
     }
+
+    .res__button:hover {
+        background-color: rgb(255, 193, 112);
+        color: white;
+      }
 
     #needs-validation center {
         display: block;
@@ -37,4 +48,3 @@
         display: block;
         margin-left: 0;
     }
-}

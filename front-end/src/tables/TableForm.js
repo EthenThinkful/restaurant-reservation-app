@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
-import "./TableForm";
+import "./TableForm.css";
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
@@ -51,7 +51,7 @@ function TableForm() {
   };
 
   return (
-    <div>
+    <div className="table__form">
     {error ? <ErrorAlert errorMessage={error}/> : <></>}
     <div className="form-group center">
       <form onSubmit={submitHandler}>
@@ -80,14 +80,14 @@ function TableForm() {
           type="button"
           name="cancel-btn"
           onClick={cancelHandler}
-          className="btn btn-secondary button-position mt-3"
+          className="btn res__button mt-3"
         >
           Cancel
         </button>
         <button
           type="submit"
           name="submit-btn"
-          className="btn btn-secondary button-position mt-3"
+          className="btn res__button mt-3"
         >
           Submit
         </button>
