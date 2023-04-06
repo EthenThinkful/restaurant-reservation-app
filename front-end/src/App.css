@@ -28,6 +28,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      /* outline: 1px solid red; */
     }
 
     html {
@@ -102,5 +103,9 @@ button {
       /* .container {
         margin-left: var(--mb-1);
         margin-right: var(--mb-1);
+      } */
+
+      /* .container {
+        margin: 0;
       } */
     }

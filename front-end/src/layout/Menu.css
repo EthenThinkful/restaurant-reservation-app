@@ -31,6 +31,7 @@ font-family: 'Poppins Regular';
         box-shadow: 0 10px 6px -6px rgb(224, 224, 224);  
         font-family: 'Poppins Regular'; 
         height: 7rem;
+        overflow: hidden;
 }
 
 .nav {
@@ -232,6 +233,11 @@ button:focus {
   #logo {
     margin-left: 0rem;
   }
+
+  /* .header {
+    width: 375px;
+  } */
+
 }
 
 @media screen and (max-width: 350px) {
