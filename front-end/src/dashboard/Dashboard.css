@@ -120,8 +120,8 @@ h4 {
 }
 
 .restaurant-picture {
-  height: auto;
-  width: auto; 
+  /* height: auto;
+  width: auto;  */
   /* border-radius: 25%; */
   float: left;
   animation: profile__animate 8s ease-in-out infinite 1s;
@@ -303,13 +303,13 @@ align-items: center;
 
 @media screen and (max-width: 576px) {
   .restaurant-pictureTwo {
-    height: auto;
-  width: auto; 
+    /* height: auto;
+  width: auto;  */
   /* border-radius: 25%; */
   float: none;
   animation: profile__animate 8s ease-in-out infinite 1s;
-  width: 333px;
-  height: 222px;
+  /* width: 333px;
+  height: 222px; */
   margin: 0rem 0rem 0rem 0rem;
   display: block;
   }
@@ -351,6 +351,16 @@ align-items: center;
     /* color: rgb(143, 143, 143); */
     color: rgb(255, 193, 112);
     display: block;
+  }
+
+  .home__container {
+    row-gap: 1rem;
+    display: grid;
+    width:auto;
+  }
+
+  .row {
+    width: 375px;
   }
 
 }
