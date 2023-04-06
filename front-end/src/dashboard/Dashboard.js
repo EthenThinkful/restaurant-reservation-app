@@ -156,7 +156,7 @@ function Dashboard({ date, Toggle }) {
         )}
       </div>
       {/* Lets user know if there aren't any tables with a message or renders any existing tables. */}
-      <div className="tables_list ">
+      <div className="tables_list">
         {tablesList.length === 0 ? (
           <h3 className="ml-5">No Tables Listed</h3>
         ) : (

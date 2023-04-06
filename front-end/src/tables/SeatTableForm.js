@@ -75,13 +75,13 @@ function SeatTableForm() {
           <br />
           <button
             type="button"
-            className="btn btn-secondary"
+            className="btn today__button"
             onClick={() => history.goBack()}
             class="btn btn-secondary"
           >
             Cancel
           </button>
-          <button type="submit" className="btn btn-primary" class="btn btn-secondary ml-3">
+          <button type="submit" className="btn today__button" class="btn btn-secondary ml-3">
             Submit
           </button>
         </form>
