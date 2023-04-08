@@ -28,7 +28,7 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      /* outline: 1px solid red; */
+      /* outline: 1px solid red; FOR DEBUGGING OVERFLOWS */ 
     }
 
     html {
@@ -43,10 +43,6 @@ textarea {
   font-size: var(--normal-font-size);
 }
 
-/* .section {
-  padding: 0rem 0rem 0rem 0rem;
-} */
-
 button {
   cursor: pointer;
   border: none;
@@ -54,7 +50,6 @@ button {
 }
 
 .container {
-  /* max-width: 968px; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -70,10 +65,6 @@ button {
         --small-font-size: 0.813rem;
         --smaller-font-size: 0.75rem;
       }
-      /* .container {
-        margin-left: var(--mb-1-5);
-        margin-right: var(--mb-1-5);
-      } */
     }
 
     @media screen and (max-width: 768px) {
@@ -99,13 +90,4 @@ button {
       :root {
         --big-font-size: 2.25rem;
       }
-    
-      /* .container {
-        margin-left: var(--mb-1);
-        margin-right: var(--mb-1);
-      } */
-
-      /* .container {
-        margin: 0;
-      } */
     }

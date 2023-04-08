@@ -114,15 +114,9 @@ h4 {
   margin-top: 1rem;
   margin-bottom: 10rem;
   font-weight: 300;
-  /* display: flex;
-  justify-content: center;
-  margin: 2% 25% 10% 25%; */
 }
 
 .restaurant-picture {
-  /* height: auto;
-  width: auto;  */
-  /* border-radius: 25%; */
   float: left;
   animation: profile__animate 8s ease-in-out infinite 1s;
   width: 400px;
@@ -162,7 +156,6 @@ align-items: center;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* position: relative; */
 }
 
 #no-reservations {
@@ -181,9 +174,6 @@ align-items: center;
 @media screen and (max-width: 992px) {
 
   .restaurant-picture {
-    /* height: auto;
-    width: auto;  */
-    /* border-radius: 25%; */
     float: left;
     animation: profile__animate 8s ease-in-out infinite 1s;
     width: 350px;
@@ -197,15 +187,11 @@ align-items: center;
     margin-top: 1rem;
     margin-bottom: 10rem;
     font-weight: 300;
-    /* display: flex;
-    justify-content: center;
-    margin: 2% 25% 10% 25%; */
   }
 
   .home__title {
     font-size: 1.5rem;
     margin-bottom: var(--mb-0-25);
-    /* color: rgb(143, 143, 143); */
     color: rgb(255, 193, 112);
     margin-right: 2rem;
   }
@@ -254,7 +240,6 @@ align-items: center;
     margin-top: 2rem;
     font-size: 2rem;
   margin-bottom: var(--mb-0-25);
-  /* color: rgb(143, 143, 143); */
   color: rgb(255, 193, 112);
   display: block;
   }
@@ -262,7 +247,6 @@ align-items: center;
   .restaurant-pictureTwo {
     height: auto;
   width: auto; 
-  /* border-radius: 25%; */
   float: none;
   animation: profile__animate 8s ease-in-out infinite 1s;
   width: 300px;
@@ -295,21 +279,13 @@ align-items: center;
     margin-top: 1rem;
     margin-bottom: 0rem;
     font-weight: 300;
-    /* display: flex;
-    justify-content: center;
-    margin: 2% 25% 10% 25%; */
   }
 }
 
 @media screen and (max-width: 576px) {
   .restaurant-pictureTwo {
-    /* height: auto;
-  width: auto;  */
-  /* border-radius: 25%; */
   float: none;
   animation: profile__animate 8s ease-in-out infinite 1s;
-  /* width: 333px;
-  height: 222px; */
   margin: 0rem 0rem 0rem 0rem;
   display: block;
   }
@@ -365,19 +341,6 @@ align-items: center;
 
 }
 
-@media screen and (max-width: 350px) {
-  /* .restaurant-picture {
-    height: 40%;
-    width: 40%;
-    border-radius: 5%;
-    background-size: cover;
-  }
-
-  .description {
-    font-family: "Poppins Light";
-    font-size: 17px;
-    display: flex;
-    justify-content: center;
-    margin: 5% 25%;
-  } */
-}
+/* @media screen and (max-width: 350px) {
+  
+} */
