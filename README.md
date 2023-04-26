@@ -4,11 +4,9 @@ Fully-functional PERN Stack Application developed for use of restaurant personne
 
 In the process of restyling... 
 
-## Demo
+## Demo 
 
-You can view the app here: https://frontend-rr-er.herokuapp.com/dashboard
-
-![PeriodicTablesUpdate](https://user-images.githubusercontent.com/104235709/197932624-3a33c31c-be87-41e2-878a-f9655e01443f.PNG)
+You can view the app here: https://periodictables.vercel.app/dashboard
 
 ## Features
 
