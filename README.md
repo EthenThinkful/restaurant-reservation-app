@@ -1,8 +1,8 @@
 # Periodic Tables: Restaurant Reservation System
 
-Fully-functional PERN Stack Application developed for use of restaurant personnel. Help your company keep track of whats going on!
+PERN Stack Application developed for use of restaurant personnel. Help your company keep track of whats going on!
 
-In the process of restyling... 
+<img width="1439" alt="restaurantReservations" src="https://user-images.githubusercontent.com/104235709/235525804-72ee76b6-bd74-45e9-b309-cb6d4cbd6a78.png">
 
 ## Demo 
 
