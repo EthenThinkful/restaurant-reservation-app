@@ -6,7 +6,7 @@ import './ReservationForm.css'
 function ReservationForm({reservationData, submitHandler, cancelHandler, error, changeHandler}) {
 
     return (
-        <div>
+        <div className="res__form">
           <ErrorAlert error={error} /> 
           <form class="needs-validation center " onSubmit={submitHandler}>
             <div class="form-row">
@@ -90,11 +90,11 @@ function ReservationForm({reservationData, submitHandler, cancelHandler, error, 
                 type="button"
                 name="cancel-btn"
                 onClick={cancelHandler}
-                className="btn btn-secondary button-position mt-0"
+                className="btn res__button mt-0"
               >
                 Cancel
               </button>
-              <button type="submit" name="submit-btn" className="btn btn-secondary button-position mt-0">
+              <button type="submit" name="submit-btn" className="btn btn res__button mt-0">
                 Submit
               </button>
             

@@ -10,23 +10,125 @@
 font-family: 'Poppins Regular';
 }
 
-@media screen and (min-width: 280px) {
+.show-menu {
+  display: none;
+}
 
-  a {
-    color: gray;
-    font-family: 'Poppins Regular';
-    font-size: 100%;
+.no-show-menu {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  background-color: rgb(247, 244, 220);
+        box-shadow: 0 10px 6px -6px rgb(224, 224, 224);  
+        font-family: 'Poppins Regular'; 
+        height: 7rem;
+        overflow: hidden;
+}
+
+.nav {
+  height: calc(var(--header-height) + 1.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 1rem;
+  padding-left: none;
+}
+
+#navbarSupportedContent20 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav__list {
+  display: flex;
+  column-gap: .1rem;
+}
+
+.nav__menu {
+  position: relative;
+  transition: .3s;
+}
+
+.burger__menu {
+  display: none;
+}
+
+.nav-link {
+  display: flex; 
+    flex-direction:row;
+     align-items: center; 
+    transition: .3s;
+}
+
+a {
+  color: gray;
+  font-family: 'Poppins Regular';
+  font-size: 100%;
+}
+
+a:hover {
+  color: darksalmon;
+  transition: 0.3s;
+}
+
+.logo img {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 22px;
+}
+
+.nav-item {
+  list-style-type: none;
+  font-size: .8rem;
+  padding-top: 3%;
+}
+
+#logo {
+  color: DarkSalmon;
+  font-size: 1.3rem;
+  font-weight: 500;
+}
+
+button:focus {
+  outline: none;
+}
+
+.icon__font {
+  display: none;
+}
+
+@media screen and (max-width: 992px) {
+  .burger {
+    background-color: rgb(247, 244, 220);
+  }
+  .nav__menu {
+    display: none;
   }
 
-  a:hover {
-    color: darksalmon;
-    transition: 0.3s;
+  .icon__font__menu {
+    
   }
 
-  .logo img {
-    width: 25px;
-    height: 25px;
-    margin-bottom: 25px;
+  .burger__menu {
+    display:block;
+    margin-right: 0rem;
+    padding-right: 0%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    width: fit-content; 
+  }
+
+  .icon__font {
+    font-size: 2rem;
+    color: DarkSalmon;
+    display: flex;
   }
 
   .animated-icon1 {
@@ -36,7 +138,38 @@ font-family: 'Poppins Regular';
     margin: 0px;
     cursor: pointer;
   }
+  
+  .animated-icon1 span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+  }
+  
+  .animated-icon1 span {
+    background: DarkSalmon;
+  }
+  
+  .animated-icon1 span:nth-child(1) {
+    top: 0px;
+    
+  }
+  
+  .animated-icon1 span:nth-child(2) {
+    top: 10px;
+    
+  }
+  
+  .animated-icon1 span:nth-child(3) {
+    top: 20px;
+    
+  }
+}
 
+@media screen and (max-width: 768px) {
   .animated-icon1 span {
     display: block;
     position: absolute;
@@ -47,123 +180,28 @@ font-family: 'Poppins Regular';
     left: 0;
   }
 
-  .animated-icon1 span {
-    background: DarkSalmon;
-  }
-
-  .animated-icon1 span:nth-child(1) {
-    top: 0px;
-    
-  }
-
-  .animated-icon1 span:nth-child(2) {
-    top: 10px;
-    
-  }
-
-  .animated-icon1 span:nth-child(3) {
-    top: 20px;
-    
-  }
-
-  .navBar-nav {
-    background-color: rgba(255, 169, 134, 0.5);
-    padding-bottom: 3%;
-    
-  }
-  .navBar {
-    background-color: rgba(250, 246, 211, 0.5);
-    margin: 0 0;
-    padding: 0 0;
-    -webkit-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
-     -moz-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
-          box-shadow: 0 10px 6px -6px rgb(224, 224, 224);  
-          font-family: 'Poppins Regular'; 
-  }
- 
-.nav-item {
-    display: flex;
-    justify-content: center;
-    padding-top: 3%;
-    font-family: 'Poppins Regular';
+  #logo {
+    margin-left: 5rem;
   }
   
- .navbar-toggler {
-    border-color: none;
-    color: none;
-    border-style: none;
-    
+}
+@media screen and (max-width: 576px) {
+
+  #logo {
+    margin-left: 0rem;
+  }
+
+}
+
+@media screen and (max-width: 350px) {
+  .burger__menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
   }
 
   #logo {
-    color: DarkSalmon;
-    font-size: 30px;
-    font-weight: 500;
-    margin-right: auto;
-    padding-left: 2%;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    width: fit-content;
+    margin-left: 0rem;
   }
-
-  button:focus {
-    outline: none;
-}
-
-.justifyNav {
-  display: flex;
-  justify-content: space-between;
-  
-}
-
-}
-
-@media screen and (min-width: 768px) {
-
-  .justifyNav { 
-    margin-right: 12rem;
-  }
-
-  .navbar-toggler {
-    display: none;
-  }
-
-  #navbarSupportedContent20 {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .navBar-nav {
-    background-color: rgba(0, 0, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 14rem;
-  }
-
-  .navBar {
-    position: relative;
-    display: flex;
-    flex-wrap: none;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .nav-link {
-    margin-top: 2rem;
-    
-  }
-}
-
-@media screen and (min-width: 1024px) {
-  #logo {
-    color: DarkSalmon;
-    font-size: 40px;
-    font-weight: 500;
-    padding-top: 3%;
-    padding-bottom: 3%;
-    width: fit-content;
-    margin-left: 14rem;
-  }
-  
 }

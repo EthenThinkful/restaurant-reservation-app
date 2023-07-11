@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import Routes from "./Routes";
-import "./Layout.css"
+
 
 /**
  * Defines the main layout of the application.
@@ -14,17 +14,13 @@ import "./Layout.css"
 
 function Layout() {
   return (
-    <div>
-      <div>
-        <div className="fixed_page">
-          <Menu />
+    <>
+        <Menu />
+    
+        <div className="main">
+        <Routes />
         </div>
-
-        <div className="fixed_page">
-          <Routes />
-        </div>
-      </div>
-    </div>
+    </>
   );
 }
 

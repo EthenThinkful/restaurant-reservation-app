@@ -1,14 +1,12 @@
 # Periodic Tables: Restaurant Reservation System
 
-Fully-functional PERN Stack Application developed for use of restaurant personnel. Help your company keep track of whats going on!
+PERN Stack Application developed for use of restaurant personnel. Help your company keep track of whats going on!
 
-In the process of restyling... 
+<img width="1439" alt="restaurantReservations" src="https://user-images.githubusercontent.com/104235709/235525804-72ee76b6-bd74-45e9-b309-cb6d4cbd6a78.png">
 
-## Demo
+## Demo 
 
-You can view the app here: https://frontend-rr-er.herokuapp.com/dashboard
-
-![PeriodicTablesUpdate](https://user-images.githubusercontent.com/104235709/197932624-3a33c31c-be87-41e2-878a-f9655e01443f.PNG)
+You can view the app here: https://periodictables.vercel.app/dashboard
 
 ## Features
 

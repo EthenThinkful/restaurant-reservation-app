@@ -72,7 +72,7 @@ function Search() {
         ></input>
         </div>
         {/* sends a get request */}
-        <button type="submit" class="btn btn-secondary mt-3">Find</button>
+        <button type="submit" class="search__button btn mt-3">Find</button>
       </form>
       {/* renders the reservation card(s) found or displays "No reservations found." */}
       <div className="reservationsList">{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
