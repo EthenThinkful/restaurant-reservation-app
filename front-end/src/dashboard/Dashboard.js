@@ -6,7 +6,7 @@ import ReservationsList from "./ReservationsList";
 import TablesList from "./TablesList";
 import { formatAsTime, previous, next, today } from "../utils/date-time";
 import "./Dashboard.css";
-import '../layout/Menu';
+import "../layout/Menu";
 
 function Dashboard({ date, Toggle }) {
   // useStates for data manipulation
@@ -70,15 +70,14 @@ function Dashboard({ date, Toggle }) {
     history.push(`/dashboard?date=${todayDate}`);
   };
 
-  
   return (
     <section className="home section">
       <div className={Toggle ? "animated-text-2" : "animated-text"}>
-          {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
+        {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
       </div>
       <div className="home__container container">
         <div className="home__content">
-        <img
+          <img
             className="restaurant-picture"
             src="https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"
             alt="restaurantPhoto"
@@ -88,22 +87,26 @@ function Dashboard({ date, Toggle }) {
             src="https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"
             alt="restaurantPhoto"
           />
-          
-            <h1 className="home__title">Periodic Tables 
-          <div className="description">
-            Simplify your Restaurant Management. A robust and intuitive app that
-            helps you manage your reservations, tables, and organization.
-          </div>
+
+          <h1 className="home__title">
+            Periodic Tables
+            <div className="description">
+            Simplify your restaurant management with Periodic Tables, allowing
+            you to maintain visibility and organization of your restaurant's reservations and
+            table availability.
+            </div>
           </h1>
-          </div>
-          <h1 className="home__titleTwo">Periodic Tables 
+        </div>
+        <h1 className="home__titleTwo">
+          Periodic Tables
           <div className="descriptionTwo">
-            Simplify your Restaurant Management. A robust and intuitive app that
-            helps you manage your reservations, tables, and organization.
+          Simplify your restaurant management with Periodic Tables, allowing
+            you to maintain visibility and organization of your restaurant's reservations and
+            table availability.
           </div>
-          </h1>
+        </h1>
       </div>
-      
+
       {/* adding... below */}
       <div className="reservation-date">
         <div className=" d-flex  justify-content-center">
@@ -145,7 +148,7 @@ function Dashboard({ date, Toggle }) {
         )}
       </div>
       {/* Lets user know if there aren't any reservations with a message or renders any existing reservations. */}
-      <div className="reservations-list ">
+      <div className="reservations_list">
         {reservationsList.length === 0 ? (
           // changed below
           <div id="no-reservations">

@@ -165,8 +165,17 @@ align-items: center;
   justify-content: center;
 }
 
-.reservations-list {
-  margin-top: 2rem;
+.reservations_list {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.tables_list {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-flow: row wrap;
 }
 
 

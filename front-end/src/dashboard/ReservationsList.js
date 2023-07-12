@@ -32,7 +32,7 @@ function ReservationList({ reservation, formatTime, loadDashboard }) {
 
   if (reservation.status !== "cancelled") { // Only renders a reservation if status column in database is NOT set to cancelled
   return (
-    <div id="reservation-card">
+      <div className="reservation-card">
       <div id="card-title">Reservation for {formattedTime} {new Date(`${reservation_date} ${reservation_time}`).getHours() < 12 ? "AM" : "PM"}</div>
       <div className="text-center">
         <h6 id="card-label">Name:</h6>
@@ -47,8 +47,8 @@ function ReservationList({ reservation, formatTime, loadDashboard }) {
         {status === "Booked" ? <button type="button"  className="btn btn-secondary m-6 mr-2"> <a className="text-light" href={`/reservations/${reservation_id}/seat`}>Seat</a></button> : null}
         {status === "Booked" ? <button type="button" className="btn btn-secondary m-6 mr-2"> <a className="text-light" href={`/reservations/${reservation_id}/edit`}>Edit</a> </button> : null}
         {status === "Booked" ? <button type="button" className="btn btn-secondary text-light" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}> <div> Cancel </div> </button> : null}
+        </div>
       </div>
-    </div>
   )} else {return null}  
 }
 
