@@ -26,12 +26,11 @@
     border: 3px solid rgb(245, 209, 161);
     text-align: center;
     padding: 50px;
-    border-radius: 25%;
+    border-radius: 50%;
     margin: 2rem;
     color: DarkSalmon;
     height: 17rem;
-    width: 17rem;
-    
+    width: 17rem;   
   }
 
   .card_img img {
@@ -45,25 +44,9 @@
     margin: 1rem 1rem 1rem 1rem;
   }
 
-  .tables_list {
- display: grid;
- grid-template-columns: repeat(1, 1fr);
- text-align: center;
-  }
 
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-  }
 
-  @media screen and (min-width: 576px) {
-    .tables_list {
-    grid-auto-rows: minmax(100px, auto); 
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   column-gap: 0rem;
-   text-align: center;
-    }
-  }
+
+
 
 
