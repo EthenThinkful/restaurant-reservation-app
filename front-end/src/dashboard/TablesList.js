@@ -30,7 +30,7 @@ function TablesList({ table, loadDashboard }) {
 
       // renders all tables
     return (
-        <div className="tables-list">
+        <div className="tables-list" id="table_id">
           {/* <div className="home__content"> */}
         <div className="card_img">
           <img src="https://user-images.githubusercontent.com/104235709/198115095-b7d574ba-f876-4a3e-8a73-93dbdee749b8.png" alt="PTLogo"/>
