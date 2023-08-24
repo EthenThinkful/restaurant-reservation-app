@@ -108,6 +108,30 @@ describe("US-06 - Reservation status - E2E", () => {
         path: ".screenshots/us-06-finish-before.png",
         fullPage: true,
       });
+
+      const finishButtonSelector = `[data-table-id-finish="${table.table_id}"]`;
+      await page.waitForSelector(finishButtonSelector);
+
+      page.on("dialog", async (dialog) => {
+        await dialog.accept();
+      });
+
+      await page.click(finishButtonSelector);
+
+      await page.waitForResponse((response) => {
+        return response.url().endsWith(`/tables`);
+      });
+
+      await page.screenshot({
+        path: ".screenshots/us-06-finish-after.png",
+        fullPage: true,
+      });
+
+      expect(
+        await page.$(
+          `[data-reservation-id-status="${reservation.reservation_id}"]`
+        )
+      ).toBeNull();
     });
   });
 });
