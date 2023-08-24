@@ -4,7 +4,6 @@
     text-align: center;
     padding: 0px;
     color: darksalmon;
-    margin-top: 10rem;
 }
 
 .search__button {
@@ -40,4 +39,5 @@
 
 .background_color {
     background-color: rgba(250, 246, 211, 0.5);
+    width: 19rem;
 }

@@ -33,7 +33,7 @@
   display: flex;
   justify-content: center;
   margin: 1rem;
-  padding-top: 10rem;
+  padding-top: 1rem;
 }
 
 @-webkit-keyframes stripes {
@@ -80,18 +80,6 @@
   color: rgb(255, 193, 112);
 }
 
-.home__titleTwo {
-  display: none;
-}
-
-.restaurant-pictureTwo {
-  display: none;
-}
-
-.descriptionTwo {
-  display: none;
-}
-
 h4 {
   color: rgb(110, 110, 110);
 }
@@ -117,11 +105,11 @@ h4 {
 }
 
 .restaurant-picture {
-  float: left;
+  float: none;
   animation: profile__animate 8s ease-in-out infinite 1s;
-  width: 400px;
-  height: 267px;
-  margin: 0rem 5rem 5rem 5rem;
+  width: 294px;
+  height: 196px;
+  display: none;
 }
 
 @keyframes profile__animate {
@@ -185,9 +173,8 @@ align-items: center;
   .restaurant-picture {
     float: left;
     animation: profile__animate 8s ease-in-out infinite 1s;
-    width: 350px;
-    height: 233px;
-    margin: 0rem 5rem 5rem 5rem;
+    width: 294px;
+    height: 196px;
   }
   .description {
     font-size: 1rem;
@@ -223,63 +210,6 @@ align-items: center;
     display: block;
   }
 
-  .animated-text-2 {
-    background-image: -webkit-linear-gradient(
-    DarkSalmon 50%,
-    rgb(255, 193, 112) 50%
-  );
-  background-size: 100% 50px;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  -webkit-animation: stripes 2s linear infinite;
-  animation: stripes 2s linear infinite;
-  font-size: 3rem;
-  display: flex;
-  justify-content: center;
-  margin: 1rem;
-  padding-top: 2rem;
-
-  }
-
-  .home__title {
-    display: none;
-  }
-
-  .home__titleTwo {
-    margin-top: 2rem;
-    font-size: 2rem;
-  margin-bottom: var(--mb-0-25);
-  color: rgb(255, 193, 112);
-  display: block;
-  }
-
-  .restaurant-pictureTwo {
-    height: auto;
-  width: auto; 
-  float: none;
-  animation: profile__animate 8s ease-in-out infinite 1s;
-  width: 300px;
-  height: 200px;
-  margin: 0rem 5rem 5rem 5rem;
-  display: block;
-  }
-
-  .descriptionTwo {
-    display: block;
-    font-family: "Poppins Light";
-  font-size: .9rem;
-  color: rgb(143, 143, 143);
-  font-weight:400;
-  margin-top: 1rem;
-  margin-bottom: 10rem;
-  margin-right: var(--mb-1-5);
-  font-weight: 300;
-  }
-
-   .restaurant-picture {
-    display: none;
-  }
-
   .description {
     font-family: "Poppins Light";
     font-size: 1rem;
@@ -292,29 +222,9 @@ align-items: center;
 }
 
 @media screen and (max-width: 576px) {
-  .restaurant-pictureTwo {
-  float: none;
-  animation: profile__animate 8s ease-in-out infinite 1s;
-  margin: 0rem 0rem 0rem 0rem;
-  display: block;
-  }
 
   .animated-text {
-    margin: 0rem;
-    padding-top: 9rem;
     font-size: 2.5rem;
-
-  }
-
-  .descriptionTwo {
-  display: block;
-  font-family: "Poppins Light";
-  font-size: .9rem;
-  color: rgb(143, 143, 143);
-  font-weight:400;
-  margin-top: 1rem;
-  margin-bottom: 4rem;
-  font-weight: 300;
   }
 
   .home__content {
@@ -328,15 +238,6 @@ align-items: center;
    align-items: center;
    padding-bottom: 2.7rem;
    }
-
-   .home__titleTwo {
-    margin-top: 0rem;
-    font-size: 2rem;
-    margin-bottom: var(--mb-0-25);
-    /* color: rgb(143, 143, 143); */
-    color: rgb(255, 193, 112);
-    display: block;
-  }
 
   .home__container {
     row-gap: 1rem;

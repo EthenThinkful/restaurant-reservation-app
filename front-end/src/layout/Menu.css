@@ -87,13 +87,18 @@ a:hover {
 .nav-item {
   list-style-type: none;
   font-size: .8rem;
-  padding-top: 3%;
+  padding: .5rem 0;
+}
+
+.dropdown-items-big-screen {
+  display: flex;
 }
 
 #logo {
   color: DarkSalmon;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 button:focus {
@@ -194,14 +199,5 @@ button:focus {
 }
 
 @media screen and (max-width: 350px) {
-  .burger__menu {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-  }
-
-  #logo {
-    margin-left: 0rem;
-  }
+  
 }

@@ -21,12 +21,11 @@
 
 
   .tables-list {
-    border-radius: 20rem;
+    border-radius: 5rem;
     background-color: rgba(250, 246, 211, 0.5);
     border: 3px solid rgb(245, 209, 161);
     text-align: center;
     padding: 50px;
-    border-radius: 50%;
     margin: 2rem;
     color: DarkSalmon;
     height: 17rem;

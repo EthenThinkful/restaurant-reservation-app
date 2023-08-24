@@ -1,6 +1,6 @@
 import React from "react";
-import Menu from "./Menu";
 import Routes from "./Routes";
+import Navbar from "./navbar";
 
 
 /**
@@ -15,7 +15,7 @@ import Routes from "./Routes";
 function Layout() {
   return (
     <>
-        <Menu />
+        <Navbar />
         <div className="main">
         <Routes />
         </div>

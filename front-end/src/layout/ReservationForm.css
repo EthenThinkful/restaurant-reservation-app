@@ -1,16 +1,6 @@
 
     .res__form {
-        margin-top: 10rem;
         border-color: rgb(255, 193, 112);
-    }
-    .center {
-        text-align: center;
-        margin: 1rem;
-        background-color: rgba(250, 246, 211, 0.5);
-        display: block;
-        -webkit-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
-        -moz-box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
-          box-shadow: 0 10px 6px -6px rgb(224, 224, 224);
     }
     
     .background-color {
@@ -37,11 +27,6 @@
         background-color: rgb(255, 193, 112);
         color: white;
       }
-
-    #needs-validation center {
-        display: block;
-        margin-top: 0em;
-    }
 
     .field {
         align-items: center;

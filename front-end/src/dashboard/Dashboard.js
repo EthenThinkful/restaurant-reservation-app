@@ -6,9 +6,10 @@ import ReservationsList from "./ReservationsList";
 import TablesList from "./TablesList";
 import { formatAsTime, previous, next, today } from "../utils/date-time";
 import "./Dashboard.css";
-import "../layout/Menu";
+// import "../layout/Menu";
+import "../layout/navbar";
 
-function Dashboard({ date, Toggle }) {
+function Dashboard({ date }) {
   // useStates for data manipulation
   const [reservations, setReservations] = useState([]);
   const [tables, setTables] = useState([]);
@@ -72,41 +73,18 @@ function Dashboard({ date, Toggle }) {
 
   return (
     <section className="home section">
-      <div className={Toggle ? "animated-text-2" : "animated-text"}>
+      <div className="animated-text">
         {new Date().getHours() < 12 ? "Good morning" : "Good evening"}
       </div>
-      <div className="home__container container">
+      {/* <div className="home__container container">
         <div className="home__content">
           <img
             className="restaurant-picture"
             src="https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"
             alt="restaurantPhoto"
           />
-          <img
-            className="restaurant-pictureTwo"
-            src="https://user-images.githubusercontent.com/104235709/189022780-2b1e6a45-fb8d-4b86-845d-658b2d2b952f.jpg"
-            alt="restaurantPhoto"
-          />
-
-          <h1 className="home__title">
-            Periodic Tables
-            <div className="description">
-            Simplify your restaurant management with Periodic Tables, allowing
-            you to maintain visibility and organization of your restaurant's reservations and
-            table availability.
-            </div>
-          </h1>
         </div>
-        <h1 className="home__titleTwo">
-          Periodic Tables
-          <div className="descriptionTwo">
-          Simplify your restaurant management with Periodic Tables, allowing
-            you to maintain visibility and organization of your restaurant's reservations and
-            table availability.
-          </div>
-        </h1>
-      </div>
-
+      </div> */}
       {/* adding... below */}
       <div className="reservation-date">
         <div className=" d-flex  justify-content-center">

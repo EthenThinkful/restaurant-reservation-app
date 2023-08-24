@@ -20,7 +20,7 @@ import "./Routes.css"
  */
 function Routes() {
   return (
-    <div className="container">
+    <div>
     <Switch>
       {/* base path */}
     <Route exact path="/">
