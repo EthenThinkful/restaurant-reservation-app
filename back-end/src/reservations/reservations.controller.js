@@ -151,6 +151,18 @@ const dateObject = new Date(data["reservation_date"])
  next();
 }
 
+// *MIDDLEWARE* makes sure reservation is made at a future time (used with "create" function).
+function notInThePast(req, res, next) {
+  const { data = {} } = req.body;
+if (Date.parse(data["reservation_date"]) < Date.now()) {
+    next({
+      status: 400,
+      message: `Reservation must be made 2 days in advance.`,
+    });
+}
+next();
+}
+
 // *MIDDLEWARE* used when creating a reservation, makes sure reservation is not made after hours (used with "create" function).
 function timeIsAvailable(req,res,next) {
   const { data = {} } = req.body;
@@ -162,18 +174,6 @@ function timeIsAvailable(req,res,next) {
     });
   }
   next();
-}
-
-// *MIDDLEWARE* makes sure reservation is made at a future time (used with "create" function).
-function notInThePast(req, res, next) {
-  const { data = {} } = req.body;
-if (Date.parse(data["reservation_date"]) < Date.now()) {
-    next({
-      status: 400,
-      message: `Reservation must be in the future.`,
-    });
-}
-next();
 }
  
 // *THEE create function* creates a new reservation.
