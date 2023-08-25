@@ -3,6 +3,7 @@ import ErrorAlert from "./ErrorAlert";
 import ReservationList from "../dashboard/ReservationsList";
 import { formatAsTime } from "../utils/date-time";
 import "./Search.css";
+import { formatPhoneNumber } from "../utils/format-phone-number";
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
@@ -69,13 +70,13 @@ function Search() {
           onChange={changeHandler}
           placeholder="Enter a customer's phone number"
           className="background_color"
+          value={formatPhoneNumber(formState)}
         ></input>
         </div>
-        {/* sends a get request */}
         <button type="submit" class="search__button btn mt-3">Find</button>
       </form>
       {/* renders the reservation card(s) found or displays "No reservations found." */}
-      <div className="reservationsList">{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
+      <div className="reservations-list">{reservationsList.length === 0 ? <h3>{altMessage}</h3> : reservationsList}</div>
     </div>
   );
 }

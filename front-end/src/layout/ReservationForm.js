@@ -1,18 +1,10 @@
 import React from "react";
 import ErrorAlert from "./ErrorAlert";
 import './ReservationForm.css'
+import { formatPhoneNumber } from "../utils/format-phone-number";
 
 // Reservation form shared between Edit & NewReservations components!
 function ReservationForm({reservationData, submitHandler, cancelHandler, error, changeHandler}) {
-
-  function formatPhoneNumber(phoneNumberString) {
-    var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
-    var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
-    if (match) {
-      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
-    }
-    return null;
-  }
 
     return (
         <div className="res__form">

@@ -43,7 +43,7 @@ function TablesList({ table, loadDashboard }) {
           <li className="third-background-color" data-table-id-status={table.table_id}>{!reservation_id ? "Free" : "occupied"}</li>
         </ul>
         <div>
-        {reservation_id ? <button type="button" onClick={onSubmitHandler} className="btn today__button" data-table-id-finish={table.table_id}>Finish</button> : <></>}
+        {reservation_id ? <button type="button" onClick={onSubmitHandler} className="btn today__button mt-0" data-table-id-finish={table.table_id}>Finish</button> : <></>}
         </div>
         </div>
   )

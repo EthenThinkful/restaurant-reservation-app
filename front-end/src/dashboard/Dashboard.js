@@ -125,10 +125,8 @@ function Dashboard({ date }) {
           <></>
         )}
       </div>
-      {/* Lets user know if there aren't any reservations with a message or renders any existing reservations. */}
       <div className="reservations_list">
         {reservationsList.length === 0 ? (
-          // changed below
           <div id="no-reservations">
             <h5>There are no reservations for this date.</h5>
           </div>
@@ -136,10 +134,10 @@ function Dashboard({ date }) {
           reservationsList
         )}
       </div>
-      {/* Lets user know if there aren't any tables with a message or renders any existing tables. */}
       <div className="tables_list">
+        {/* movies.length === 0 ? <div><h2>Fetching data from the database...</h2><section className="loader"></section></div> */}
         {tablesList.length === 0 ? (
-          <h3 className="ml-5">No Tables Listed</h3>
+          <div><p>Fetching data from the database...</p><section className="loader"></section></div>
         ) : (
           tablesList
         )}
