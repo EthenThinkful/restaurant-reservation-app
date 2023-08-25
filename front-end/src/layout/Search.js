@@ -69,7 +69,7 @@ function Search() {
           id="mobile_number"
           onChange={changeHandler}
           placeholder="Enter a customer's phone number"
-          className="background_color"
+          className="search-input"
           value={formatPhoneNumber(formState)}
         ></input>
         </div>
