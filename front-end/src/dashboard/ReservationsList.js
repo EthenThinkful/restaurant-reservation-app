@@ -1,11 +1,14 @@
 import React from "react";
 import "./ReservationList.css";
 import { useHistory } from "react-router";
+import { useState } from "react";
+import ErrorAlert from "../layout/ErrorAlert";
 
 const { REACT_APP_API_BASE_URL } = process.env;
 
 function ReservationList({ reservation, formatTime, loadDashboard }) {
-  const history = useHistory(); // for redirection purposes
+  const history = useHistory(); 
+  const [error, setError] = useState(undefined);
 
   // De-constructing needed values from reservation
   const { first_name, last_name, mobile_number, reservation_time, reservation_date, people, status, reservation_id } =
@@ -25,14 +28,22 @@ function ReservationList({ reservation, formatTime, loadDashboard }) {
             },
             body: JSON.stringify({data: { status: "cancelled" } }),
             
-          }, history.go(0)); // Reloads current page after cancellation
-          return response;
+          }); // Reloads current page after cancellation
+          const resData = await response.json();
+      if (resData.error) {
+        setError(resData.error);
+      }
+      // end of request: return to dashboard
+      if (response.status !== 400) {
+        history.push(`/dashboard`);
+      }
     }
   }
 
   if (reservation.status !== "cancelled") { // Only renders a reservation if status column in database is NOT set to cancelled
   return (
       <div className="reservation-card">
+        {error ? <ErrorAlert errorMessage={error}/> : <></>}
       <div id="card-title">Reservation for {formattedTime} {new Date(`${reservation_date} ${reservation_time}`).getHours() < 12 ? "AM" : "PM"}</div>
       <div className="text-center">
         <h6 id="card-label">Name:</h6>
