@@ -5,6 +5,15 @@ import './ReservationForm.css'
 // Reservation form shared between Edit & NewReservations components!
 function ReservationForm({reservationData, submitHandler, cancelHandler, error, changeHandler}) {
 
+  function formatPhoneNumber(phoneNumberString) {
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+    var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+    if (match) {
+      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+    }
+    return null;
+  }
+
     return (
         <div className="res__form">
           <ErrorAlert error={error} /> 
@@ -42,7 +51,7 @@ function ReservationForm({reservationData, submitHandler, cancelHandler, error, 
                   id="mobile_number"
                   name="mobile_number"
                   placeholder="xxx-xxx-xxxx"
-                  value={reservationData.mobile_number}
+                  value={formatPhoneNumber(reservationData.mobile_number)}
                   className="background-color"
                   onChange={changeHandler}
                 ></input>
