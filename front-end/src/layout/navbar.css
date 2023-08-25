@@ -33,16 +33,12 @@ nav {
 
 .menu {
     width: 100%;
-    height: 40vh;
+    height: 25vh;
+    padding-top: 1rem;
     background-color: rgba(255, 169, 134, 0.5);
     position: relative;
     top: 0;
     z-index: 0;
-}
-
-.dropdown-items {
-    
-    padding: 2rem 8rem;
 }
 
 /* ------------- sliding menu ------------------ */

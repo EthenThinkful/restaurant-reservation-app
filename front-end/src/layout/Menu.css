@@ -87,7 +87,7 @@ a:hover {
 .nav-item {
   list-style-type: none;
   font-size: .8rem;
-  padding: .5rem 0;
+  padding: 1rem 0;
 }
 
 .dropdown-items-big-screen {
@@ -194,6 +194,12 @@ button:focus {
 
   #logo {
     margin-left: 0rem;
+  }
+
+  .nav-item {
+    list-style-type: none;
+    font-size: .8rem;
+    padding: .5rem 0;
   }
 
 }

@@ -43,10 +43,13 @@ function ReservationList({ reservation, formatTime, loadDashboard }) {
         <p id="card-text">{people}</p>
         <h6 id="card-label">Status:</h6>
         <p id="card-text" data-reservation-id-status={reservation.reservation_id}>{status}</p>
-        {/* conditionally rendering buttons only if reservation status is set to "Booked" */}
-        {status === "Booked" ? <button type="button"  className="btn btn-secondary m-6 mr-2"> <a className="text-light" href={`/reservations/${reservation_id}/seat`}>Seat</a></button> : null}
-        {status === "Booked" ? <button type="button" className="btn btn-secondary m-6 mr-2"> <a className="text-light" href={`/reservations/${reservation_id}/edit`}>Edit</a> </button> : null}
-        {status === "Booked" ? <button type="button" className="btn btn-secondary text-light" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}> <div> Cancel </div> </button> : null}
+        {status === "Booked" ?
+        <div className="btn-container">
+        {status === "Booked" ? <button type="button"  className="btn today__button"> <a className="text-light" href={`/reservations/${reservation_id}/seat`}>Seat</a></button> : null}
+        {status === "Booked" ? <button type="button" className="btn today__button"> <a className="text-light" href={`/reservations/${reservation_id}/edit`}>Edit</a> </button> : null}
+        {status === "Booked" ? <button type="button" className="btn today__button" data-reservation-id-cancel={reservation.reservation_id} onClick={cancelHandler}> <div> Cancel </div> </button> : null}
+        </div>
+        : null}
         </div>
       </div>
   )} else {return null}  

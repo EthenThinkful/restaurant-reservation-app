@@ -90,7 +90,7 @@ function Dashboard({ date }) {
         <div className=" d-flex  justify-content-center">
           <h4 className="mb-0">Reservations for {date}</h4>
         </div>
-        <div className="row my-4">
+        <div className="flex text-center my-4">
           {/* useHistory buttons */}
           <button
             type="button"
